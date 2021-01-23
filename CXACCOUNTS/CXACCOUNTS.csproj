@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C373D0EE-E62E-4D7F-BAB1-F706F6FB107A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXACCOUNTS</RootNamespace>
+    <AssemblyName>CXACCOUNTS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework">
+      <HintPath>..\Assets\Reference\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cash\Cash_in_hand\Const\CASH_IN_HAND.cs" />
+    <Compile Include="Cash\Cash_in_hand\Crud\CCash_in_hand.cs" />
+    <Compile Include="Cash\Cash_in_hand\Crud\CCash_in_hand_exten.cs" />
+    <Compile Include="Cash\Cash_in_hand\Form\FCash_in_hand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\Form\FCash_in_hand.designer.cs">
+      <DependentUpon>FCash_in_hand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\Form\FCash_in_hand_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\Form\VCash_in_hand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\List\LCash_in_hand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\List\LCash_in_hand.designer.cs">
+      <DependentUpon>LCash_in_hand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\List\LCash_in_hand_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\List\VLCash_in_hand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_in_hand\Setup\Cash_in_hand_Tbl.cs" />
+    <Compile Include="Cash\Cash_payment\Const\CASH_PAYMENT.cs" />
+    <Compile Include="Cash\Cash_payment\Crud\CCash_payment.cs" />
+    <Compile Include="Cash\Cash_payment\Crud\CCash_payment_exten.cs" />
+    <Compile Include="Cash\Cash_payment\Form\FCash_payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\Form\FCash_payment.designer.cs">
+      <DependentUpon>FCash_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\Form\FCash_payment_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\Form\VCash_payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\List\LCash_payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\List\LCash_payment.designer.cs">
+      <DependentUpon>LCash_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\List\LCash_payment_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\List\VLCash_payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_payment\Setup\Cash_payment_Tbl.cs" />
+    <Compile Include="Cash\Cash_receipt\Const\CASH_RECEIPT.cs" />
+    <Compile Include="Cash\Cash_receipt\Crud\CCash_receipt.cs" />
+    <Compile Include="Cash\Cash_receipt\Crud\CCash_receipt_exten.cs" />
+    <Compile Include="Cash\Cash_receipt\Form\FCash_receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\Form\FCash_receipt.designer.cs">
+      <DependentUpon>FCash_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\Form\FCash_receipt_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\Form\VCash_receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\List\LCash_receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\List\LCash_receipt.designer.cs">
+      <DependentUpon>LCash_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\List\LCash_receipt_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\List\VLCash_receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cash\Cash_receipt\Setup\Cash_receipt_Tbl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CXBILL\CXBILL.csproj">
+      <Project>{f1b5fd94-ddd2-46b6-998f-fc86ca8a8f10}</Project>
+      <Name>CXBILL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXCORE\CXCORE.csproj">
+      <Project>{f859e753-8725-48f3-83ac-56ff98054236}</Project>
+      <Name>CXCORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXLIB\CXLIB.csproj">
+      <Project>{f0ec1db6-ea0b-4ade-8ee5-a7c10cad33ed}</Project>
+      <Name>CXLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cash\Cash_in_hand\Test\" />
+    <Folder Include="Cash\Cash_payment\Test\" />
+    <Folder Include="Cash\Cash_receipt\Test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

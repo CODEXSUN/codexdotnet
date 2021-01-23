@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F859E753-8725-48F3-83AC-56FF98054236}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXCORE</RootNamespace>
+    <AssemblyName>CXCORE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CXBIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\SEQ\Class\CSeq_exten.cs" />
+    <Compile Include="Admin\SEQ\Const\SEQ.cs" />
+    <Compile Include="Admin\SEQ\Setup\Seq_Tbl.cs" />
+    <Compile Include="Admin\Version\Const\VERSION.cs" />
+    <Compile Include="Admin\Version\Crud\CVersion.cs" />
+    <Compile Include="Admin\Version\Crud\CVersion_exten.cs" />
+    <Compile Include="Admin\Version\Form\FVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\Form\FVersion.designer.cs">
+      <DependentUpon>FVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Version\Form\FVersion_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\Form\VVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\List\LVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\List\LVersion.designer.cs">
+      <DependentUpon>LVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Version\List\LVersion_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\List\VLVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Version\Setup\Version_Tbl.cs" />
+    <Compile Include="Company\Acy\Const\ACY.cs" />
+    <Compile Include="Company\Acy\Crud\CAcy.cs" />
+    <Compile Include="Company\Acy\Crud\CAcy_exten.cs" />
+    <Compile Include="Company\Acy\Form\FAcy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\Form\FAcy.designer.cs">
+      <DependentUpon>FAcy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Acy\Form\FAcy_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\Form\VAcy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\List\LAcy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\List\LAcy.designer.cs">
+      <DependentUpon>LAcy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Acy\List\LAcy_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\List\VLAcy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\SACY.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Acy\SACY.designer.cs">
+      <DependentUpon>SACY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Acy\Setup\Acy_Tbl.cs" />
+    <Compile Include="Company\Acy\Setup\U_Acy.cs" />
+    <Compile Include="Company\Company\Const\COMPANY.cs" />
+    <Compile Include="Company\Company\Crud\CCompany.cs" />
+    <Compile Include="Company\Company\Crud\CCompany_exten.cs" />
+    <Compile Include="Company\Company\Form\FCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Company\Form\FCompany.designer.cs">
+      <DependentUpon>FCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Company\Form\FCompany_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Company\Form\VCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Company\sCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Company\Company\sCompany.designer.cs">
+      <DependentUpon>sCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company\Company\Setup\Company_Tbl.cs" />
+    <Compile Include="Company\Company\Setup\U_Company.cs" />
+    <Compile Include="Core Plus\CCoreplus.cs" />
+    <Compile Include="Core\Bank\Class\CBank.cs" />
+    <Compile Include="Core\Bank\Class\CBank_exten.cs" />
+    <Compile Include="Core\Bank\Const\BANK.cs" />
+    <Compile Include="Core\Bank\Form\FBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\Form\FBank.designer.cs">
+      <DependentUpon>FBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Bank\Form\FBank_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\Form\VBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\List\LBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\List\LBank.designer.cs">
+      <DependentUpon>LBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Bank\List\LBank_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\List\VLBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Bank\Setup\Bank_Tbl.cs" />
+    <Compile Include="Core\Bank\Setup\U_Bank.cs" />
+    <Compile Include="Core\bundle\Class\CBundle.cs" />
+    <Compile Include="Core\bundle\Class\CBundle_exten.cs" />
+    <Compile Include="Core\bundle\Const\BUNDLE.cs" />
+    <Compile Include="Core\bundle\Form\FBundle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\Form\FBundle.designer.cs">
+      <DependentUpon>FBundle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\bundle\Form\FBundle_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\Form\VBundle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\List\LBundle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\List\LBundle.designer.cs">
+      <DependentUpon>LBundle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\bundle\List\LBundle_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\List\VLBundle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\bundle\Setup\Bundle_Tbl.cs" />
+    <Compile Include="Core\bundle\Setup\U_Bundle.cs" />
+    <Compile Include="Core\City\Class\CCity.cs" />
+    <Compile Include="Core\City\Class\CCity_exten.cs" />
+    <Compile Include="Core\City\Const\CITY.cs" />
+    <Compile Include="Core\City\Form\FCity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\Form\FCity.designer.cs">
+      <DependentUpon>FCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\City\Form\FCity_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\Form\VCity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\List\LCity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\List\LCity.designer.cs">
+      <DependentUpon>LCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\City\List\LCity_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\List\VLCity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\City\Setup\City_Tbl.cs" />
+    <Compile Include="Core\City\Setup\U_City.cs" />
+    <Compile Include="Core\Colours\Class\CColours.cs" />
+    <Compile Include="Core\Colours\Class\CColours_exten.cs" />
+    <Compile Include="Core\Colours\Const\COLOURS.cs" />
+    <Compile Include="Core\Colours\Form\FColours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\Form\FColours.designer.cs">
+      <DependentUpon>FColours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Colours\Form\FColours_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\Form\VColours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\List\LColours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\List\LColours.designer.cs">
+      <DependentUpon>LColours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Colours\List\LColours_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\List\VLColours.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Colours\Setup\Colours_Tbl.cs" />
+    <Compile Include="Core\Colours\Setup\U_Colours.cs" />
+    <Compile Include="Core\Contacttype\Class\CContacttype.cs" />
+    <Compile Include="Core\Contacttype\Class\CContacttype_exten.cs" />
+    <Compile Include="Core\Contacttype\Const\CONTACTTYPE.cs" />
+    <Compile Include="Core\Contacttype\Form\FContacttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\Form\FContacttype.designer.cs">
+      <DependentUpon>FContacttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contacttype\Form\FContacttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\Form\VContacttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\List\LContacttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\List\LContacttype.designer.cs">
+      <DependentUpon>LContacttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contacttype\List\LContacttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\List\VLContacttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Contacttype\Setup\Contacttype_Tbl.cs" />
+    <Compile Include="Core\Contacttype\Setup\U_Contacttype.cs" />
+    <Compile Include="Core\Country\Class\CCountry.cs" />
+    <Compile Include="Core\Country\Class\CCountry_exten.cs" />
+    <Compile Include="Core\Country\Const\COUNTRY.cs" />
+    <Compile Include="Core\Country\Form\FCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\Form\FCountry.designer.cs">
+      <DependentUpon>FCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Country\Form\FCountry_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\Form\VCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\List\LCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\List\LCountry.designer.cs">
+      <DependentUpon>LCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Country\List\LCountry_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\List\VLCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Country\Setup\Country_Tbl.cs" />
+    <Compile Include="Core\Country\Setup\U_Country.cs" />
+    <Compile Include="Core\Deliveredto\Class\CDeliveredto.cs" />
+    <Compile Include="Core\Deliveredto\Class\CDeliveredto_exten.cs" />
+    <Compile Include="Core\Deliveredto\Const\DELIVEREDTO.cs" />
+    <Compile Include="Core\Deliveredto\Form\FDeliveredto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\Form\FDeliveredto.designer.cs">
+      <DependentUpon>FDeliveredto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Deliveredto\Form\FDeliveredto_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\Form\VDeliveredto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\List\LDeliveredto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\List\LDeliveredto.designer.cs">
+      <DependentUpon>LDeliveredto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Deliveredto\List\LDeliveredto_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\List\VLDeliveredto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Deliveredto\Setup\Deliveredto_Tbl.cs" />
+    <Compile Include="Core\Deliveredto\Setup\U_Deliveredto.cs" />
+    <Compile Include="Core\Hsncode\Class\CHsncode.cs" />
+    <Compile Include="Core\Hsncode\Class\CHsncode_exten.cs" />
+    <Compile Include="Core\Hsncode\Const\HSNCODE.cs" />
+    <Compile Include="Core\Hsncode\Form\FHsncode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\Form\FHsncode.designer.cs">
+      <DependentUpon>FHsncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Hsncode\Form\FHsncode_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\Form\VHsncode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\List\LHsncode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\List\LHsncode.designer.cs">
+      <DependentUpon>LHsncode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Hsncode\List\LHsncode_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\List\VLHsncode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Hsncode\Setup\Hsncode_Tbl.cs" />
+    <Compile Include="Core\Hsncode\Setup\U_Hsncode.cs" />
+    <Compile Include="Core\Ledgergroup\Class\CLedgergroup.cs" />
+    <Compile Include="Core\Ledgergroup\Class\CLedgergroup_exten.cs" />
+    <Compile Include="Core\Ledgergroup\Const\LEDGERGROUP.cs" />
+    <Compile Include="Core\Ledgergroup\Form\FLedgergroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\Form\FLedgergroup.designer.cs">
+      <DependentUpon>FLedgergroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\Form\FLedgergroup_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\Form\VLedgergroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\List\LLedgergroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\List\LLedgergroup.designer.cs">
+      <DependentUpon>LLedgergroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\List\LLedgergroup_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\List\VLLedgergroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledgergroup\Setup\Ledgergroup_Tbl.cs" />
+    <Compile Include="Core\Ledgergroup\Setup\U_Ledgergroup.cs" />
+    <Compile Include="Core\Ledger\Class\CLedger.cs" />
+    <Compile Include="Core\Ledger\Class\CLedger_exten.cs" />
+    <Compile Include="Core\Ledger\Const\LEDGER.cs" />
+    <Compile Include="Core\Ledger\Form\FLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\Form\FLedger.designer.cs">
+      <DependentUpon>FLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ledger\Form\FLedger_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\Form\VLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\List\LLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\List\LLedger.designer.cs">
+      <DependentUpon>LLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ledger\List\LLedger_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\List\VLLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ledger\Setup\Ledger_Tbl.cs" />
+    <Compile Include="Core\Ledger\Setup\U_Ledger.cs" />
+    <Compile Include="Core\method\Class\CMethod.cs" />
+    <Compile Include="Core\method\Class\CMethod_exten.cs" />
+    <Compile Include="Core\method\Const\METHOD.cs" />
+    <Compile Include="Core\method\Form\FMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\Form\FMethod.designer.cs">
+      <DependentUpon>FMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\method\Form\FMethod_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\Form\VMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\List\LMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\List\LMethod.designer.cs">
+      <DependentUpon>LMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\method\List\LMethod_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\List\VLMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\method\Setup\Method_Tbl.cs" />
+    <Compile Include="Core\Month\Class\CMonth.cs" />
+    <Compile Include="Core\Month\Class\CMonth_exten.cs" />
+    <Compile Include="Core\Month\Const\MONTH.cs" />
+    <Compile Include="Core\Month\Form\FMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\Form\FMonth.designer.cs">
+      <DependentUpon>FMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Month\Form\FMonth_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\Form\VMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\List\LMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\List\LMonth.designer.cs">
+      <DependentUpon>LMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Month\List\LMonth_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\List\VLMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Month\Setup\Month_Tbl.cs" />
+    <Compile Include="Core\Month\Setup\U_Month.cs" />
+    <Compile Include="Core\Ordertype\Class\COrdertype.cs" />
+    <Compile Include="Core\Ordertype\Class\COrdertype_exten.cs" />
+    <Compile Include="Core\Ordertype\Const\ORDERTYPE.cs" />
+    <Compile Include="Core\Ordertype\Form\FOrdertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\Form\FOrdertype.designer.cs">
+      <DependentUpon>FOrdertype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ordertype\Form\FOrdertype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\Form\VOrdertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\List\LOrdertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\List\LOrdertype.designer.cs">
+      <DependentUpon>LOrdertype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Ordertype\List\LOrdertype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\List\VLOrdertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Ordertype\Setup\Ordertype_Tbl.cs" />
+    <Compile Include="Core\Ordertype\Setup\U_Ordertype.cs" />
+    <Compile Include="Core\Pincode\Class\CPincode.cs" />
+    <Compile Include="Core\Pincode\Class\CPincode_exten.cs" />
+    <Compile Include="Core\Pincode\Const\PINCODE.cs" />
+    <Compile Include="Core\Pincode\Form\FPincode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\Form\FPincode.designer.cs">
+      <DependentUpon>FPincode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Pincode\Form\FPincode_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\Form\VPincode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\List\LPincode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\List\LPincode.designer.cs">
+      <DependentUpon>LPincode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Pincode\List\LPincode_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\List\VLPincode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Pincode\Setup\Pincode_Tbl.cs" />
+    <Compile Include="Core\Pincode\Setup\U_Pincode.cs" />
+    <Compile Include="Core\Producttype\Class\CProducttype.cs" />
+    <Compile Include="Core\Producttype\Class\CProducttype_exten.cs" />
+    <Compile Include="Core\Producttype\Const\PRODUCTTYPE.cs" />
+    <Compile Include="Core\Producttype\Form\FProducttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\Form\FProducttype.designer.cs">
+      <DependentUpon>FProducttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Producttype\Form\FProducttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\Form\VProducttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\List\LProducttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\List\LProducttype.designer.cs">
+      <DependentUpon>LProducttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Producttype\List\LProducttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\List\VLProducttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Producttype\Setup\Producttype_Tbl.cs" />
+    <Compile Include="Core\Producttype\Setup\U_Producttype.cs" />
+    <Compile Include="Core\Receipttype\Class\CReceipttype.cs" />
+    <Compile Include="Core\Receipttype\Class\CReceipttype_exten.cs" />
+    <Compile Include="Core\Receipttype\Const\RECEIPTTYPE.cs" />
+    <Compile Include="Core\Receipttype\Form\FReceipttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\Form\FReceipttype.designer.cs">
+      <DependentUpon>FReceipttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Receipttype\Form\FReceipttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\Form\VReceipttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\List\LReceipttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\List\LReceipttype.designer.cs">
+      <DependentUpon>LReceipttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Receipttype\List\LReceipttype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\List\VLReceipttype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Receipttype\Setup\Receipttype_Tbl.cs" />
+    <Compile Include="Core\Receipttype\Setup\U_Receipttype.cs" />
+    <Compile Include="Core\salestype\Class\CSalestype.cs" />
+    <Compile Include="Core\salestype\Class\CSalestype_exten.cs" />
+    <Compile Include="Core\salestype\Const\SALESTYPE.cs" />
+    <Compile Include="Core\salestype\Form\FSalestype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\Form\FSalestype.designer.cs">
+      <DependentUpon>FSalestype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\salestype\Form\FSalestype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\Form\VSalestype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\List\LSalestype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\List\LSalestype.designer.cs">
+      <DependentUpon>LSalestype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\salestype\List\LSalestype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\List\VLSalestype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\salestype\Setup\Salestype_Tbl.cs" />
+    <Compile Include="Core\salestype\Setup\U_Salestype.cs" />
+    <Compile Include="Core\Shipping\Class\CShipping.cs" />
+    <Compile Include="Core\Shipping\Class\CShipping_exten.cs" />
+    <Compile Include="Core\Shipping\Const\SHIPPING.cs" />
+    <Compile Include="Core\Shipping\Form\FShipping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\Form\FShipping.designer.cs">
+      <DependentUpon>FShipping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Shipping\Form\FShipping_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\Form\VShipping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\List\LShipping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\List\LShipping.designer.cs">
+      <DependentUpon>LShipping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Shipping\List\LShipping_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\List\VLShipping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Shipping\Setup\Shipping_Tbl.cs" />
+    <Compile Include="Core\sizes\Class\CSizes.cs" />
+    <Compile Include="Core\sizes\Class\CSizes_exten.cs" />
+    <Compile Include="Core\sizes\Const\SIZES.cs" />
+    <Compile Include="Core\sizes\Form\FSizes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\Form\FSizes.designer.cs">
+      <DependentUpon>FSizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\sizes\Form\FSizes_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\Form\VSizes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\List\LSizes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\List\LSizes.designer.cs">
+      <DependentUpon>LSizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\sizes\List\LSizes_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\List\VLSizes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\sizes\Setup\Sizes_Tbl.cs" />
+    <Compile Include="Core\sizes\Setup\U_Sizes.cs" />
+    <Compile Include="Core\State\Class\CState.cs" />
+    <Compile Include="Core\State\Class\CState_exten.cs" />
+    <Compile Include="Core\State\Const\STATE.cs" />
+    <Compile Include="Core\State\Form\FState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\Form\FState.designer.cs">
+      <DependentUpon>FState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\State\Form\FState_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\Form\VState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\List\LState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\List\LState.designer.cs">
+      <DependentUpon>LState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\State\List\LState_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\List\VLState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\State\Setup\State_Tbl.cs" />
+    <Compile Include="Core\State\Setup\U_State.cs" />
+    <Compile Include="Core\taxtype\Class\CTaxtype.cs" />
+    <Compile Include="Core\taxtype\Class\CTaxtype_exten.cs" />
+    <Compile Include="Core\taxtype\Const\TAXTYPE.cs" />
+    <Compile Include="Core\taxtype\Form\FTaxtype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\Form\FTaxtype.designer.cs">
+      <DependentUpon>FTaxtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\taxtype\Form\FTaxtype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\Form\VTaxtype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\List\LTaxtype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\List\LTaxtype.designer.cs">
+      <DependentUpon>LTaxtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\taxtype\List\LTaxtype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\List\VLTaxtype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\taxtype\Setup\Taxtype_Tbl.cs" />
+    <Compile Include="Core\taxtype\Setup\U_Taxtype.cs" />
+    <Compile Include="Core\transport\Class\CTransport.cs" />
+    <Compile Include="Core\transport\Class\CTransport_exten.cs" />
+    <Compile Include="Core\transport\Const\TRANSPORT.cs" />
+    <Compile Include="Core\transport\Form\FTransport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\Form\FTransport.designer.cs">
+      <DependentUpon>FTransport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\transport\Form\FTransport_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\Form\VTransport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\List\LTransport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\List\LTransport.designer.cs">
+      <DependentUpon>LTransport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\transport\List\LTransport_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\List\VLTransport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\transport\Setup\Transport_Tbl.cs" />
+    <Compile Include="Core\transport\Setup\U_Transport.cs" />
+    <Compile Include="Core\Unit\Class\CUnit.cs" />
+    <Compile Include="Core\Unit\Class\CUnit_exten.cs" />
+    <Compile Include="Core\Unit\Const\UNIT.cs" />
+    <Compile Include="Core\Unit\Form\FUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\Form\FUnit.designer.cs">
+      <DependentUpon>FUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Unit\Form\FUnit_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\Form\VUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\List\LUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\List\LUnit.designer.cs">
+      <DependentUpon>LUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Unit\List\LUnit_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\List\VLUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Unit\Setup\Unit_Tbl.cs" />
+    <Compile Include="Core\Unit\Setup\U_Unit.cs" />
+    <Compile Include="Core\vouchertype\Class\CVouchertype.cs" />
+    <Compile Include="Core\vouchertype\Class\CVouchertype_exten.cs" />
+    <Compile Include="Core\vouchertype\Const\VOUCHERTYPE.cs" />
+    <Compile Include="Core\vouchertype\Form\FVouchertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\Form\FVouchertype.designer.cs">
+      <DependentUpon>FVouchertype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\vouchertype\Form\FVouchertype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\Form\VVouchertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\List\LVouchertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\List\LVouchertype.designer.cs">
+      <DependentUpon>LVouchertype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\vouchertype\List\LVouchertype_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\List\VLVouchertype.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\vouchertype\Setup\Vouchertype_Tbl.cs" />
+    <Compile Include="Login\DefaultCompany\Class\CDefaultcompany.cs" />
+    <Compile Include="Login\DefaultCompany\Class\CDefaultcompany_exten.cs" />
+    <Compile Include="Login\DefaultCompany\Const\DEFAULTCOMPANY.cs" />
+    <Compile Include="Login\DefaultCompany\Setup\Defaultcompany_Tbl.cs" />
+    <Compile Include="Login\Defaultlogin\Class\CDefaultlogin.cs" />
+    <Compile Include="Login\Defaultlogin\Class\CDefaultlogin_exten.cs" />
+    <Compile Include="Login\Defaultlogin\Const\DEFAULTLOGIN.cs" />
+    <Compile Include="Login\Defaultlogin\Setup\Defaultlogin_Tbl.cs" />
+    <Compile Include="Login\Login\fLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Login\fLogins_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Login\fLogins_Designer.Designer.cs">
+      <DependentUpon>fLogins_Designer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login\Login_bg.cs" />
+    <Compile Include="Login\Role\Class\CRole.cs" />
+    <Compile Include="Login\Role\Class\CRole_exten.cs" />
+    <Compile Include="Login\Role\Const\ROLE.cs" />
+    <Compile Include="Login\Role\Form\FRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\Form\FRole.designer.cs">
+      <DependentUpon>FRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Role\Form\FRole_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\Form\VRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\List\LRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\List\LRole.designer.cs">
+      <DependentUpon>LRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Role\List\LRole_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\List\VLRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\Role\Setup\Role_Tbl.cs" />
+    <Compile Include="Login\Role\Setup\U_Role.cs" />
+    <Compile Include="Login\User\Class\CUser.cs" />
+    <Compile Include="Login\User\Class\CUser_exten.cs" />
+    <Compile Include="Login\User\Const\USER.cs" />
+    <Compile Include="Login\User\Form\FUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\Form\FUser.designer.cs">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\User\Form\FUser_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\Form\VUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\List\LUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\List\LUser.designer.cs">
+      <DependentUpon>LUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\User\List\LUser_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\List\VLUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Login\User\Setup\User_Tbl.cs" />
+    <Compile Include="Login\User\Setup\U_User.cs" />
+    <Compile Include="Master\Party\Setup\Party_Tbl.cs" />
+    <Compile Include="Master\Party\Setup\U_Party.cs" />
+    <Compile Include="Master\Product\Setup\Product_Tbl.cs" />
+    <Compile Include="Master\Party\Class\cParty.cs" />
+    <Compile Include="Master\Party\Class\cParty_exten.cs" />
+    <Compile Include="Master\Party\Const\PARTY.cs" />
+    <Compile Include="Master\Party\Form\FParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Party\Form\FParty.designer.cs">
+      <DependentUpon>FParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Party\Form\FParty_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Party\Form\VParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Party\List\LParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Party\List\LParty.designer.cs">
+      <DependentUpon>LParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Party\List\LParty_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Party\List\VLParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\Class\cProduct.cs" />
+    <Compile Include="Master\Product\Class\cProduct_exten.cs" />
+    <Compile Include="Master\Product\Const\Product.cs" />
+    <Compile Include="Master\Product\Form\FProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\Form\FProduct.designer.cs">
+      <DependentUpon>FProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Product\Form\FProduct_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\Form\VProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\List\LProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\List\LProduct.designer.cs">
+      <DependentUpon>LProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Product\List\LProduct_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\List\VLProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Master\Product\Setup\U_Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CXLIB\CXLIB.csproj">
+      <Project>{f0ec1db6-ea0b-4ade-8ee5-a7c10cad33ed}</Project>
+      <Name>CXLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Login\Login\fLogins_Designer.resx">
+      <DependentUpon>fLogins_Designer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accounts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

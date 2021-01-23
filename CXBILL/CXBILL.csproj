@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1B5FD94-DDD2-46B6-998F-FC86CA8A8F10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXBILL</RootNamespace>
+    <AssemblyName>CXBILL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CXBIN\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Assets\Reference\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assert\Ref\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Garment new\order\Class\COrder.cs" />
+    <Compile Include="Garment new\order\Class\COrderitems.cs" />
+    <Compile Include="Garment new\order\Class\COrderitems_exten.cs" />
+    <Compile Include="Garment new\order\Class\COrder_exten.cs" />
+    <Compile Include="Garment new\order\Const\ORDER.cs" />
+    <Compile Include="Garment new\order\Const\ORDERITEMS.cs" />
+    <Compile Include="Garment new\order\Form\FOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\Form\FOrder.designer.cs">
+      <DependentUpon>FOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\order\Form\FOrder_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\Form\FOrder_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\Form\VOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\List\LOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\List\LOrder.designer.cs">
+      <DependentUpon>LOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\order\List\LOrder_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\List\VLOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\order\Setup\Order_Tbl.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Setup\U_Purchase_from_GarmentSoftware.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Class\cInvoice.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Class\CInvoiceitems.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Class\CInvoiceitems_exten.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Class\cInvoice_exten.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Const\INVOICE.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Const\INVOICEITEMS.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Form\FInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\Form\FInvoice.designer.cs">
+      <DependentUpon>FInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\Form\FInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\Form\FInvoice_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\Form\VInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\List\LInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\List\LInvoice.designer.cs">
+      <DependentUpon>LInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\List\LInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\List\VLInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Invoice\Prints\D_Invoice.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Prints\D_InvoiceItem.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Prints\PrintInvoiceExchange.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Prints\Print_Invoice.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Prints\P_Invoice.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Prints\P_Invoiceitem.cs" />
+    <Compile Include="Garment new\Sales\Invoice\Setup\Invoice_Tbl.cs" />
+    <Compile Include="Reports\Outstanding\List\LOutstanding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Outstanding\List\LOutstanding.designer.cs">
+      <DependentUpon>LOutstanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Outstanding\List\LOutstanding_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Outstanding\List\VLOutstanding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Prints\Amaltex\D_Quotation.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Prints\Amaltex\D_QuotationItem.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Prints\Amaltex\P_Quotation.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Prints\Amaltex\P_Quotationitem.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Class\CReceipt.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Class\CReceiptitems.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Class\CReceiptitems_exten.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Class\CReceipt_exten.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Const\RECEIPT.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Const\RECEIPTITEMS.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Form\FReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\Form\FReceipt.designer.cs">
+      <DependentUpon>FReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\Form\FReceipt_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\Form\FReceipt_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\Form\VReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\List\LReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\List\LReceipt.designer.cs">
+      <DependentUpon>LReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\List\LReceipt_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\List\VLReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Receipt\Refered\CReceipt_manual.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Refered\CReceipt_refered.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Setup\Receipt_Tbl.cs" />
+    <Compile Include="Garment new\Sales\Receipt\Setup\U_Receipt.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Class\CPayment.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Class\CPaymentitems.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Class\CPaymentitems_exten.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Class\CPayment_exten.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Const\PAYMENT.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Const\PAYMENTITEMS.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Form\FPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\Form\FPayment.designer.cs">
+      <DependentUpon>FPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\Form\FPayment_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\Form\FPayment_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\Form\VPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\List\LPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\List\LPayment.designer.cs">
+      <DependentUpon>LPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\List\LPayment_Design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\List\VLPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Payment\Refered\CPayment_manual.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Refered\CPayment_refered.cs" />
+    <Compile Include="Garment new\Purchase\Payment\Setup\Payment_Tbl.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Class\cPurchase.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Class\CPurchaseitems.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Class\CPurchaseitems_exten.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Class\cPurchase_exten.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Const\PURCHASE.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Const\PURCHASEITEMS.cs" />
+    <Compile Include="Garment new\Purchase\Purchase\Form\FPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\Form\FPurchase.designer.cs">
+      <DependentUpon>FPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\Form\FPurchase_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\Form\FPurchase_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\Form\VPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\List\LPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\List\LPurchase.designer.cs">
+      <DependentUpon>LPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\List\LPurchase_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\List\VLPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Purchase\Purchase\Setup\Purchase_Tbl.cs" />
+    <Compile Include="Reports\GSTRegister\Class\CGSTRegister.cs" />
+    <Compile Include="Reports\GSTRegister\Const\PURCHASE_GST.cs" />
+    <Compile Include="Reports\GSTRegister\Const\SALES_GST.cs" />
+    <Compile Include="Reports\GSTRegister\Form\RGSTRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\GSTRegister\Form\RGSTRegister_designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\GSTRegister\Form\RGSTRegister_designer.designer.cs">
+      <DependentUpon>RGSTRegister_designer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\Class\Invoice.cs" />
+    <Compile Include="Garment new\Sales\Labour\Class\Invoiceitems.cs" />
+    <Compile Include="Garment new\Sales\Labour\Class\Invoiceitems_exten.cs" />
+    <Compile Include="Garment new\Sales\Labour\Class\Invoice_exten.cs" />
+    <Compile Include="Garment new\Sales\Labour\Const\OFFSET_LABOUR.cs" />
+    <Compile Include="Garment new\Sales\Labour\Const\OFFSET_LABOURITEMS.cs" />
+    <Compile Include="Garment new\Sales\Labour\Form\FInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\Form\FInvoice.designer.cs">
+      <DependentUpon>FInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\Form\FInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\Form\FInvoice_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\Form\VInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\List\LInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\List\LInvoice.designer.cs">
+      <DependentUpon>LInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\List\LInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Labour\List\VLInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\PartyStatement\Class\CReportPartyStatement.cs" />
+    <Compile Include="Reports\PartyStatement\Const\REPORTPARTYSTATEMENT.cs" />
+    <Compile Include="Reports\PartyStatement\Form\FRepoartPartyStatement_code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\PartyStatement\Form\FReportPartyStatement_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\PartyStatement\Form\FReportPartyStatement_design.designer.cs">
+      <DependentUpon>FReportPartyStatement_design.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Quotation statement\Class\CRQuotation.cs" />
+    <Compile Include="Reports\Quotation statement\Const\RQUOTAION.cs" />
+    <Compile Include="Reports\Quotation statement\Form\RQuotaion_code.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Quotation statement\Form\RQuotaion_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Quotation statement\Form\RQuotaion_design.designer.cs">
+      <DependentUpon>RQuotaion_design.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Outstanding\Class\COutstanding_exten.cs" />
+    <Compile Include="Reports\Outstanding\Const\OUTSTANDING.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Class\CQreceipt.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Class\CQreceiptitems.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Class\CQreceiptitems_exten.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Class\CQreceipt_exten.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Const\QRECEIPT.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Const\QRECEIPTITEMS.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Form\FQreceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\Form\FQreceipt.designer.cs">
+      <DependentUpon>FQreceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\Form\FQreceipt_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\Form\FQreceipt_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\Form\VQreceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\List\LQreceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\List\LQreceipt.designer.cs">
+      <DependentUpon>LQreceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\List\LQreceipt_Design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\List\VLQreceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\QReceipt\Refered\CQreceipt_manual.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Refered\CQreceipt_refered.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Setup\QReceipt_Tbl.cs" />
+    <Compile Include="Garment new\Sales\QReceipt\Setup\U_QReceipt.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Class\cQuotation.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Class\CQuotationitems.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Class\CQuotationitems_exten.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Class\cQuotation_exten.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Const\QUOTATION.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Const\QUOTATIONITEMS.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Form\FQuotation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Form\FQuotation.designer.cs">
+      <DependentUpon>FQuotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Form\FQuotation_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Form\FQuotation_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Form\VQuotation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\List\LQuotation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\List\LQuotation.designer.cs">
+      <DependentUpon>LQuotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\List\LQuotation_Design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\List\VLQuotation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Garment new\Sales\Quotation\Setup\Quotation_Tbl.cs" />
+    <Compile Include="Garment new\Sales\Quotation\Setup\U_Quotation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CXCORE\CXCORE.csproj">
+      <Project>{06076e9e-19e8-4aae-ae6a-4fe7d0512462}</Project>
+      <Name>CXCORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXLIB\CXLIB.csproj">
+      <Project>{fda5925a-117f-44f4-a789-84d234122a4b}</Project>
+      <Name>CXLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Garments\Offset_1\Sales\Invoice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Purchase_Gst.datasource" />
+    <None Include="Properties\DataSources\Purchase_Gst1.datasource" />
+    <None Include="Properties\DataSources\Purchase_Gst2.datasource" />
+    <None Include="Properties\DataSources\Purchase_Gst3.datasource" />
+    <None Include="Properties\DataSources\Sales_Gst.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\GSTRegister\Form\RGSTRegister_designer.resx">
+      <DependentUpon>RGSTRegister_designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PartyStatement.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PartyStatement\Form\FReportPartyStatement_design.resx">
+      <DependentUpon>FReportPartyStatement_design.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Quotation statement\Form\RQuotaion_design.resx">
+      <DependentUpon>RQuotaion_design.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\QuotationStatement.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Purchase_GST.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sales_GST.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

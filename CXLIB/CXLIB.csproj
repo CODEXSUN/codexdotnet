@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0EC1DB6-EA0B-4ADE-8EE5-A7C10CAD33ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXLIB</RootNamespace>
+    <AssemblyName>CXLIB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CXBIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Assets\Reference\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common.resources">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.Common.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization.resources">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design.resources">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.Design.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.2.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms.resources">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Assets\Reference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="_Software Types\AccountingYear.cs" />
+    <Compile Include="_Software Types\CompanyList.cs" />
+    <Compile Include="_Software Types\SoftwareTypes.cs" />
+    <Compile Include="Common\ChangeCase.cs" />
+    <Compile Include="Common\Checks.cs" />
+    <Compile Include="Common\ConvertTO.cs" />
+    <Compile Include="Common\Core.cs" />
+    <Compile Include="Common\Current.cs" />
+    <Compile Include="Common\Customise.cs" />
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="Common\IMG.cs" />
+    <Compile Include="Common\PrintCopies.cs" />
+    <Compile Include="Controls\Animations\AnimationDirection.cs" />
+    <Compile Include="Controls\Animations\AnimationManager.cs" />
+    <Compile Include="Controls\Animations\Animations.cs" />
+    <Compile Include="Controls\BaseControl\CxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Button\CloseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Button\CloseButton.Designer.cs">
+      <DependentUpon>CloseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Button\OfficeButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Button\OfficeButton.Designer.cs">
+      <DependentUpon>OfficeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calander\xDatepicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Calander\xDatepicker.Designer.cs">
+      <DependentUpon>xDatepicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calander\xDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Calander\xDateTimePicker.Designer.cs">
+      <DependentUpon>xDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calander\xTimepicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Calander\xTimepicker.Designer.cs">
+      <DependentUpon>xTimepicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Editor\RtfEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Editor\RtfEditor.Designer.cs">
+      <DependentUpon>RtfEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Enum\action.cs" />
+    <Compile Include="Controls\Enum\entry.cs" />
+    <Compile Include="Controls\Excel\ExlUtil.cs" />
+    <Compile Include="Controls\Global\XDictionary.cs" />
+    <Compile Include="Controls\Global\XEntity.cs" />
+    <Compile Include="Controls\Global\XEntityList.cs" />
+    <Compile Include="Controls\Gridview\BaseGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Gridview\BaseGridView.designer.cs">
+      <DependentUpon>BaseGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Gridview\EditGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Gridview\EditGridView.designer.cs">
+      <DependentUpon>EditGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Gridview\ListGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Gridview\ListGridView.designer.cs">
+      <DependentUpon>ListGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Gridview\LookupGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Gridview\LookupGridView.designer.cs">
+      <DependentUpon>LookupGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header\Header.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\lookup\IEditBox.cs" />
+    <Compile Include="Controls\lookup\LookupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\lookup\LookupBox.designer.cs">
+      <DependentUpon>LookupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\lookup\LookupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\lookup\LookupForm.designer.cs">
+      <DependentUpon>LookupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\ColorScheme.cs" />
+    <Compile Include="Controls\Mcontrols\DrawHelper.cs" />
+    <Compile Include="Controls\Mcontrols\IControl.cs" />
+    <Compile Include="Controls\Mcontrols\MCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MFlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MRaisedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MSingleLineTextField.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\MTabSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Mcontrols\SkinManager.cs" />
+    <Compile Include="Controls\Reports\Base64Util.cs" />
+    <Compile Include="Controls\Reports\FReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Reports\FReportPreview.designer.cs">
+      <DependentUpon>FReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Reports\IReportFilterPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Reports\MSRptViewerUtil.cs" />
+    <Compile Include="Controls\Reports\PrintDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Reports\PrintDialog.designer.cs">
+      <DependentUpon>PrintDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Reports\PrintSetupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Reports\PrintSetupPanel.designer.cs">
+      <DependentUpon>PrintSetupPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Reports\PrintSetupSaver.cs" />
+    <Compile Include="Controls\Reports\ReportBuilder.cs" />
+    <Compile Include="Controls\Reports\ReportUtil.cs" />
+    <Compile Include="Controls\Reports\XPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Reports\XPanel.designer.cs">
+      <DependentUpon>XPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Rich Text\Class1.cs" />
+    <Compile Include="Controls\Rich Text\xRtfBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Rich Text\xRtfBox.Designer.cs">
+      <DependentUpon>xRtfBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShadowPanel\ShadowBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShadowPanel\ShadowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Text box\Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Text box\Label.Designer.cs">
+      <DependentUpon>Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Text box\NumberBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Text box\NumberBox.designer.cs">
+      <DependentUpon>NumberBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Text box\TextBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Text box\XTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Text box\XTextBox.Designer.cs">
+      <DependentUpon>XTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Text\cCultureInfo.cs" />
+    <Compile Include="Controls\Timer\XTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Timer\XTimer.Designer.cs">
+      <DependentUpon>XTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DAL\Server.cs" />
+    <Compile Include="DAL\SYS_DAL.cs" />
+    <Compile Include="Enum\BtnEvent.cs" />
+    <Compile Include="Enum\ListOption.cs" />
+    <Compile Include="Print Config\Features\Invoice\InvoiceConfig.cs" />
+    <Compile Include="Print Config\Features\Invoice\InvoiceFeatures.cs" />
+    <Compile Include="Print Config\Features\Invoice\InvoiceSettings.cs" />
+    <Compile Include="Print Config\PrintConfig.cs" />
+    <Compile Include="Print Config\SetPrintConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Setups\Setup.cs" />
+    <Compile Include="Setups\SetupCodeBase.cs" />
+    <Compile Include="Themes\CodexsunTheme.cs" />
+    <Compile Include="Themes\Theme.cs" />
+    <Compile Include="Themes\XAnchor.cs" />
+    <Compile Include="Themes\XFont.cs" />
+    <Compile Include="Themes\XLayout.cs" />
+    <Compile Include="Themes\XSize.cs" />
+    <Compile Include="Themes\XTabindex.cs" />
+    <Compile Include="Themes\XTheme.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Editor\RtfEditor.resx">
+      <DependentUpon>RtfEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\lookup\LookupBox.resx">
+      <DependentUpon>LookupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\lookup\LookupForm.resx">
+      <DependentUpon>LookupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Mcontrols\MForm.resx">
+      <DependentUpon>MForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Reports\FReportPreview.resx">
+      <DependentUpon>FReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Reports\PrintDialog.resx">
+      <DependentUpon>PrintDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Reports\PrintSetupPanel.resx">
+      <DependentUpon>PrintSetupPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\tshadowdown.png" />
+    <EmbeddedResource Include="Images\tshadowdownleft.png" />
+    <EmbeddedResource Include="Images\tshadowdownright.png" />
+    <EmbeddedResource Include="Images\tshadowright.png" />
+    <EmbeddedResource Include="Images\tshadowtopright.png" />
+    <None Include="Resources\zoom factor.png" />
+    <None Include="Resources\unlocked.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\U.png" />
+    <None Include="Resources\tick_32.png" />
+    <None Include="Resources\styles.png" />
+    <None Include="Resources\right_arrow.bmp" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\receipted.png" />
+    <None Include="Resources\printer_small.png" />
+    <None Include="Resources\person_users.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\Partial.png" />
+    <None Include="Resources\page-setup.png" />
+    <None Include="Resources\Not.png" />
+    <None Include="Resources\Locked.png" />
+    <None Include="Resources\list unordered.png" />
+    <None Include="Resources\labourbill.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\Invoiced.png" />
+    <None Include="Resources\indent increase.png" />
+    <None Include="Resources\indent decrease.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\I.png" />
+    <None Include="Resources\highlight color.png" />
+    <None Include="Resources\font color.png" />
+    <None Include="Resources\Delivered.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\codexsun.png" />
+    <None Include="Resources\bg_v4_0.jpg" />
+    <None Include="Resources\bg_v2_2.jpg" />
+    <None Include="Resources\bg_v2.jpg" />
+    <None Include="Resources\B.png" />
+    <None Include="Resources\align right.png" />
+    <None Include="Resources\align left.png" />
+    <None Include="Resources\align center.png" />
+    <None Include="Resources\abc.png" />
+    <None Include="Resources\A+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_v5_0.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

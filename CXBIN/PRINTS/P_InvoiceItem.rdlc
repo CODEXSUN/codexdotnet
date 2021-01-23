@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition"
+         xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<DataSources>
+<DataSource Name="DummyDataSource">
+<ConnectionProperties>
+<DataProvider></DataProvider>
+<ConnectString></ConnectString>
+</ConnectionProperties>
+</DataSource>
+</DataSources>
+<DataSets>
+<DataSet Name="MyDataSource_Items">
+<Fields>
+<Field Name="INVOICE_ITEM_ID">
+<DataField>INVOICE_ITEM_ID</DataField>
+</Field>
+<Field Name="INVOICE_ID">
+<DataField>INVOICE_ID</DataField>
+</Field>
+<Field Name="SL_NO">
+<DataField>SL_NO</DataField>
+</Field>
+<Field Name="PO_NO">
+<DataField>PO_NO</DataField>
+</Field>
+<Field Name="DC_NO">
+<DataField>DC_NO</DataField>
+</Field>
+<Field Name="PRODUCT_ID">
+<DataField>PRODUCT_ID</DataField>
+</Field>
+<Field Name="HSN_CODE_ID">
+<DataField>HSN_CODE_ID</DataField>
+</Field>
+<Field Name="SIZES">
+<DataField>SIZES</DataField>
+</Field>
+<Field Name="QTY">
+<DataField>QTY</DataField>
+</Field>
+<Field Name="PRICE">
+<DataField>PRICE</DataField>
+</Field>
+<Field Name="SUB_TOTAL">
+<DataField>SUB_TOTAL</DataField>
+</Field>
+<Field Name="TAXABLEVALUE">
+<DataField>TAXABLEVALUE</DataField>
+</Field>
+<Field Name="CGST_PERCENT">
+<DataField>CGST_PERCENT</DataField>
+</Field>
+<Field Name="CGST_AMOUNT">
+<DataField>CGST_AMOUNT</DataField>
+</Field>
+<Field Name="SGST_PERCENT">
+<DataField>SGST_PERCENT</DataField>
+</Field>
+<Field Name="SGST_AMOUNT">
+<DataField>SGST_AMOUNT</DataField>
+</Field>
+<Field Name="IGST_PERCENT">
+<DataField>IGST_PERCENT</DataField>
+</Field>
+<Field Name="IGST_AMOUNT">
+<DataField>IGST_AMOUNT</DataField>
+</Field>
+</Fields>
+<Query>
+<DataSourceName>DummyDataSource</DataSourceName>
+<CommandText></CommandText>
+</Query>
+</DataSet>
+</DataSets>
+<Body>
+<ReportItems>
+<Rectangle Name="manirect">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>None</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0in</Left>
+<Height>0.1in</Height>
+<Width>7.65in</Width>
+<ReportItems>
+<Rectangle Name="heading">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0in</Left>
+<Height>0.3in</Height>
+<Width>7.65in</Width>
+</Rectangle>
+<Rectangle Name="slno">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0in</Left>
+<Height>4.7in</Height>
+<Width>0.23in</Width>
+</Rectangle>
+<Rectangle Name="po">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>None</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0.23in</Left>
+<Height>4.7in</Height>
+<Width>0.45in</Width>
+</Rectangle>
+<Rectangle Name="dc">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0.68in</Left>
+<Height>4.7in</Height>
+<Width>0.45in</Width>
+</Rectangle>
+<Rectangle Name="hsn_code">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>1.13in</Left>
+<Height>4.7in</Height>
+<Width>0.5in</Width>
+</Rectangle>
+<Rectangle Name="particulars">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>1.63in</Left>
+<Height>4.7in</Height>
+<Width>2.1in</Width>
+</Rectangle>
+<Rectangle Name="qtys">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>3.73in</Left>
+<Height>4.7in</Height>
+<Width>0.6in</Width>
+</Rectangle>
+<Rectangle Name="price">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>4.33in</Left>
+<Height>4.7in</Height>
+<Width>0.45in</Width>
+</Rectangle>
+<Rectangle Name="taxableamt">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>4.78in</Left>
+<Height>4.7in</Height>
+<Width>0.65in</Width>
+</Rectangle>
+<Rectangle Name="sgst_per">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.3in</Top>
+<Left>5.43in</Left>
+<Height>4.4in</Height>
+<Width>0.21in</Width>
+</Rectangle>
+<Rectangle Name="sgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>5.64in</Left>
+<Height>4.7in</Height>
+<Width>0.55in</Width>
+</Rectangle>
+<Rectangle Name="cgst_per">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.3in</Top>
+<Left>6.19in</Left>
+<Height>4.4in</Height>
+<Width>0.2in</Width>
+</Rectangle>
+<Rectangle Name="cgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>6.39in</Left>
+<Height>4.7in</Height>
+<Width>0.56in</Width>
+</Rectangle>
+<Rectangle Name="sub_total">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>Outset</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>6.95in</Left>
+<Height>4.7in</Height>
+<Width>0.7in</Width>
+</Rectangle>
+<Textbox Name="lbl_slno">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>7pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>0.01in</Left>
+<Height>0.16in</Height>
+<Width>0.2in</Width>
+<Value>S.No</Value>
+</Textbox>
+<Textbox Name="lbl_po_no">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>0.24in</Left>
+<Height>0.16in</Height>
+<Width>0.42in</Width>
+<Value>PO.No</Value>
+</Textbox>
+<Textbox Name="lbl_dc_no">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>0.69in</Left>
+<Height>0.16in</Height>
+<Width>0.42in</Width>
+<Value>DC.No</Value>
+</Textbox>
+<Textbox Name="lbl_hsn">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.03in</Top>
+<Left>1.25in</Left>
+<Height>0.16in</Height>
+<Width>0.42in</Width>
+<Value>HSN</Value>
+</Textbox>
+<Textbox Name="lbl_particulars">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.03in</Top>
+<Left>1.74in</Left>
+<Height>0.16in</Height>
+<Width>1.97in</Width>
+<Value>Particulars</Value>
+</Textbox>
+<Textbox Name="lbl_hsn_code">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.15in</Top>
+<Left>1.23in</Left>
+<Height>0.16in</Height>
+<Width>0.42in</Width>
+<Value>Code</Value>
+</Textbox>
+<Textbox Name="lbl_qty">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>3.74in</Left>
+<Height>0.16in</Height>
+<Width>0.57in</Width>
+<Value>Quantity</Value>
+</Textbox>
+<Textbox Name="lbl_price">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>4.34in</Left>
+<Height>0.16in</Height>
+<Width>0.42in</Width>
+<Value>Price</Value>
+</Textbox>
+<Textbox Name="lbl_taxableamt">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.03in</Top>
+<Left>4.79in</Left>
+<Height>0.16in</Height>
+<Width>0.62in</Width>
+<Value>Taxable</Value>
+</Textbox>
+<Textbox Name="lbl_taxableamount">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.15in</Top>
+<Left>4.79in</Left>
+<Height>0.16in</Height>
+<Width>0.62in</Width>
+<Value>Amt</Value>
+</Textbox>
+<Textbox Name="lbl_sgst">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.02in</Top>
+<Left>5.44in</Left>
+<Height>0.16in</Height>
+<Width>0.73in</Width>
+<Value>  SGST</Value>
+</Textbox>
+<Textbox Name="lbl_sgst_per">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.12in</Top>
+<Left>5.46in</Left>
+<Height>0.16in</Height>
+<Width>0.18in</Width>
+<Value> %</Value>
+</Textbox>
+<Textbox Name="lbl_sgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>7pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.15in</Top>
+<Left>5.65in</Left>
+<Height>0.16in</Height>
+<Width>0.52in</Width>
+<Value>    Amt</Value>
+</Textbox>
+<Textbox Name="lbl_cgst">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.02in</Top>
+<Left>6.2in</Left>
+<Height>0.16in</Height>
+<Width>0.73in</Width>
+<Value>  CGST</Value>
+</Textbox>
+<Textbox Name="lbl_cgst_per">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.12in</Top>
+<Left>6.22in</Left>
+<Height>0.16in</Height>
+<Width>0.17in</Width>
+<Value> %</Value>
+</Textbox>
+<Textbox Name="lbl_cgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.15in</Top>
+<Left>6.41in</Left>
+<Height>0.16in</Height>
+<Width>0.53in</Width>
+<Value>    Amt</Value>
+</Textbox>
+<Textbox Name="lbl_Totalv">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Calibri</FontFamily>
+<FontSize>9pt</FontSize>
+<FontWeight>Bolder</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0.09in</Top>
+<Left>7.01in</Left>
+<Height>0.16in</Height>
+<Width>0.61in</Width>
+<Value>Sub Total</Value>
+</Textbox>
+<List Name="listDetlLine">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0.4in</Top>
+<Left>0in</Left>
+<Height>0.03in</Height>
+<Width>7.65in</Width>
+<DataSetName>MyDataSource_Items</DataSetName>
+<Grouping Name="group_SL_NO">
+<GroupExpressions>
+<GroupExpression>=Fields!SL_NO.Value</GroupExpression>
+</GroupExpressions>
+</Grouping>
+<ReportItems>
+<Rectangle Name="listdetails_rect">
+<Style>
+<BorderColor />
+<BorderStyle>
+<Default>None</Default>
+</BorderStyle>
+<BorderWidth>
+<Default>1pt</Default>
+</BorderWidth>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0in</Left>
+<Height>0.25in</Height>
+<Width>0.55in</Width>
+<ReportItems>
+<Textbox Name="txt_slno">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>7pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0.01in</Left>
+<Height>0.25in</Height>
+<Width>0.2in</Width>
+<Value>=Fields!SL_NO.Value</Value>
+</Textbox>
+<Textbox Name="txt_po_no">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>7pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0.24in</Left>
+<Height>0.25in</Height>
+<Width>0.42in</Width>
+<Value>=Fields!PO_NO.Value</Value>
+</Textbox>
+<Textbox Name="txt_dc_no">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>7pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>0.69in</Left>
+<Height>0.25in</Height>
+<Width>0.42in</Width>
+<Value>=Fields!DC_NO.Value</Value>
+</Textbox>
+<Textbox Name="txt_hsn_code">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>1.14in</Left>
+<Height>0.25in</Height>
+<Width>0.48in</Width>
+<Value>=Fields!HSN_CODE_ID.Value</Value>
+</Textbox>
+<Textbox Name="txt_product_name">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Left</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>1.68in</Left>
+<Height>0.25in</Height>
+<Width>2.05in</Width>
+<Value>=Fields!PRODUCT_ID.Value</Value>
+<CanGrow>true</CanGrow>
+</Textbox>
+<Textbox Name="txt_qty">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>3.75in</Left>
+<Height>0.25in</Height>
+<Width>0.55in</Width>
+<Value>=Fields!QTY.Value</Value>
+</Textbox>
+<Textbox Name="txt_price">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Right</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>4.35in</Left>
+<Height>0.25in</Height>
+<Width>0.4in</Width>
+<Value>=Fields!PRICE.Value</Value>
+</Textbox>
+<Textbox Name="txt_taxable">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Right</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>4.79in</Left>
+<Height>0.25in</Height>
+<Width>0.61in</Width>
+<Value>=Fields!TAXABLEVALUE.Value</Value>
+</Textbox>
+<Textbox Name="txt_sgst_per">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>5.44in</Left>
+<Height>0.25in</Height>
+<Width>0.17in</Width>
+<Value>=Fields!SGST_PERCENT.Value</Value>
+</Textbox>
+<Textbox Name="txt_sgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Right</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>5.64in</Left>
+<Height>0.25in</Height>
+<Width>0.52in</Width>
+<Value>=Fields!SGST_AMOUNT.Value</Value>
+</Textbox>
+<Textbox Name="txt_cgst_per">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Center</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>6.2in</Left>
+<Height>0.25in</Height>
+<Width>0.16in</Width>
+<Value>=Fields!CGST_PERCENT.Value</Value>
+</Textbox>
+<Textbox Name="txt_cgst_amt">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Right</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>6.39in</Left>
+<Height>0.25in</Height>
+<Width>0.53in</Width>
+<Value>=Fields!CGST_AMOUNT.Value</Value>
+</Textbox>
+<Textbox Name="txt_amount">
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<FontStyle>Normal</FontStyle>
+<FontFamily>Tahoma</FontFamily>
+<FontSize>8pt</FontSize>
+<FontWeight>Normal</FontWeight>
+<TextAlign>Right</TextAlign>
+</Style>
+<Top>0in</Top>
+<Left>6.96in</Left>
+<Height>0.25in</Height>
+<Width>0.66in</Width>
+<Value>=Fields!SUB_TOTAL.Value</Value>
+</Textbox>
+</ReportItems>
+</Rectangle>
+</ReportItems>
+</List>
+</ReportItems>
+</Rectangle>
+</ReportItems>
+<Height>10in</Height>
+<Style>
+<BorderColor />
+<BorderStyle />
+<BorderWidth />
+<TextAlign>Left</TextAlign>
+</Style>
+</Body>
+<Width>7.5in</Width>
+</Report>

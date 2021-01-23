@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{347D1A7C-CD09-41B3-AE11-34F60209B493}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXBILL_EXTEN</RootNamespace>
+    <AssemblyName>CXBILL_EXTEN</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\Assets\Reference\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Invoice\Class\cInvoice.cs" />
+    <Compile Include="Invoice\Class\CInvoiceitems.cs" />
+    <Compile Include="Invoice\Class\CInvoiceitems_exten.cs" />
+    <Compile Include="Invoice\Class\cInvoice_exten.cs" />
+    <Compile Include="Invoice\Const\INVOICE.cs" />
+    <Compile Include="Invoice\Const\INVOICEITEMS.cs" />
+    <Compile Include="Invoice\Form\FInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\Form\FInvoice.designer.cs">
+      <DependentUpon>FInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\Form\FInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\Form\FInvoice_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\Form\VInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\List\LInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\List\LInvoice.designer.cs">
+      <DependentUpon>LInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\List\LInvoice_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\List\VLInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\Prints\D_Invoice.cs" />
+    <Compile Include="Invoice\Prints\D_InvoiceItem.cs" />
+    <Compile Include="Invoice\Prints\PrintInvoiceExchange.cs" />
+    <Compile Include="Invoice\Prints\Print_Invoice.cs" />
+    <Compile Include="Invoice\Prints\P_Invoice.cs" />
+    <Compile Include="Invoice\Prints\P_Invoiceitem.cs" />
+    <Compile Include="Invoice\Setup\Offset_1\OFFSET_1_INVOICE.cs" />
+    <Compile Include="Invoice\Setup\Offset_1\OFFSET_1_INVOICEITEMS.cs" />
+    <Compile Include="Invoice\Setup\Invoice_Tbl.cs" />
+    <Compile Include="Invoice\Setup\Offset_1\U_Invoice_from_saraSoftware .cs" />
+    <Compile Include="Labour\Class\cLabour.cs" />
+    <Compile Include="Labour\Class\CLabouritems.cs" />
+    <Compile Include="Labour\Class\CLabouritems_exten.cs" />
+    <Compile Include="Labour\Class\cLabour_exten.cs" />
+    <Compile Include="Labour\Const\LABOUR.cs" />
+    <Compile Include="Labour\Const\LABOURITEMS.cs" />
+    <Compile Include="Labour\Form\FLabour.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\Form\FLabour.designer.cs">
+      <DependentUpon>FLabour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labour\Form\FLabour_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\Form\FLabour_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\Form\VLabour.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\List\LLabour.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\List\LLabour.designer.cs">
+      <DependentUpon>LLabour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Labour\List\LLabour_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\List\VLLabour.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Labour\Prints\D_Labour.cs" />
+    <Compile Include="Labour\Prints\D_LabourItem.cs" />
+    <Compile Include="Labour\Prints\PrintLabourExchange.cs" />
+    <Compile Include="Labour\Prints\Print_Labour.cs" />
+    <Compile Include="Labour\Prints\P_Labour.cs" />
+    <Compile Include="Labour\Prints\P_Invoiceitem.cs" />
+    <Compile Include="Labour\Setup\Labour_Tbl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CXBILL\CXBILL.csproj">
+      <Project>{F1B5FD94-DDD2-46B6-998F-FC86CA8A8F10}</Project>
+      <Name>CXBILL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXCORE\CXCORE.csproj">
+      <Project>{f859e753-8725-48f3-83ac-56ff98054236}</Project>
+      <Name>CXCORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXLIB\CXLIB.csproj">
+      <Project>{f0ec1db6-ea0b-4ade-8ee5-a7c10cad33ed}</Project>
+      <Name>CXLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

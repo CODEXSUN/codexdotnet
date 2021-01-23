@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C054D9E-B0D8-43C7-8E4E-5A143CA728EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CXSETUP</RootNamespace>
+    <AssemblyName>CXSETUP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CXBIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Create Setup\CreateDatabase.cs" />
+    <Compile Include="Create Setup\InsertDefault.cs" />
+    <Compile Include="Main\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\UpdateSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\UpdateSetup.Designer.cs">
+      <DependentUpon>UpdateSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\NewSetup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\NewSetup.Designer.cs">
+      <DependentUpon>NewSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Setup\RunSetup.cs" />
+    <Compile Include="Update Setup\RunUpdate.cs" />
+    <Compile Include="Utlities\WriteAppConfig.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="SQL_DB_Query.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\codexsun.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CXACCOUNTS\CXACCOUNTS.csproj">
+      <Project>{c373d0ee-e62e-4d7f-bab1-f706f6fb107a}</Project>
+      <Name>CXACCOUNTS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXBILL\CXBILL.csproj">
+      <Project>{f1b5fd94-ddd2-46b6-998f-fc86ca8a8f10}</Project>
+      <Name>CXBILL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXBILL_EXTEN\CXBILL_EXTEN.csproj">
+      <Project>{347d1a7c-cd09-41b3-ae11-34f60209b493}</Project>
+      <Name>CXBILL_EXTEN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXCORE\CXCORE.csproj">
+      <Project>{f859e753-8725-48f3-83ac-56ff98054236}</Project>
+      <Name>CXCORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXLIB\CXLIB.csproj">
+      <Project>{f0ec1db6-ea0b-4ade-8ee5-a7c10cad33ed}</Project>
+      <Name>CXLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\UpdateSetup.resx">
+      <DependentUpon>UpdateSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\NewSetup.resx">
+      <DependentUpon>NewSetup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
