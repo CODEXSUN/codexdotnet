@@ -12,9 +12,9 @@ using System.ComponentModel;
 
 namespace CXERP
 { 
-    public partial class FArticle : UserControl 
+    public partial class FStyle : UserControl 
     { 
-        public FArticle() 
+        public FStyle() 
         {
             InitializeComponent();
             Initialize();
@@ -226,7 +226,7 @@ namespace CXERP
 
             btn_close.Click += new EventHandler(Btn_close_Click);
 
-            lbl_header.Text = "Article Sheet";
+            lbl_header.Text = "Style Sheet";
 
             #endregion[Header]
 
@@ -234,7 +234,7 @@ namespace CXERP
 
             lbl_article_no.Font = XFont.Font_10B;
             lbl_article_no.Name = "lbl_garment_article_no";
-            lbl_article_no.Text = " Article no";
+            lbl_article_no.Text = " Style no";
             lbl_article_no.Anchor = XAnchor.LT;
             lbl_article_no.TextAlign = ContentAlignment.MiddleLeft;
             lbl_article_no.ForeColor = XFontColor.Lbl_ForeColor;
@@ -255,7 +255,7 @@ namespace CXERP
 
             lbl_article_date.Font = XFont.Font_10B;
             lbl_article_date.Name = "lbl_garment_article_date";
-            lbl_article_date.Text = "   Article date";
+            lbl_article_date.Text = "   Style date";
             lbl_article_date.Anchor = XAnchor.LT;
             lbl_article_date.TextAlign = ContentAlignment.MiddleLeft;
             lbl_article_date.ForeColor = XFontColor.Lbl_ForeColor;
@@ -272,7 +272,7 @@ namespace CXERP
             txt_article_date.Anchor = XAnchor.LTR;
             txt_article_date.Location =XLayout.R1_2Text_2(txt_article_no.Location);
             txt_article_date.TabIndex = XTab.Index(txt_article_no.TabIndex);
-            txt_article_date.Enter += new EventHandler(Txt_Article_date_Enter);
+            txt_article_date.Enter += new EventHandler(Txt_Style_date_Enter);
 
             editgrid.Location = new Point(XLayout.H_left, txt_article_date.Bottom + 10); 
             editgrid.Name = "editgrid"; 
@@ -331,12 +331,12 @@ namespace CXERP
 
             #endregion[finner_panel]
 
-            #region [FArticle]
+            #region [FStyle]
 
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.split_container);
-            this.Name = "fArticle";
+            this.Name = "fStyle";
             this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, ClientSize.Height);
 
             this.split_container.Panel1.ResumeLayout(false);
@@ -371,14 +371,14 @@ namespace CXERP
             editgrid.CellValueChanged += new DataGridViewCellEventHandler(Editgrid_CellValueChanged);
             editgrid.CurrentCellChanged += new EventHandler(Editgrid_CurrentCellChanged);
 
-            DataGridViewTextBoxColumn col_Articleitems_Id = new DataGridViewTextBoxColumn();
-            col_Articleitems_Id.Name = ARTICLEITEMS.ARTICLEITEMS_ID;
-            col_Articleitems_Id.HeaderText = "ARTICLEITEMS_ID ";
-            col_Articleitems_Id.Visible = false; 
-            col_Articleitems_Id.Width = 100;
-            col_Articleitems_Id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Articleitems_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Articleitems_Id );
+            DataGridViewTextBoxColumn col_Styleitems_Id = new DataGridViewTextBoxColumn();
+            col_Styleitems_Id.Name = STYLEITEMS.STYLEITEMS_ID;
+            col_Styleitems_Id.HeaderText = "STYLEITEMS_ID ";
+            col_Styleitems_Id.Visible = false; 
+            col_Styleitems_Id.Width = 100;
+            col_Styleitems_Id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Styleitems_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Styleitems_Id );
 
             DataGridViewTextBoxColumn col_slno = new DataGridViewTextBoxColumn();
             col_slno.Name = Core.SLNO;
@@ -390,26 +390,26 @@ namespace CXERP
             col_slno.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_slno);
 
-            DataGridViewTextBoxColumn col_Article_id = new DataGridViewTextBoxColumn();
-            col_Article_id.Name = ARTICLEITEMS.ARTICLE_ID;
-            col_Article_id.HeaderText = " ARTICLE ID";
-            col_Article_id.Visible = false; 
-            col_Article_id.Width = 100;
-            col_Article_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Article_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Article_id);
+            DataGridViewTextBoxColumn col_Style_id = new DataGridViewTextBoxColumn();
+            col_Style_id.Name = STYLEITEMS.STYLE_ID;
+            col_Style_id.HeaderText = " STYLE ID";
+            col_Style_id.Visible = false; 
+            col_Style_id.Width = 100;
+            col_Style_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_Style_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Style_id);
 
-            DataGridViewTextBoxColumn col_Article_no = new DataGridViewTextBoxColumn();
-            col_Article_no.Name = ARTICLEITEMS.ARTICLE_NO;
-            col_Article_no.HeaderText = " ARTICLE NO";
-            col_Article_no.Visible = false; 
-            col_Article_no.Width = 200;
-            col_Article_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Article_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Article_no);
+            DataGridViewTextBoxColumn col_Style_no = new DataGridViewTextBoxColumn();
+            col_Style_no.Name = STYLEITEMS.STYLE_NO;
+            col_Style_no.HeaderText = " STYLE NO";
+            col_Style_no.Visible = false; 
+            col_Style_no.Width = 200;
+            col_Style_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_Style_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Style_no);
 
             DataGridViewTextBoxColumn col_Product_id = new DataGridViewTextBoxColumn();
-            col_Product_id.Name = ARTICLEITEMS.PRODUCT_ID;
+            col_Product_id.Name = STYLEITEMS.PRODUCT_ID;
             col_Product_id.HeaderText = "PRODUCT";
             //col_Product_id.Visible = false; 
             col_Product_id.Width = 500;
@@ -418,7 +418,7 @@ namespace CXERP
             editgrid.Columns.Add(col_Product_id);
 
             DataGridViewTextBoxColumn col_Colours_id = new DataGridViewTextBoxColumn();
-            col_Colours_id.Name = ARTICLEITEMS.COLOURS_ID;
+            col_Colours_id.Name = STYLEITEMS.COLOURS_ID;
             col_Colours_id.HeaderText = "COLOURS";
             //col_Colours_id.Visible = false; 
             col_Colours_id.Width = 150;
@@ -427,7 +427,7 @@ namespace CXERP
             editgrid.Columns.Add(col_Colours_id);
 
             DataGridViewTextBoxColumn col_Sizes_id = new DataGridViewTextBoxColumn();
-            col_Sizes_id.Name = ARTICLEITEMS.SIZES_ID;
+            col_Sizes_id.Name = STYLEITEMS.SIZES_ID;
             col_Sizes_id.HeaderText = "SIZES";
             //col_Sizes_id.Visible = false; 
             col_Sizes_id.Width = 150;
@@ -436,7 +436,7 @@ namespace CXERP
             editgrid.Columns.Add(col_Sizes_id);
 
             DataGridViewTextBoxColumn col_Qty = new DataGridViewTextBoxColumn();
-            col_Qty.Name = ARTICLEITEMS.QTY;
+            col_Qty.Name = STYLEITEMS.QTY;
             col_Qty.HeaderText = "QTY";
             //col_Qty.Visible = false; 
             col_Qty.Width = 200;
@@ -445,7 +445,7 @@ namespace CXERP
             editgrid.Columns.Add(col_Qty);
 
             DataGridViewTextBoxColumn col_Price = new DataGridViewTextBoxColumn();
-            col_Price.Name = ARTICLEITEMS.PRICE;
+            col_Price.Name = STYLEITEMS.PRICE;
             col_Price.HeaderText = "PRICE";
             //col_Price.Visible = false; 
             col_Price.Width = 150;

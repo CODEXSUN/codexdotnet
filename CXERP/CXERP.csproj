@@ -42,6 +42,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article\Const\ARTICLE.cs" />
+    <Compile Include="Article\Crud\CArticle.cs" />
+    <Compile Include="Article\Crud\CArticle_exten.cs" />
+    <Compile Include="Article\Form\FArticle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\Form\FArticle.designer.cs">
+      <DependentUpon>FArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Article\Form\FArticle_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\Form\VArticle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\List\LArticle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\List\LArticle.designer.cs">
+      <DependentUpon>LArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Article\List\LArticle_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\List\VLArticle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Article\Setup\Article_Tbl.cs" />
+    <Compile Include="Article\Setup\U_Article.cs" />
+    <Compile Include="Po\Const\PO.cs" />
+    <Compile Include="Po\Crud\CPo.cs" />
+    <Compile Include="Po\Crud\CPo_exten.cs" />
+    <Compile Include="Po\Form\FPo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\Form\FPo.designer.cs">
+      <DependentUpon>FPo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Po\Form\FPo_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\Form\VPo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\List\LPo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\List\LPo.designer.cs">
+      <DependentUpon>LPo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Po\List\LPo_Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\List\VLPo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Po\Setup\Po_Tbl.cs" />
+    <Compile Include="Po\Setup\U_Po.cs" />
     <Compile Include="Style\Class\CStyle.cs" />
     <Compile Include="Style\Class\CStyleitems.cs" />
     <Compile Include="Style\Class\CStyleitems_exten.cs" />

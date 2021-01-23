@@ -49,7 +49,7 @@ namespace ERP
             switch (Current.SoftwareType)
             {
                 case SoftwareTypes.GARMENT:
-                    _erp = new string[] { DropMenuERP.Orderinfo,DropMenuERP.Article };
+                    _erp = new string[] { DropMenuERP.Orderinfo, DropMenuERP.Style, DropMenuERP.Article };
 
                     Add_menu(_erp, MainMenuHeader.Erp, null);
 
@@ -184,6 +184,8 @@ namespace ERP
         internal const string Job = "JOB";
         internal const string Inward = "Inward";
         internal const string Outward = "Outward";
+        internal const string Style = "Style";
+        
 
     }
 

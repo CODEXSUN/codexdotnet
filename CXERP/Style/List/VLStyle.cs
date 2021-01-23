@@ -9,7 +9,7 @@ using CXLIB;
 
 namespace CXERP
 {
-    public partial class LArticle
+    public partial class LStyle
     {
         #region[list Option]
 
@@ -29,11 +29,11 @@ namespace CXERP
 
                     if (rdo_refer.Checked == true)
                     {
-                        LoadData(CArticle_exten.Refer());
+                        LoadData(CStyle_exten.Refer());
                     }
                     else
                     {
-                        LoadData(CArticle_exten.Unrefer());
+                        LoadData(CStyle_exten.Unrefer());
                     }
 
                     break;
@@ -42,11 +42,11 @@ namespace CXERP
 
                     if (rdo_showall.Checked == true)
                     {
-                        LoadData(CArticle_exten.Showall());
+                        LoadData(CStyle_exten.Showall());
                     }
                     else
                     {
-                        LoadData(CArticle_exten.Unrefer());
+                        LoadData(CStyle_exten.Unrefer());
                     }
 
                     break;
@@ -55,21 +55,21 @@ namespace CXERP
 
                     if (rdo_notactive.Checked == true)
                     {
-                        LoadData(CArticle_exten.Notactive());
+                        LoadData(CStyle_exten.Notactive());
                     }
                     else
                     {
-                        LoadData(CArticle_exten.Unrefer());
+                        LoadData(CStyle_exten.Unrefer());
                     }
 
                     break;
 
                 case ListOption.Search:
-                    LoadData(CArticle_exten.Searchby(txt_no.Text, txt_date.Text, txt_Todate.Text, ""));
+                    LoadData(CStyle_exten.Searchby(txt_no.Text, txt_date.Text, txt_Todate.Text, ""));
                     break;
 
                 default:
-                    LoadData(CArticle_exten.Unrefer());
+                    LoadData(CStyle_exten.Unrefer());
                     break;
             }
         }
@@ -78,7 +78,7 @@ namespace CXERP
 
         #region[Load Data]
 
-        public void LoadData(List<Article> list)
+        public void LoadData(List<Style> list)
         {
             if (constructed_flag == false)
             {
@@ -93,11 +93,11 @@ namespace CXERP
             {
                 DataGridViewRow row = listgrid.Rows[r];
 
-                row.Cells[ARTICLE.ARTICLE_ID].Value = list[r].Article_id;
-                row.Cells[ARTICLE.ARTICLE_NO].Value = list[r].Article_no;
-                row.Cells[ARTICLE.ARTICLE_DATE].Value = ConvertTO.Date2S(list[r].Article_date);
-                row.Cells[ARTICLE.LOCKED].Value = list[r].Locked;
-                row.Cells[ARTICLE.USER_ID].Value = list[r].User_id;
+                row.Cells[STYLE.STYLE_ID].Value = list[r].Style_id;
+                row.Cells[STYLE.STYLE_NO].Value = list[r].Style_no;
+                row.Cells[STYLE.STYLE_DATE].Value = ConvertTO.Date2S(list[r].Style_date);
+                row.Cells[STYLE.LOCKED].Value = list[r].Locked;
+                row.Cells[STYLE.USER_ID].Value = list[r].User_id;
 
                 switch (list[r].Locked)
                 {
@@ -122,7 +122,7 @@ namespace CXERP
 
                 if (listgrid.RowCount != 0)
                 {
-                    listgrid.CurrentCell = listgrid[ARTICLE.ARTICLE_NO, listgrid.RowCount - 1];
+                    listgrid.CurrentCell = listgrid[STYLE.STYLE_NO, listgrid.RowCount - 1];
                 }
             }
             listgrid.Refresh();

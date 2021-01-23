@@ -6,23 +6,23 @@ using CXLIB;
 
 namespace CXERP
 {
-    public static class CArticle
+    public static class CStyle
     {
 
         #region[Get New]
 
-        public static Article GetNew
+        public static Style GetNew
         {
             get
             {
-                Article obj = new Article()
+                Style obj = new Style()
                 {
-                    Article_id = string.Empty,
+                    Style_id = string.Empty,
                     Uniqueno = string.Empty,
                     Company_id = Current.Company_id,
                     Acy_id = Current.Acy_id,
-                    Article_no = string.Empty,
-                    Article_date = string.Empty,
+                    Style_no = string.Empty,
+                    Style_date = string.Empty,
                     Locked = string.Empty,
                     Notes = string.Empty,
                     Active_id = Core.Active,
@@ -36,46 +36,46 @@ namespace CXERP
 
         #region[Attach params]
 
-        private static string AttachParams(string q, Article v)
+        private static string AttachParams(string q, Style v)
         {
-            q = q.Replace("@" + ARTICLE.ARTICLE_ID + "@", "" + ConvertTO.SqlString(v.Article_id) + "");
-            q = q.Replace("@" + ARTICLE.UNIQUENO + "@", "" + ConvertTO.SqlString(v.Uniqueno) + "");
-            q = q.Replace("@" + ARTICLE.COMPANY_ID + "@", "" + ConvertTO.SqlString(v.Company_id) + "");
-            q = q.Replace("@" + ARTICLE.ACY_ID + "@", "" + ConvertTO.SqlString(v.Acy_id) + "");
-            q = q.Replace("@" + ARTICLE.ARTICLE_NO + "@", "" + ConvertTO.SqlString(v.Article_no) + "");
-            q = q.Replace("@" + ARTICLE.ARTICLE_DATE + "@", "" + ConvertTO.SqlDate(v.Article_date) + "");
-            q = q.Replace("@" + ARTICLE.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
-            q = q.Replace("@" + ARTICLE.NOTES + "@", "" + ConvertTO.SqlString(v.Notes) + "");
-            q = q.Replace("@" + ARTICLE.ACTIVE_ID + "@", "" + ConvertTO.SqlString(v.Active_id) + "");
-            q = q.Replace("@" + ARTICLE.USER_ID + "@", "" + ConvertTO.SqlString(v.User_id) + "");
+            q = q.Replace("@" + STYLE.STYLE_ID + "@", "" + ConvertTO.SqlString(v.Style_id) + "");
+            q = q.Replace("@" + STYLE.UNIQUENO + "@", "" + ConvertTO.SqlString(v.Uniqueno) + "");
+            q = q.Replace("@" + STYLE.COMPANY_ID + "@", "" + ConvertTO.SqlString(v.Company_id) + "");
+            q = q.Replace("@" + STYLE.ACY_ID + "@", "" + ConvertTO.SqlString(v.Acy_id) + "");
+            q = q.Replace("@" + STYLE.STYLE_NO + "@", "" + ConvertTO.SqlString(v.Style_no) + "");
+            q = q.Replace("@" + STYLE.STYLE_DATE + "@", "" + ConvertTO.SqlDate(v.Style_date) + "");
+            q = q.Replace("@" + STYLE.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
+            q = q.Replace("@" + STYLE.NOTES + "@", "" + ConvertTO.SqlString(v.Notes) + "");
+            q = q.Replace("@" + STYLE.ACTIVE_ID + "@", "" + ConvertTO.SqlString(v.Active_id) + "");
+            q = q.Replace("@" + STYLE.USER_ID + "@", "" + ConvertTO.SqlString(v.User_id) + "");
             return q;
         }
         #endregion[Attach params]
 
         #region[Insert]
 
-        public static void Insert(Article v, DAL dalsession)
+        public static void Insert(Style v, DAL dalsession)
         {
-                string q = " INSERT INTO " + ARTICLE.ARTICLE_TBL + " ( ";
-                q += " " + ARTICLE.UNIQUENO + "\r\n";
-                q += "," + ARTICLE.COMPANY_ID + "\r\n";
-                q += "," + ARTICLE.ACY_ID + "\r\n";
-                q += "," + ARTICLE.ARTICLE_NO + " \r\n";
-                q += "," + ARTICLE.ARTICLE_DATE + " \r\n";
-                q += "," + ARTICLE.LOCKED + " \r\n";
-                q += "," + ARTICLE.NOTES + " \r\n";
-                q += "," + ARTICLE.ACTIVE_ID + " \r\n";
-                q += "," + ARTICLE.USER_ID + " \r\n ";
+                string q = " INSERT INTO " + STYLE.STYLE_TBL + " ( ";
+                q += " " + STYLE.UNIQUENO + "\r\n";
+                q += "," + STYLE.COMPANY_ID + "\r\n";
+                q += "," + STYLE.ACY_ID + "\r\n";
+                q += "," + STYLE.STYLE_NO + " \r\n";
+                q += "," + STYLE.STYLE_DATE + " \r\n";
+                q += "," + STYLE.LOCKED + " \r\n";
+                q += "," + STYLE.NOTES + " \r\n";
+                q += "," + STYLE.ACTIVE_ID + " \r\n";
+                q += "," + STYLE.USER_ID + " \r\n ";
                 q += " ) VALUES ( ";
-                q += "  @" + ARTICLE.UNIQUENO + "@ \r\n";
-                q += ", @" + ARTICLE.COMPANY_ID + "@ \r\n";
-                q += ", @" + ARTICLE.ACY_ID + "@ \r\n";
-                q += ", @"+ ARTICLE.ARTICLE_NO + "@ \r\n";
-                q += ", @"+ ARTICLE.ARTICLE_DATE + "@ \r\n";
-                q += ", @"+ ARTICLE.LOCKED + "@ \r\n";
-                q += ", @"+ ARTICLE.NOTES + "@ \r\n";
-                q += ", @"+ ARTICLE.ACTIVE_ID + "@ \r\n";
-                q += ", @"+ ARTICLE.USER_ID + "@ \r\n";
+                q += "  @" + STYLE.UNIQUENO + "@ \r\n";
+                q += ", @" + STYLE.COMPANY_ID + "@ \r\n";
+                q += ", @" + STYLE.ACY_ID + "@ \r\n";
+                q += ", @"+ STYLE.STYLE_NO + "@ \r\n";
+                q += ", @"+ STYLE.STYLE_DATE + "@ \r\n";
+                q += ", @"+ STYLE.LOCKED + "@ \r\n";
+                q += ", @"+ STYLE.NOTES + "@ \r\n";
+                q += ", @"+ STYLE.ACTIVE_ID + "@ \r\n";
+                q += ", @"+ STYLE.USER_ID + "@ \r\n";
                 q += " ) \r\n ";
                 q = AttachParams(q, v);
                 dalsession.Execute(q);
@@ -84,19 +84,19 @@ namespace CXERP
 
         #region[Update]
 
-        public static void Update(Article v, DAL dalsession)
+        public static void Update(Style v, DAL dalsession)
         {
-                string q = "UPDATE " + ARTICLE.ARTICLE_TBL + " SET";
-                q += " " + ARTICLE.UNIQUENO + " = @" + ARTICLE.UNIQUENO + "@ \r\n";
-                q += "," + ARTICLE.COMPANY_ID + " = @" + ARTICLE.COMPANY_ID + "@ \r\n";
-                q += "," + ARTICLE.ACY_ID + " = @" + ARTICLE.ACY_ID + "@ \r\n";
-                q += "," + ARTICLE.ARTICLE_NO + " = @" + ARTICLE.ARTICLE_NO + "@ \r\n ";
-                q += "," + ARTICLE.ARTICLE_DATE + " = @" + ARTICLE.ARTICLE_DATE + "@ \r\n ";
-                q += "," + ARTICLE.LOCKED + " = @" + ARTICLE.LOCKED + "@ \r\n ";
-                q += "," + ARTICLE.NOTES + " = @" + ARTICLE.NOTES + "@ \r\n ";
-                q += "," + ARTICLE.ACTIVE_ID + " = @" + ARTICLE.ACTIVE_ID + "@ \r\n ";
-                q += "," + ARTICLE.USER_ID + " = @" + ARTICLE.USER_ID + "@ \r\n ";
-                q += "  WHERE " + ARTICLE.ARTICLE_ID + " = @" + ARTICLE.ARTICLE_ID + "@ ";
+                string q = "UPDATE " + STYLE.STYLE_TBL + " SET";
+                q += " " + STYLE.UNIQUENO + " = @" + STYLE.UNIQUENO + "@ \r\n";
+                q += "," + STYLE.COMPANY_ID + " = @" + STYLE.COMPANY_ID + "@ \r\n";
+                q += "," + STYLE.ACY_ID + " = @" + STYLE.ACY_ID + "@ \r\n";
+                q += "," + STYLE.STYLE_NO + " = @" + STYLE.STYLE_NO + "@ \r\n ";
+                q += "," + STYLE.STYLE_DATE + " = @" + STYLE.STYLE_DATE + "@ \r\n ";
+                q += "," + STYLE.LOCKED + " = @" + STYLE.LOCKED + "@ \r\n ";
+                q += "," + STYLE.NOTES + " = @" + STYLE.NOTES + "@ \r\n ";
+                q += "," + STYLE.ACTIVE_ID + " = @" + STYLE.ACTIVE_ID + "@ \r\n ";
+                q += "," + STYLE.USER_ID + " = @" + STYLE.USER_ID + "@ \r\n ";
+                q += "  WHERE " + STYLE.STYLE_ID + " = @" + STYLE.STYLE_ID + "@ ";
                 q = AttachParams(q, v);
                 dalsession.Execute(q);
         }
@@ -106,7 +106,7 @@ namespace CXERP
 
         public static void Delete(string pkid , DAL dalsession)
         {
-                dalsession.Execute("DELETE FROM  " + ARTICLE.ARTICLE_TBL+ " WHERE " + ARTICLE.ARTICLE_ID + " =  " + pkid +";");
+                dalsession.Execute("DELETE FROM  " + STYLE.STYLE_TBL+ " WHERE " + STYLE.STYLE_ID + " =  " + pkid +";");
         }
         #endregion[Delete]
 

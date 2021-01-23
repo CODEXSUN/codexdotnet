@@ -6,11 +6,11 @@ namespace CXERP
 {
     #region[Properties]
      
-    public class Articleitems
+    public class Styleitems
     {
-        public string Articleitems_id { get; set; }
-        public string Article_id { get; set; }
-        public string Article_no { get; set; }
+        public string Styleitems_id { get; set; }
+        public string Style_id { get; set; }
+        public string Style_no { get; set; }
         public string Product_id { get; set; }
         public string Colours_id { get; set; }
         public string Sizes_id { get; set; }
@@ -24,11 +24,11 @@ namespace CXERP
 
     #region[string Const class]
 
-    public static class ARTICLEITEMS
+    public static class STYLEITEMS
     {
-        public const string ARTICLEITEMS_ID = "ARTICLEITEMS_ID";
-        public const string ARTICLE_ID = "ARTICLE_ID";
-        public const string ARTICLE_NO = "ARTICLE_NO";
+        public const string STYLEITEMS_ID = "STYLEITEMS_ID";
+        public const string STYLE_ID = "STYLE_ID";
+        public const string STYLE_NO = "STYLE_NO";
         public const string PRODUCT_ID = "PRODUCT_ID";
         public const string COLOURS_ID = "COLOURS_ID";
         public const string SIZES_ID = "SIZES_ID";
@@ -37,7 +37,7 @@ namespace CXERP
         public const string REFERED_ID = "REFERED_ID";
         public const string LOCKED = "LOCKED";
 
-        public const string ARTICLEITEMS_TBL = "ARTICLEITEMS_TBL";
+        public const string STYLEITEMS_TBL = "STYLEITEMS_TBL";
     }
 
     #endregion[string Const class]

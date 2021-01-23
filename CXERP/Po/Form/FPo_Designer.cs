@@ -1,7 +1,6 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// 20-06-2019 10:44:05 AM
-// last update : 20-06-2019
+// last update : 23-01-2021 08:39:04 PM
 
 using System;
 using System.Windows.Forms;
@@ -9,18 +8,16 @@ using CXLIB;
 using System.Drawing;
 using System.ComponentModel;
 
-
 namespace CXERP
 { 
-    public partial class FStyle : UserControl 
+    public partial class FPo : CxControl 
     { 
-        public FStyle() 
+        public FPo() 
         {
             InitializeComponent();
             Initialize();
-            InitGrid();
             Setactives();
-            SetFocus();
+            SetFocus(); 
         }
         
         #region [Private Declare]
@@ -38,12 +35,10 @@ namespace CXERP
         private OfficeButton btn_print;
         private OfficeButton btn_splitter;
 
-        private XTextBox txt_article_no;
-        private XLabel lbl_article_no;
-        private xDatepicker txt_article_date;
-        private XLabel lbl_article_date;
-
-        private EditGridView editgrid;
+        private XTextBox txt_po_no;
+        private XLabel lbl_po_no;
+        private xDatepicker txt_po_date;
+        private XLabel lbl_po_date;
 
         private RichTextBox txt_notes;
         private XLabel lbl_notes;
@@ -71,11 +66,10 @@ namespace CXERP
             lbl_header = new Header();
             btn_close = new CloseButton();
 
-            txt_article_no = new XTextBox();
-            lbl_article_no = new XLabel();
-            txt_article_date = new xDatepicker();
-            lbl_article_date = new XLabel();
-            editgrid = new EditGridView();
+            txt_po_no = new XTextBox();
+            lbl_po_no = new XLabel();
+            txt_po_date = new xDatepicker();
+            lbl_po_date = new XLabel();
 
             txt_notes = new RichTextBox();
             lbl_notes = new XLabel();
@@ -87,7 +81,6 @@ namespace CXERP
             #region[container suspend]
 
             ((ISupportInitialize)(split_container)).BeginInit();
-            ((ISupportInitialize)(editgrid)).BeginInit();
             split_container.Panel1.SuspendLayout();
             split_container.Panel2.SuspendLayout();
             split_container.SuspendLayout();
@@ -212,11 +205,10 @@ namespace CXERP
 
             finner_panel.Controls.Add(txt_notes);
             finner_panel.Controls.Add(lbl_notes);
-            finner_panel.Controls.Add(txt_article_no);
-            finner_panel.Controls.Add(lbl_article_no);
-            finner_panel.Controls.Add(txt_article_date);
-            finner_panel.Controls.Add(lbl_article_date);
-            finner_panel.Controls.Add(editgrid);
+            finner_panel.Controls.Add(txt_po_no);
+            finner_panel.Controls.Add(lbl_po_no);
+            finner_panel.Controls.Add(txt_po_date);
+            finner_panel.Controls.Add(lbl_po_date);
             finner_panel.Controls.Add(btn_save);
             finner_panel.Controls.Add(btn_active);
 
@@ -226,60 +218,53 @@ namespace CXERP
 
             btn_close.Click += new EventHandler(Btn_close_Click);
 
-            lbl_header.Text = "Style Sheet";
+            lbl_header.Text = "Po";
 
             #endregion[Header]
 
             #region[Properties of control]
 
-            lbl_article_no.Font = XFont.Font_10B;
-            lbl_article_no.Name = "lbl_garment_article_no";
-            lbl_article_no.Text = " Style no";
-            lbl_article_no.Anchor = XAnchor.LT;
-            lbl_article_no.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_article_no.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_article_no.Size =  XSize.OneLabel;
-            lbl_article_no.Location =XLayout.FirstLabel;
+            lbl_po_no.Font = XFont.Font_10B;
+            lbl_po_no.Name = "lbl_po_no";
+            lbl_po_no.Text = "   Po no";
+            lbl_po_no.Anchor = XAnchor.LT;
+            lbl_po_no.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_po_no.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_po_no.Size =  XSize.OneLabel;
+            lbl_po_no.Location =XLayout.FirstLabel;
 
-            txt_article_no.Font = XFont.TxtFont;
-            txt_article_no.ForeColor = XFontColor.TxtFontColor;
-            txt_article_no.BackColor = XTheme.TxtBackcolor;
-            txt_article_no.Name = "txt_garment_article_no";
-            txt_article_no.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_article_no.Size =  XSize.TwoText;
-            txt_article_no.Anchor = XAnchor.LT;
-            txt_article_no.Location =XLayout.FirstText;
-            txt_article_no.TabIndex = XTab.Txt_TabIndex;
-            txt_article_no.Enter += new EventHandler(Txt_article_no_Enter);
+            txt_po_no.Font = XFont.TxtFont;
+            txt_po_no.ForeColor = XFontColor.TxtFontColor;
+            txt_po_no.BackColor = XTheme.TxtBackcolor;
+            txt_po_no.Name = "txt_po_no";
+            txt_po_no.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
+            txt_po_no.Size =  XSize.OneText;
+            txt_po_no.Anchor = XAnchor.LTR;
+            txt_po_no.Location =XLayout.FirstText;
+            txt_po_no.TabIndex = XTab.Txt_TabIndex;
+            txt_po_no.Enter += new EventHandler(Txt_po_no_Enter);
 
 
-            lbl_article_date.Font = XFont.Font_10B;
-            lbl_article_date.Name = "lbl_garment_article_date";
-            lbl_article_date.Text = "   Style date";
-            lbl_article_date.Anchor = XAnchor.LT;
-            lbl_article_date.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_article_date.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_article_date.Size =  XSize.TwoLabel;
-            lbl_article_date.Location =XLayout.R1_2Label_2(lbl_article_no.Location);
+            lbl_po_date.Font = XFont.Font_10B;
+            lbl_po_date.Name = "lbl_po_date";
+            lbl_po_date.Text = "   Date";
+            lbl_po_date.Anchor = XAnchor.LT;
+            lbl_po_date.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_po_date.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_po_date.Size =  XSize.OneLabel;
+            lbl_po_date.Location =XLayout.R1_Label(lbl_po_no.Location);
 
-            txt_article_date.Font = XFont.TxtFont;
-            txt_article_date.ForeColor = XFontColor.TxtFontColor;
-            txt_article_date.BackColor = XTheme.TxtBackcolor;
-            txt_article_date.Name = "txt_garment_article_date";
-            txt_article_date.CustomFormat = "dd-MM-yyyy";
-            txt_article_date.Format = DateTimePickerFormat.Custom;
-            txt_article_date.Size =  XSize.TwoText;
-            txt_article_date.Anchor = XAnchor.LTR;
-            txt_article_date.Location =XLayout.R1_2Text_2(txt_article_no.Location);
-            txt_article_date.TabIndex = XTab.Index(txt_article_no.TabIndex);
-            txt_article_date.Enter += new EventHandler(Txt_Style_date_Enter);
-
-            editgrid.Location = new Point(XLayout.H_left, txt_article_date.Bottom + 10); 
-            editgrid.Name = "editgrid"; 
-            editgrid.Size = new Size(finner_panel.Width - 50, 250); 
-            editgrid.TabIndex = XTab.Index(txt_article_date.TabIndex);
-            editgrid.RowsLimit = 12; 
-            Point p = new Point(editgrid.Left , editgrid.Bottom); 
+            txt_po_date.Font = XFont.TxtFont;
+            txt_po_date.ForeColor = XFontColor.TxtFontColor;
+            txt_po_date.BackColor = XTheme.TxtBackcolor;
+            txt_po_date.Name = "txt_po_date";
+            txt_po_date.CustomFormat = "dd-MM-yyyy";
+            txt_po_date.Format = DateTimePickerFormat.Custom;
+            txt_po_date.Size =  XSize.OneText;
+            txt_po_date.Anchor = XAnchor.LTR;
+            txt_po_date.Location =XLayout.R1_Text(txt_po_no.Location);
+            txt_po_date.TabIndex = XTab.Index(txt_po_no.TabIndex);
+            txt_po_date.Enter += new EventHandler(Txt_po_date_Enter);
 
 
             lbl_notes.Font = XFont.Font_10B;
@@ -310,7 +295,7 @@ namespace CXERP
             btn_save.Font = XFont.BtnFont;
             btn_save.Size = XSize.BtnOne;
             btn_save.Location = XLayout.BtnSave;
-            btn_save.TabIndex = XTab.Index(txt_article_date.TabIndex);
+            btn_save.TabIndex = XTab.Index(txt_po_date.TabIndex);
             btn_save.Name = "btn_save";
             btn_save.Text = "&SAVE";
             btn_save.Themes = XTheme.BlueBtn;
@@ -331,17 +316,16 @@ namespace CXERP
 
             #endregion[finner_panel]
 
-            #region [FStyle]
+            #region [FPo]
 
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.split_container);
-            this.Name = "fStyle";
+            this.Name = "fPo";
             this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, ClientSize.Height);
 
             this.split_container.Panel1.ResumeLayout(false);
             this.split_container.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(editgrid)).EndInit();
             ((ISupportInitialize)(this.split_container)).EndInit();
             this.split_container.ResumeLayout(false);
             this.fpanel.ResumeLayout(false);
@@ -351,121 +335,5 @@ namespace CXERP
 
             #endregion [Fpost]
         }
-
-        internal string GetName()
-        {
-            return txt_article_no.Text;
-        }
-
-        internal void Setname(string pValue)
-        {
-            txt_article_no.Text = pValue;
-        }
-
-        #region[Init Grid]
-
-        private void InitGrid()
-         {
-            editgrid.RowsRemoved += new DataGridViewRowsRemovedEventHandler(Editgrid_RowsRemoved);
-            editgrid.CellValidating += new DataGridViewCellValidatingEventHandler(Editgrid_CellValidating);
-            editgrid.CellValueChanged += new DataGridViewCellEventHandler(Editgrid_CellValueChanged);
-            editgrid.CurrentCellChanged += new EventHandler(Editgrid_CurrentCellChanged);
-
-            DataGridViewTextBoxColumn col_Styleitems_Id = new DataGridViewTextBoxColumn();
-            col_Styleitems_Id.Name = STYLEITEMS.STYLEITEMS_ID;
-            col_Styleitems_Id.HeaderText = "STYLEITEMS_ID ";
-            col_Styleitems_Id.Visible = false; 
-            col_Styleitems_Id.Width = 100;
-            col_Styleitems_Id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Styleitems_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Styleitems_Id );
-
-            DataGridViewTextBoxColumn col_slno = new DataGridViewTextBoxColumn();
-            col_slno.Name = Core.SLNO;
-            col_slno.HeaderText = "S.NO";
-            //col_slno.Visible = false; 
-            col_slno.ReadOnly = true;
-            col_slno.Width = 50;
-            col_slno.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_slno.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_slno);
-
-            DataGridViewTextBoxColumn col_Style_id = new DataGridViewTextBoxColumn();
-            col_Style_id.Name = STYLEITEMS.p;
-            col_Style_id.HeaderText = " STYLE ID";
-            col_Style_id.Visible = false; 
-            col_Style_id.Width = 100;
-            col_Style_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Style_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Style_id);
-
-            DataGridViewTextBoxColumn col_Style_no = new DataGridViewTextBoxColumn();
-            col_Style_no.Name = STYLEITEMS.STYLE_NO;
-            col_Style_no.HeaderText = " STYLE NO";
-            col_Style_no.Visible = false; 
-            col_Style_no.Width = 200;
-            col_Style_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Style_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Style_no);
-
-            DataGridViewTextBoxColumn col_Product_id = new DataGridViewTextBoxColumn();
-            col_Product_id.Name = STYLEITEMS.STYLE_ID;
-            col_Product_id.HeaderText = "PRODUCT";
-            //col_Product_id.Visible = false; 
-            col_Product_id.Width = 500;
-            col_Product_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Product_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Product_id);
-
-            DataGridViewTextBoxColumn col_Colours_id = new DataGridViewTextBoxColumn();
-            col_Colours_id.Name = STYLEITEMS.COLOURS_ID;
-            col_Colours_id.HeaderText = "COLOURS";
-            //col_Colours_id.Visible = false; 
-            col_Colours_id.Width = 150;
-            col_Colours_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Colours_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Colours_id);
-
-            DataGridViewTextBoxColumn col_Sizes_id = new DataGridViewTextBoxColumn();
-            col_Sizes_id.Name = STYLEITEMS.SIZES_ID;
-            col_Sizes_id.HeaderText = "SIZES";
-            //col_Sizes_id.Visible = false; 
-            col_Sizes_id.Width = 150;
-            col_Sizes_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Sizes_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Sizes_id);
-
-            DataGridViewTextBoxColumn col_Qty = new DataGridViewTextBoxColumn();
-            col_Qty.Name = STYLEITEMS.QTY;
-            col_Qty.HeaderText = "QTY";
-            //col_Qty.Visible = false; 
-            col_Qty.Width = 200;
-            col_Qty.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Qty.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Qty);
-
-            DataGridViewTextBoxColumn col_Price = new DataGridViewTextBoxColumn();
-            col_Price.Name = STYLEITEMS.PRICE;
-            col_Price.HeaderText = "PRICE";
-            //col_Price.Visible = false; 
-            col_Price.Width = 150;
-            col_Price.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Price);
-
-
-            DataGridViewTextBoxColumn colFiller = new DataGridViewTextBoxColumn();
-            colFiller.Name = "FILLER";
-            colFiller.HeaderText = "";
-            colFiller.ReadOnly = true;
-            colFiller.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            colFiller.SortMode = DataGridViewColumnSortMode.NotSortable;
-            colFiller.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            editgrid.Columns.Add(colFiller);
-
-            }
-
-            #endregion[Init Grid]
-
 }//cls 
 }//ns 

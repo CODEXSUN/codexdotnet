@@ -7,22 +7,22 @@ using CXLIB;
 
 namespace CXERP
 {
-    public static class CArticleitems 
+    public static class CStyleitems 
     {
 
         #region[Get New]
 
-        public static List<Articleitems> GetNew
+        public static List<Styleitems> GetNew
         {
             get
             {
-            List<Articleitems> list = new List<Articleitems>();
+            List<Styleitems> list = new List<Styleitems>();
 
-                Articleitems obj = new Articleitems()
+                Styleitems obj = new Styleitems()
                 {
-                    Articleitems_id = string.Empty,
-                    Article_id = string.Empty,
-                    Article_no = string.Empty,
+                    Styleitems_id = string.Empty,
+                    Style_id = string.Empty,
+                    Style_no = string.Empty,
                     Product_id = string.Empty,
                     Colours_id = string.Empty,
                     Sizes_id = string.Empty,
@@ -40,31 +40,31 @@ namespace CXERP
 
         #region[Attach params]
         
-        private static string AttachParams(string q, Articleitems v)
+        private static string AttachParams(string q, Styleitems v)
         {
-            q = q.Replace("@" + ARTICLEITEMS.ARTICLE_ID + "@", "" + ConvertTO.SqlString(v.Article_id) + "");
-            q = q.Replace("@" + ARTICLEITEMS.ARTICLE_NO + "@", "" + ConvertTO.SqlString(v.Article_no) + "");
-            q = q.Replace("@" + ARTICLEITEMS.PRODUCT_ID + "@", "" + ConvertTO.SqlString(v.Product_id) + "");
-            q = q.Replace("@" + ARTICLEITEMS.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colours_id) + "");
-            q = q.Replace("@" + ARTICLEITEMS.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Sizes_id) + "");
-            q = q.Replace("@" + ARTICLEITEMS.QTY + "@", "" + ConvertTO.SqlString(v.Qty) + "");
-            q = q.Replace("@" + ARTICLEITEMS.PRICE + "@", "" + ConvertTO.SqlDecimal(v.Price) + "");
-            q = q.Replace("@" + ARTICLEITEMS.REFERED_ID + "@", "" + ConvertTO.SqlString(v.Refered_id) + "");
-            q = q.Replace("@" + ARTICLEITEMS.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
+            q = q.Replace("@" + STYLEITEMS.STYLE_ID + "@", "" + ConvertTO.SqlString(v.Style_id) + "");
+            q = q.Replace("@" + STYLEITEMS.STYLE_NO + "@", "" + ConvertTO.SqlString(v.Style_no) + "");
+            q = q.Replace("@" + STYLEITEMS.PRODUCT_ID + "@", "" + ConvertTO.SqlString(v.Product_id) + "");
+            q = q.Replace("@" + STYLEITEMS.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colours_id) + "");
+            q = q.Replace("@" + STYLEITEMS.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Sizes_id) + "");
+            q = q.Replace("@" + STYLEITEMS.QTY + "@", "" + ConvertTO.SqlString(v.Qty) + "");
+            q = q.Replace("@" + STYLEITEMS.PRICE + "@", "" + ConvertTO.SqlDecimal(v.Price) + "");
+            q = q.Replace("@" + STYLEITEMS.REFERED_ID + "@", "" + ConvertTO.SqlString(v.Refered_id) + "");
+            q = q.Replace("@" + STYLEITEMS.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
             return q;
         }
         #endregion[Attach params]
         
         #region[Insert]
         
-        public static void Insert(List<Articleitems> list, DAL dalsession)
+        public static void Insert(List<Styleitems> list, DAL dalsession)
         {
             for (int i = 0; i < list.Count; i++)
             {
-                Articleitems obj = new Articleitems()
+                Styleitems obj = new Styleitems()
                 {
-                    Article_id = list[i].Article_id,
-                    Article_no = list[i].Article_no,
+                    Style_id = list[i].Style_id,
+                    Style_no = list[i].Style_no,
                     Product_id = list[i].Product_id,
                     Colours_id = list[i].Colours_id,
                     Sizes_id = list[i].Sizes_id,
@@ -81,28 +81,28 @@ namespace CXERP
 
         #region[InsertSub]
         
-        public static void InsertSub(Articleitems v, DAL dalsession)
+        public static void InsertSub(Styleitems v, DAL dalsession)
         {
-                string q = " INSERT INTO " + ARTICLEITEMS.ARTICLEITEMS_TBL + " ( ";
-                q += " " + ARTICLEITEMS.ARTICLE_ID + " \r\n ";
-                q += "," + ARTICLEITEMS.ARTICLE_NO + " \r\n ";
-                q += "," + ARTICLEITEMS.PRODUCT_ID + " \r\n ";
-                q += "," + ARTICLEITEMS.COLOURS_ID + " \r\n ";
-                q += "," + ARTICLEITEMS.SIZES_ID + " \r\n ";
-                q += "," + ARTICLEITEMS.QTY + " \r\n ";
-                q += "," + ARTICLEITEMS.PRICE + " \r\n ";
-                q += "," + ARTICLEITEMS.REFERED_ID + " \r\n ";
-                q += "," + ARTICLEITEMS.LOCKED + " \r\n ";
+                string q = " INSERT INTO " + STYLEITEMS.STYLEITEMS_TBL + " ( ";
+                q += " " + STYLEITEMS.STYLE_ID + " \r\n ";
+                q += "," + STYLEITEMS.STYLE_NO + " \r\n ";
+                q += "," + STYLEITEMS.PRODUCT_ID + " \r\n ";
+                q += "," + STYLEITEMS.COLOURS_ID + " \r\n ";
+                q += "," + STYLEITEMS.SIZES_ID + " \r\n ";
+                q += "," + STYLEITEMS.QTY + " \r\n ";
+                q += "," + STYLEITEMS.PRICE + " \r\n ";
+                q += "," + STYLEITEMS.REFERED_ID + " \r\n ";
+                q += "," + STYLEITEMS.LOCKED + " \r\n ";
                 q += " ) VALUES ( ";
-                q += "  @"+ ARTICLEITEMS.ARTICLE_ID + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.ARTICLE_NO + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.PRODUCT_ID + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.COLOURS_ID + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.SIZES_ID + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.QTY + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.PRICE + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.REFERED_ID + "@ \r\n ";
-                q += ", @"+ ARTICLEITEMS.LOCKED + "@ \r\n ";
+                q += "  @"+ STYLEITEMS.STYLE_ID + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.STYLE_NO + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.PRODUCT_ID + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.COLOURS_ID + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.SIZES_ID + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.QTY + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.PRICE + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.REFERED_ID + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.LOCKED + "@ \r\n ";
                 q += " ) \r\n ";
                 q = AttachParams(q, v);
                 dalsession.Execute(q);
@@ -113,7 +113,7 @@ namespace CXERP
         
         public static void Delete(string fkid , DAL dalsession)
         {
-                dalsession.Execute("DELETE FROM  " + ARTICLEITEMS.ARTICLEITEMS_TBL+ " WHERE " + ARTICLEITEMS.ARTICLE_ID + " =  " + fkid +";");
+                dalsession.Execute("DELETE FROM  " + STYLEITEMS.STYLEITEMS_TBL+ " WHERE " + STYLEITEMS.STYLE_ID + " =  " + fkid +";");
         }
         #endregion[Delete]
         

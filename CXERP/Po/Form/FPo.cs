@@ -1,17 +1,16 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 20-06-2019 10:44:05 AM
+// last update : 23-01-2021 08:39:04 PM
 
 using System;
 using System.Windows.Forms;
-using System.Drawing;
 using CXLIB;
-using CXCORE;
+using System.Drawing;
 
 
 namespace CXERP
 { 
-    public partial class FStyle : UserControl 
+    public partial class FPo
     { 
 
         #region[Split Timer]
@@ -61,21 +60,20 @@ namespace CXERP
 
         #region[Enter Event]
 
-        private void Txt_article_no_Enter(object sender, EventArgs e)
+        private void Txt_po_no_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_article_no.BackColor = Theme.lbl_EnterBackColor;
-            lbl_article_no.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_article_no.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_po_no.BackColor = Theme.lbl_EnterBackColor;
+            lbl_po_no.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_po_no.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_Style_date_Enter(object sender, EventArgs e)
+        private void Txt_po_date_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_article_date.BackColor = Theme.lbl_EnterBackColor;
-            lbl_article_date.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_article_date.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_po_date.BackColor = Theme.lbl_EnterBackColor;
+            lbl_po_date.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_po_date.ForeColor = Theme.lbl_EnterForeColor;
         }
-
         private void Txt_notes_Enter(object sender, EventArgs e)
         {
             Change_infocus();
@@ -86,13 +84,13 @@ namespace CXERP
         private void Change_infocus()
         {
             
-            lbl_article_no.BackColor = Theme.lbl_BackColor;
-            lbl_article_no.BorderColor = Theme.lbl_BorderColor;
-            lbl_article_no.ForeColor = Theme.lbl_ForeColor;
+            lbl_po_no.BackColor = Theme.lbl_BackColor;
+            lbl_po_no.BorderColor = Theme.lbl_BorderColor;
+            lbl_po_no.ForeColor = Theme.lbl_ForeColor;
             
-            lbl_article_date.BackColor = Theme.lbl_BackColor;
-            lbl_article_date.BorderColor = Theme.lbl_BorderColor;
-            lbl_article_date.ForeColor = Theme.lbl_ForeColor;
+            lbl_po_date.BackColor = Theme.lbl_BackColor;
+            lbl_po_date.BorderColor = Theme.lbl_BorderColor;
+            lbl_po_date.ForeColor = Theme.lbl_ForeColor;
             
             lbl_notes.BackColor = Theme.lbl_BackColor;
             lbl_notes.BorderColor = Theme.lbl_BorderColor;
@@ -221,22 +219,27 @@ namespace CXERP
 
         #region[Raise Event ]
 
-        public event EventHandler FStyle_NeedToRefresh;
+        public event EventHandler FPo_NeedToRefresh;
 
         public void Form_NeedToRefresh()
         {
-            if (FStyle_NeedToRefresh != null)
-            {
-                FStyle_NeedToRefresh(this, new EventArgs());
-            }
+            FPo_NeedToRefresh?.Invoke(this, new EventArgs());
         }
         #endregion[Raise Event ]
 
-        #region[Set Focus]
+        #region[GetName]
 
+        public string GetName() 
+        { 
+            return txt_po_no.Text; 
+        } 
+        public void setname(string pName) 
+        { 
+            txt_po_no.Text = pName ; 
+        } 
         public void SetFocus()
         {
-            txt_article_no.Focus();
+            txt_po_no.Focus();
         }
         #endregion[Set Focus]
 

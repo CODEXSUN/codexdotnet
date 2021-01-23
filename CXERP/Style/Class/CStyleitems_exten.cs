@@ -9,30 +9,30 @@ using System.Collections.Generic;
 
 namespace CXERP
 {
-    public static class CArticleitems_exten
+    public static class CStyleitems_exten
     {
          #region[Entity List] 
   
-         private static List<Articleitems> EntityList(string q) 
+         private static List<Styleitems> EntityList(string q) 
          { 
-             List<Articleitems> list = new List<Articleitems>(); 
+             List<Styleitems> list = new List<Styleitems>(); 
   
              using (IDataReader redr = new DAL().Listreader(q)) 
              { 
                  while (redr.Read() == true) 
                  { 
-                      Articleitems  obj = new  Articleitems () 
+                      Styleitems  obj = new  Styleitems () 
                      { 
-                        Articleitems_id = redr[ARTICLEITEMS.ARTICLEITEMS_ID].ToString(), 
-                        Article_id = redr[ARTICLEITEMS.ARTICLE_ID].ToString(),
-                        Article_no = redr[ARTICLEITEMS.ARTICLE_NO].ToString(),
+                        Styleitems_id = redr[STYLEITEMS.STYLEITEMS_ID].ToString(), 
+                        Style_id = redr[STYLEITEMS.STYLE_ID].ToString(),
+                        Style_no = redr[STYLEITEMS.STYLE_NO].ToString(),
                         Product_id = redr[PRODUCT.PRODUCT_NAME].ToString(),
                         Colours_id = redr[COLOURS.COLOURS_NAME].ToString(),
                         Sizes_id = redr[SIZES.SIZES_NAME].ToString(),
-                        Qty = redr[ARTICLEITEMS.QTY].ToString(),
-                        Price = ConvertTO.Decimal(redr[ARTICLEITEMS.PRICE].ToString()),
-                        Refered_id = redr[ARTICLEITEMS.REFERED_ID].ToString(),
-                        Locked = redr[ARTICLEITEMS.LOCKED].ToString(),
+                        Qty = redr[STYLEITEMS.QTY].ToString(),
+                        Price = ConvertTO.Decimal(redr[STYLEITEMS.PRICE].ToString()),
+                        Refered_id = redr[STYLEITEMS.REFERED_ID].ToString(),
+                        Locked = redr[STYLEITEMS.LOCKED].ToString(),
                      }; 
   
                      list.Add(obj); 
@@ -46,24 +46,24 @@ namespace CXERP
   
          #region[FKId] 
   
-         public static List<Articleitems> FKId(string id ) 
+         public static List<Styleitems> FKId(string id ) 
          { 
-            string q = " SELECT " + ARTICLEITEMS.ARTICLEITEMS_TBL +".* \r\n"; 
-            q += ", "+ ARTICLE.ARTICLE_TBL + "."+ ARTICLE.ARTICLE_NO + " \r\n"; 
+            string q = " SELECT " + STYLEITEMS.STYLEITEMS_TBL +".* \r\n"; 
+            q += ", "+ STYLE.STYLE_TBL + "."+ STYLE.STYLE_NO + " \r\n"; 
             q += ", "+ PRODUCT.PRODUCT_TBL + "."+ PRODUCT.PRODUCT_NAME + " \r\n"; 
             q += ", "+ COLOURS.COLOURS_TBL + "."+ COLOURS.COLOURS_NAME + " \r\n"; 
             q += ", "+ SIZES.SIZES_TBL + "."+ SIZES.SIZES_NAME + " \r\n"; 
-            q += " FROM  " + ARTICLEITEMS.ARTICLEITEMS_TBL + " \r\n"; 
-            q += " INNER JOIN  " + ARTICLE.ARTICLE_TBL + "\r\n";  
-            q += " ON(" + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLEITEMS.ARTICLE_ID + " = " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_ID+" )\r\n";  
+            q += " FROM  " + STYLEITEMS.STYLEITEMS_TBL + " \r\n"; 
+            q += " INNER JOIN  " + STYLE.STYLE_TBL + "\r\n";  
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.STYLE_ID + " = " + STYLE.STYLE_TBL + "." + STYLE.STYLE_ID+" )\r\n";  
             q += " INNER JOIN  " + PRODUCT.PRODUCT_TBL + "\r\n";  
-            q += " ON(" + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLEITEMS.PRODUCT_ID + " = " + PRODUCT.PRODUCT_TBL + "." + PRODUCT.PRODUCT_ID+" )\r\n";  
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.PRODUCT_ID + " = " + PRODUCT.PRODUCT_TBL + "." + PRODUCT.PRODUCT_ID+" )\r\n";  
             q += " INNER JOIN  " + COLOURS.COLOURS_TBL + "\r\n";  
-            q += " ON(" + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLEITEMS.COLOURS_ID + " = " + COLOURS.COLOURS_TBL + "." + COLOURS.COLOURS_ID+" )\r\n";  
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.COLOURS_ID + " = " + COLOURS.COLOURS_TBL + "." + COLOURS.COLOURS_ID+" )\r\n";  
             q += " INNER JOIN  " + SIZES.SIZES_TBL + "\r\n";  
-            q += " ON(" + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLEITEMS.SIZES_ID + " = " + SIZES.SIZES_TBL + "." + SIZES.SIZES_ID+" )\r\n";  
-            q += " WHERE " + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLE.ARTICLE_ID + "  = '" + id + "' \r\n"; 
-            q += " ORDER BY  " + ARTICLEITEMS.ARTICLEITEMS_TBL + "." + ARTICLEITEMS.ARTICLEITEMS_ID + ";\r\n"; 
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.SIZES_ID + " = " + SIZES.SIZES_TBL + "." + SIZES.SIZES_ID+" )\r\n";  
+            q += " WHERE " + STYLEITEMS.STYLEITEMS_TBL + "." + STYLE.STYLE_ID + "  = '" + id + "' \r\n"; 
+            q += " ORDER BY  " + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.STYLEITEMS_ID + ";\r\n"; 
   
              return EntityList(q); 
          } 

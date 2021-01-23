@@ -9,7 +9,7 @@ using CXCORE;
 
 namespace CXERP
 {
-    public partial class LArticle : CxControl
+    public partial class LStyle : CxControl
     {
         #region[Grid Action]
 
@@ -19,15 +19,15 @@ namespace CXERP
             {
                 return;
             }
-            if (fArticle == null)
+            if (fStyle == null)
             {
-                fArticle = new FArticle();
+                fStyle = new FStyle();
             }
             BuildForm();
             string pkValue = GetSelectedPkValue();
             if (pkValue != null)
             {
-                fArticle.SetAction(BtnEvent.Open, pkValue);
+                fStyle.SetAction(BtnEvent.Open, pkValue);
             }
         }
 
@@ -37,15 +37,15 @@ namespace CXERP
 
         private void BuildForm()
         {
-            if (fArticle == null)
+            if (fStyle == null)
             {
-                fArticle = new FArticle();
+                fStyle = new FStyle();
             }
-            fArticle.FArticle_NeedToRefresh += VArticle_NeedToRefresh;
-            Parent.Controls.Add(fArticle);
-            fArticle.Dock = DockStyle.Fill;
-            fArticle.Show();
-            fArticle.BringToFront();
+            fStyle.FStyle_NeedToRefresh += VStyle_NeedToRefresh;
+            Parent.Controls.Add(fStyle);
+            fStyle.Dock = DockStyle.Fill;
+            fStyle.Show();
+            fStyle.BringToFront();
 
         }
 
@@ -97,8 +97,8 @@ namespace CXERP
         private void Btn_new_Click(object sender, EventArgs e)
         {
             BuildForm();
-            fArticle.SetAction(BtnEvent.New, null);
-            fArticle.SetFocus();
+            fStyle.SetAction(BtnEvent.New, null);
+            fStyle.SetFocus();
         }
 
         private void Btn_edit_Click(object sender, EventArgs e)
@@ -107,8 +107,8 @@ namespace CXERP
             BuildForm();
             if (pkValue != null)
             {
-                fArticle.SetAction(BtnEvent.Edit, pkValue);
-                fArticle.SetFocus();
+                fStyle.SetAction(BtnEvent.Edit, pkValue);
+                fStyle.SetFocus();
             }
         }
 
@@ -118,8 +118,8 @@ namespace CXERP
             BuildForm();
             if (pkValue != null)
             {
-                fArticle.SetAction(BtnEvent.Delete, pkValue);
-                fArticle.SetFocus();
+                fStyle.SetAction(BtnEvent.Delete, pkValue);
+                fStyle.SetFocus();
             }
         }
 
@@ -129,8 +129,8 @@ namespace CXERP
             string pkValue = GetSelectedPkValue();
             if (pkValue != null)
             {
-                fArticle.SetAction(BtnEvent.Print, pkValue);
-                fArticle.SetFocus();
+                fStyle.SetAction(BtnEvent.Print, pkValue);
+                fStyle.SetFocus();
             }
         }
 
@@ -207,12 +207,12 @@ namespace CXERP
 
         public void No_lookup()
         {
-            txt_no.LookupColNames = new string[] { ARTICLE.ARTICLE_NO };
+            txt_no.LookupColNames = new string[] { STYLE.STYLE_NO };
             txt_no.LookupUpdate += Txt_no_LookupUpdate;
         }
         void Txt_no_LookupUpdate(object sender, EventArgs e)
         {
-            txt_no.LookupList = CArticle_exten.LookupNo();
+            txt_no.LookupList = CStyle_exten.LookupNo();
         }
 
         #endregion[No lookup]
@@ -245,7 +245,7 @@ namespace CXERP
             string selPkValue = null;
             if (vSelRow != null)
             {
-                selPkValue = vSelRow.Cells[ARTICLE.ARTICLE_ID].Value.ToString();
+                selPkValue = vSelRow.Cells[STYLE.STYLE_ID].Value.ToString();
             }
             return selPkValue;
         }
@@ -254,7 +254,7 @@ namespace CXERP
 
         #region[RaiseEvent]
 
-        void VArticle_NeedToRefresh(object sender, EventArgs e)
+        void VStyle_NeedToRefresh(object sender, EventArgs e)
         {
             List_Option(ListOption.active);
         }

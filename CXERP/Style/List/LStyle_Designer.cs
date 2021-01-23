@@ -9,13 +9,13 @@ using CXLIB;
 
 namespace CXERP
 {
-    public partial class LArticle
+    public partial class LStyle
     {
 
-        private FArticle fArticle = null;
+        private FStyle fStyle = null;
         private bool constructed_flag = false;
 
-        public LArticle()
+        public LStyle()
         {
             InitializeComponent();
             Initialize();
@@ -111,7 +111,7 @@ namespace CXERP
 
             btn_close.Click += Btn_close_Click;
 
-            lbl_header.Text = "Article List";
+            lbl_header.Text = "Style List";
 
             #endregion[Initialize]
 
@@ -423,7 +423,7 @@ namespace CXERP
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lpanel);
-            Name = "LArticle";
+            Name = "LStyle";
             Size = new Size(1000, 600);
             lpanel.ResumeLayout(false);
             linner_panel.ResumeLayout(false);
@@ -441,35 +441,35 @@ namespace CXERP
         {
             listgrid.RowAction += Listgrid_RowAction;
 
-            DataGridViewTextBoxColumn col_Article_Id = new DataGridViewTextBoxColumn();
-            col_Article_Id.Name = ARTICLE.ARTICLE_ID;
-            col_Article_Id.HeaderText = "ARTICLE_ID ";
-            col_Article_Id.Visible = false;
-            col_Article_Id.Width = 100;
-            col_Article_Id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Article_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Article_Id);
+            DataGridViewTextBoxColumn col_Style_Id = new DataGridViewTextBoxColumn();
+            col_Style_Id.Name = STYLE.STYLE_ID;
+            col_Style_Id.HeaderText = "STYLE_ID ";
+            col_Style_Id.Visible = false;
+            col_Style_Id.Width = 100;
+            col_Style_Id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Style_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Style_Id);
 
-            DataGridViewTextBoxColumn col_Article_no = new DataGridViewTextBoxColumn();
-            col_Article_no.Name = ARTICLE.ARTICLE_NO;
-            col_Article_no.HeaderText = "ARTICLE NO";
-            //col_Article_no.Visible = false;
-            col_Article_no.Width = 200;
-            col_Article_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Article_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Article_no);
+            DataGridViewTextBoxColumn col_Style_no = new DataGridViewTextBoxColumn();
+            col_Style_no.Name = STYLE.STYLE_NO;
+            col_Style_no.HeaderText = "STYLE NO";
+            //col_Style_no.Visible = false;
+            col_Style_no.Width = 200;
+            col_Style_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Style_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Style_no);
 
-            DataGridViewTextBoxColumn col_Article_date = new DataGridViewTextBoxColumn();
-            col_Article_date.Name = ARTICLE.ARTICLE_DATE;
-            col_Article_date.HeaderText = "ARTICLE DATE";
-            //col_Article_date.Visible = false;
-            col_Article_date.Width = 162;
-            col_Article_date.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Article_date.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Article_date);
+            DataGridViewTextBoxColumn col_Style_date = new DataGridViewTextBoxColumn();
+            col_Style_date.Name = STYLE.STYLE_DATE;
+            col_Style_date.HeaderText = "STYLE DATE";
+            //col_Style_date.Visible = false;
+            col_Style_date.Width = 162;
+            col_Style_date.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Style_date.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Style_date);
 
             DataGridViewTextBoxColumn col_Locked = new DataGridViewTextBoxColumn();
-            col_Locked.Name = ARTICLE.LOCKED;
+            col_Locked.Name = STYLE.LOCKED;
             col_Locked.HeaderText = "LOCKED";
             col_Locked.Visible = false;
             col_Locked.Width = 100;
@@ -487,7 +487,7 @@ namespace CXERP
             listgrid.Columns.Add(col_grid);
 
             DataGridViewTextBoxColumn col_User_Id = new DataGridViewTextBoxColumn();
-            col_User_Id.Name = ARTICLE.USER_ID;
+            col_User_Id.Name = STYLE.USER_ID;
             col_User_Id.HeaderText = "ENTRY BY";
             //col_User_Id.Visible = false;
             col_User_Id.Width = 120;

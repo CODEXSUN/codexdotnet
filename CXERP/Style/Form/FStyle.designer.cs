@@ -5,7 +5,7 @@
 
 namespace CXERP
         { 
-        public partial class FArticle
+        public partial class FStyle
     {
         private System.ComponentModel.IContainer components = null; 
         

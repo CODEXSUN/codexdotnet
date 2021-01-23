@@ -1,12 +1,11 @@
-// Version : 1.0.0.4 dt : 14-11-2017
+// Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// 08-01-2018 10:25:49 PM
-// last update : 08-01-2018
+// last update : 23-01-2021 08:39:04 PM
 
 namespace CXERP
         { 
-        public partial class FStyle
-    {
+        public partial class FPo
+        {
         private System.ComponentModel.IContainer components = null; 
         
         protected override void Dispose(bool disposing) 

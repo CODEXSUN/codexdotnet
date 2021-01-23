@@ -1,10 +1,10 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 15-06-2019 10:08:59 AM
+// last update : 23-01-2021 08:38:55 PM
 
 namespace CXERP
         { 
-    public partial class LStyle
+        public partial class FArticle
         {
         private System.ComponentModel.IContainer components = null; 
         

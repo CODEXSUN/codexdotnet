@@ -11,7 +11,7 @@ using CXCORE;
 
 namespace CXERP
 { 
-    public partial class FArticle : UserControl 
+    public partial class FStyle : UserControl 
     { 
 
         #region[Split Timer]
@@ -68,7 +68,7 @@ namespace CXERP
             lbl_article_no.BorderColor = Theme.lbl_EnterBorderColor;
             lbl_article_no.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_Article_date_Enter(object sender, EventArgs e)
+        private void Txt_Style_date_Enter(object sender, EventArgs e)
         {
             Change_infocus();
             lbl_article_date.BackColor = Theme.lbl_EnterBackColor;
@@ -221,13 +221,13 @@ namespace CXERP
 
         #region[Raise Event ]
 
-        public event EventHandler FArticle_NeedToRefresh;
+        public event EventHandler FStyle_NeedToRefresh;
 
         public void Form_NeedToRefresh()
         {
-            if (FArticle_NeedToRefresh != null)
+            if (FStyle_NeedToRefresh != null)
             {
-                FArticle_NeedToRefresh(this, new EventArgs());
+                FStyle_NeedToRefresh(this, new EventArgs());
             }
         }
         #endregion[Raise Event ]

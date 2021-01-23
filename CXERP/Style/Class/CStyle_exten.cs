@@ -10,33 +10,33 @@ using System.Collections.Generic;
 
 namespace CXERP
 {
-    public static class CArticle_exten
+    public static class CStyle_exten
     {
          #region[Entity Data]
 
-        private static Article EntityData(string q)
+        private static Style EntityData(string q)
         {
             using (IDataReader redr = new DAL().Listreader(q))
             {
                  while (redr.Read() == true)
                  {
-                    Article obj = new Article()
+                    Style obj = new Style()
                     {
-                        Article_id = redr[ARTICLE.ARTICLE_ID].ToString(),
-                        Uniqueno = redr[ARTICLE.UNIQUENO].ToString(),
-                        Company_id = redr[ARTICLE.COMPANY_ID].ToString(),
-                        Acy_id = redr[ARTICLE.ACY_ID].ToString(),
-                        Article_no = redr[ARTICLE.ARTICLE_NO].ToString(),
-                        Article_date = redr[ARTICLE.ARTICLE_DATE].ToString(),
-                        Locked = redr[ARTICLE.LOCKED].ToString(),
-                        Notes = redr[ARTICLE.NOTES].ToString(),
-                        Active_id = redr[ARTICLE.ACTIVE_ID].ToString(),
+                        Style_id = redr[STYLE.STYLE_ID].ToString(),
+                        Uniqueno = redr[STYLE.UNIQUENO].ToString(),
+                        Company_id = redr[STYLE.COMPANY_ID].ToString(),
+                        Acy_id = redr[STYLE.ACY_ID].ToString(),
+                        Style_no = redr[STYLE.STYLE_NO].ToString(),
+                        Style_date = redr[STYLE.STYLE_DATE].ToString(),
+                        Locked = redr[STYLE.LOCKED].ToString(),
+                        Notes = redr[STYLE.NOTES].ToString(),
+                        Active_id = redr[STYLE.ACTIVE_ID].ToString(),
                         User_id = redr[USER.USER_NAME].ToString()
                         };
                     return obj;
                  }
             redr.Close();
-            return new Article();
+            return new Style();
             }
         }
 
@@ -44,25 +44,25 @@ namespace CXERP
 
          #region[Entity List]
 
-         private static List<Article> EntityList(string q)
+         private static List<Style> EntityList(string q)
          {
-             List<Article> list = new List<Article>();
+             List<Style> list = new List<Style>();
 
              using (IDataReader redr = new DAL().Listreader(q))
              {
                  while (redr.Read() == true)
                  {
-                      Article obj = new Article()
+                      Style obj = new Style()
                      {
-                        Article_id = redr[ARTICLE.ARTICLE_ID].ToString(),
-                        Uniqueno = redr[ARTICLE.UNIQUENO].ToString(),
-                        Company_id = redr[ARTICLE.COMPANY_ID].ToString(),
-                        Acy_id = redr[ARTICLE.ACY_ID].ToString(),
-                        Article_no = redr[ARTICLE.ARTICLE_NO].ToString(),
-                        Article_date = redr[ARTICLE.ARTICLE_DATE].ToString(),
-                        Locked = redr[ARTICLE.LOCKED].ToString(),
-                        Notes = redr[ARTICLE.NOTES].ToString(),
-                        Active_id = redr[ARTICLE.ACTIVE_ID].ToString(),
+                        Style_id = redr[STYLE.STYLE_ID].ToString(),
+                        Uniqueno = redr[STYLE.UNIQUENO].ToString(),
+                        Company_id = redr[STYLE.COMPANY_ID].ToString(),
+                        Acy_id = redr[STYLE.ACY_ID].ToString(),
+                        Style_no = redr[STYLE.STYLE_NO].ToString(),
+                        Style_date = redr[STYLE.STYLE_DATE].ToString(),
+                        Locked = redr[STYLE.LOCKED].ToString(),
+                        Notes = redr[STYLE.NOTES].ToString(),
+                        Active_id = redr[STYLE.ACTIVE_ID].ToString(),
                         User_id = redr[USER.USER_NAME].ToString()
                      };
 
@@ -78,19 +78,19 @@ namespace CXERP
 
          #region[Unrefer]
 
-         public static List<Article> Unrefer()
+         public static List<Style> Unrefer()
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
@@ -99,19 +99,19 @@ namespace CXERP
 
          #region[refer]
 
-         public static List<Article> Refer()
+         public static List<Style> Refer()
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND NOT " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND NOT " + STYLE.STYLE_TBL + "." + STYLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
@@ -120,18 +120,18 @@ namespace CXERP
 
          #region[showall]
 
-         public static List<Article> Showall()
+         public static List<Style> Showall()
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
@@ -140,18 +140,18 @@ namespace CXERP
 
          #region[not active]
 
-         public static List<Article> Notactive()
+         public static List<Style> Notactive()
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.NotActive + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.NotActive + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
@@ -160,18 +160,18 @@ namespace CXERP
 
          #region[PKId]
 
-         public static Article PKId(string id)
+         public static Style PKId(string id)
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_ID + " = '" + id + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.STYLE_ID + " = '" + id + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityData(q);
          }
@@ -180,35 +180,35 @@ namespace CXERP
 
          #region[Searchby]
 
-         public static List<Article> Searchby(string no, string date, string dateTo, string party)
+         public static List<Style> Searchby(string no, string date, string dateTo, string party)
          {
-            string q = " SELECT " + ARTICLE.ARTICLE_TBL + ".* \r\n";
+            string q = " SELECT " + STYLE.STYLE_TBL + ".* \r\n";
             q += ", " + USER.USER_TBL + "." + USER.USER_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " INNER JOIN  " + USER.USER_TBL + "\r\n";
-            q += " ON(" + ARTICLE.ARTICLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " ON(" + STYLE.STYLE_TBL + "." + USER.USER_ID + "  = " + USER.USER_TBL + "." + USER.USER_ID + ")\r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             if (no != "")
             {
-                q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + " = '" + no + "'\r\n";
+                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + " = '" + no + "'\r\n";
             }
             if (dateTo != "")
             {
-                q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "  BETWEEN " + ConvertTO.SqlDate(date) + " AND " + ConvertTO.SqlDate(dateTo) + "\r\n";
+                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "  BETWEEN " + ConvertTO.SqlDate(date) + " AND " + ConvertTO.SqlDate(dateTo) + "\r\n";
             }
             else if (date != "")
             {
 
-                q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + " = " + ConvertTO.SqlDate(date) + "\r\n";
+                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + " = " + ConvertTO.SqlDate(date) + "\r\n";
             }
             if (party != "")
             {
                 q += " AND " + PARTY.PARTY_TBL + "." + PARTY.PARTY_NAME + " = '" + party + "'  \r\n";
             }
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
@@ -220,13 +220,13 @@ namespace CXERP
         public static DataTable LookupNo()
         {
             string q = " SELECT  DISTINCT \r\n";
-            q += " " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return new DAL().Listdata(q);
         }
@@ -235,12 +235,12 @@ namespace CXERP
         {
             string q = " SELECT  DISTINCT \r\n";
             q += " " + PARTY.PARTY_TBL + "." + PARTY.PARTY_NAME + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return new DAL().Listdata(q);
         }
@@ -248,24 +248,24 @@ namespace CXERP
         public static DataTable LookupDate()
         {
             string q = " SELECT  DISTINCT \r\n";
-            q += " " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + " \r\n";
-            q += " FROM  " + ARTICLE.ARTICLE_TBL + " \r\n";
-            q += " WHERE " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + " \r\n";
+            q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
-            q += " AND " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_DATE + "\r\n";
-            q += " ,  " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + ";\r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             DataTable xtbl = new DAL().Listdata(q);
 
             DataTable tbl = new DataTable();
 
-            tbl.Columns.Add(ARTICLE.ARTICLE_DATE, typeof(string));
+            tbl.Columns.Add(STYLE.STYLE_DATE, typeof(string));
             if (xtbl.Rows.Count != 0)
             {
                 for (int i = 0; i < xtbl.Rows.Count; i++)
                 {
-                    tbl.Rows.Add(ConvertTO.Date2S(xtbl.Rows[i][ARTICLE.ARTICLE_DATE] + "")
+                    tbl.Rows.Add(ConvertTO.Date2S(xtbl.Rows[i][STYLE.STYLE_DATE] + "")
                     );
                 }
             }
@@ -280,14 +280,14 @@ namespace CXERP
         {
             get
             {
-                string q = "SELECT " + ARTICLE.ARTICLE_NO + " FROM " + ARTICLE.ARTICLE_TBL + "\r\n";
-                q += " WHERE " + ARTICLE.COMPANY_ID + " = " + Current.Company_id + " \r\n";
-                q += " ORDER BY " + ARTICLE.ARTICLE_NO + " DESC LIMIT 1;\r\n";
+                string q = "SELECT " + STYLE.STYLE_NO + " FROM " + STYLE.STYLE_TBL + "\r\n";
+                q += " WHERE " + STYLE.COMPANY_ID + " = " + Current.Company_id + " \r\n";
+                q += " ORDER BY " + STYLE.STYLE_NO + " DESC LIMIT 1;\r\n";
                 using (IDataReader redr = new DAL().Listreader(q))
                 {
                     while (redr.Read() == true)
                     {
-                        return ((Convert.ToInt32(redr[ARTICLE.ARTICLE_NO].ToString())) + 1).ToString();
+                        return ((Convert.ToInt32(redr[STYLE.STYLE_NO].ToString())) + 1).ToString();
                     }
                      redr.Close();
                     return Core.One;
@@ -303,7 +303,7 @@ namespace CXERP
         {
             if (pkValue != null)
             {
-                Article obj = PKId(pkValue);
+                Style obj = PKId(pkValue);
                 if (obj.Locked == Core.Unlocked)
                 {
                     return false;
@@ -318,11 +318,11 @@ namespace CXERP
 
          public static string GetName_Id(string _pId)
         {
-            Article obj = PKId(_pId);
+            Style obj = PKId(_pId);
 
              if (obj != null)
             {
-                return obj.Article_no;
+                return obj.Style_no;
             }
             return "";
         }
@@ -333,7 +333,7 @@ namespace CXERP
 
              if (list.Count != 0)
             {
-                return list[0].Article_id;
+                return list[0].Style_id;
             }
             return "";
         }
