@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:57 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using CXLIB; 
 
@@ -18,7 +18,7 @@ namespace CXERP
             q += AddFields.Primary(ARTICLE.ARTICLE_ID);
             q += AddFields.Foreign(ARTICLE.ARTICLE_TBL, ARTICLE.PO_ID); 
             q += AddFields.VARCHAR_500(ARTICLE.ARTICLE_NO); 
-            q += AddFields.VARCHAR_500(ARTICLE.PRODUCT_ID); 
+            q += AddFields.Foreign(ARTICLE.ARTICLE_TBL, ARTICLE.PRODUCT_ID); 
             q += AddFields.Foreign(ARTICLE.ARTICLE_TBL, ARTICLE.HSNCODE_ID); 
             q += AddFields.Foreign(ARTICLE.ARTICLE_TBL, ARTICLE.SIZES_ID); 
             q += AddFields.Foreign(ARTICLE.ARTICLE_TBL, ARTICLE.COLOURS_ID); 
@@ -59,7 +59,7 @@ namespace CXERP
             q += DB.VALUE_1ST("1");
             q += DB.VALUE("1");
             q += DB.VALUE("-");
-            q += DB.VALUE("-");
+            q += DB.VALUE("1");
             q += DB.VALUE("1");
             q += DB.VALUE("1");
             q += DB.VALUE("1");

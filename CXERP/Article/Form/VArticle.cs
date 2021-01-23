@@ -1,11 +1,11 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:55 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System; 
-using System.Windows.Forms;
+using System.Windows.Forms; 
+using CXLIB;
 using CXCORE;
-using CXLIB; 
  
 namespace CXERP
 { 
@@ -64,8 +64,8 @@ namespace CXERP
             txt_article_no.Text = obj.Article_no;
             txt_product_id.Text = obj.Product_id;
             txt_hsncode_id.Text = obj.Hsncode_id;
-            txt_size_id.Text = obj.Size_id;
-            txt_colour_id.Text = obj.Colour_id;
+            txt_sizes_id.Text = obj.Sizes_id;
+            txt_colours_id.Text = obj.Colours_id;
             txt_qty.Text = obj.Qty;
             txt_price.Text = obj.Price.ToString();
             txt_barcode.Text = obj.Barcode;
@@ -86,8 +86,8 @@ namespace CXERP
             txt_article_no.Enabled = !pReadOnly;
             txt_product_id.Enabled = !pReadOnly;
             txt_hsncode_id.Enabled = !pReadOnly;
-            txt_size_id.Enabled = !pReadOnly;
-            txt_colour_id.Enabled = !pReadOnly;
+            txt_sizes_id.Enabled = !pReadOnly;
+            txt_colours_id.Enabled = !pReadOnly;
             txt_qty.Enabled = !pReadOnly;
             txt_price.Enabled = !pReadOnly;
             txt_barcode.Enabled = !pReadOnly;
@@ -206,12 +206,12 @@ namespace CXERP
             Article fobj = new Article()
            {
                 Article_id = vId,
-                Po_id = txt_po_id.Text,
+                Po_id = CPo_exten.GetId_Name(txt_po_id.Text),
                 Article_no = txt_article_no.Text,
-                Product_id = txt_product_id.Text,
+                Product_id = CProduct_exten.GetId_Name( txt_product_id.Text),
                 Hsncode_id = CHsncode_exten.GetId_Name(txt_hsncode_id.Text),
-                Size_id = CSizes_exten.GetId_Name(txt_size_id.Text),
-                Colour_id = CColours_exten.GetId_Name(txt_colour_id.Text),
+                Sizes_id = CSizes_exten.GetId_Name(txt_sizes_id.Text),
+                Colours_id = CColours_exten.GetId_Name(txt_colours_id.Text),
                 Qty = txt_qty.Text,
                 Price = ConvertTO.Decimal(txt_price.Text),
                 Barcode = txt_barcode.Text,

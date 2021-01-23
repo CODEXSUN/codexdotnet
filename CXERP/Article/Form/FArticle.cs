@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:55 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System;
 using System.Windows.Forms;
@@ -88,19 +88,19 @@ namespace CXERP
             lbl_hsncode_id.BorderColor = Theme.lbl_EnterBorderColor;
             lbl_hsncode_id.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_size_id_Enter(object sender, EventArgs e)
+        private void Txt_sizes_id_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_size_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_size_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_size_id.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_sizes_id.BackColor = Theme.lbl_EnterBackColor;
+            lbl_sizes_id.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_sizes_id.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_colour_id_Enter(object sender, EventArgs e)
+        private void Txt_colours_id_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_colour_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_colour_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_colour_id.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_colours_id.BackColor = Theme.lbl_EnterBackColor;
+            lbl_colours_id.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_colours_id.ForeColor = Theme.lbl_EnterForeColor;
         }
         private void Txt_qty_Enter(object sender, EventArgs e)
         {
@@ -149,13 +149,13 @@ namespace CXERP
             lbl_hsncode_id.BorderColor = Theme.lbl_BorderColor;
             lbl_hsncode_id.ForeColor = Theme.lbl_ForeColor;
             
-            lbl_size_id.BackColor = Theme.lbl_BackColor;
-            lbl_size_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_size_id.ForeColor = Theme.lbl_ForeColor;
+            lbl_sizes_id.BackColor = Theme.lbl_BackColor;
+            lbl_sizes_id.BorderColor = Theme.lbl_BorderColor;
+            lbl_sizes_id.ForeColor = Theme.lbl_ForeColor;
             
-            lbl_colour_id.BackColor = Theme.lbl_BackColor;
-            lbl_colour_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_colour_id.ForeColor = Theme.lbl_ForeColor;
+            lbl_colours_id.BackColor = Theme.lbl_BackColor;
+            lbl_colours_id.BorderColor = Theme.lbl_BorderColor;
+            lbl_colours_id.ForeColor = Theme.lbl_ForeColor;
             
             lbl_qty.BackColor = Theme.lbl_BackColor;
             lbl_qty.BorderColor = Theme.lbl_BorderColor;
@@ -308,7 +308,7 @@ namespace CXERP
 
         public void Po_lookup() 
         { 
-            txt_po_id.LookupColNames = new string[] {PO.PO_NO}; 
+            txt_po_id.LookupColNames = new string[] {PO.PO_NO }; 
             txt_po_id.LookupUpdate += Txt_po_LookupUpdate; 
             txt_po_id.AllowNewEntry = true; 
             txt_po_id.NewEntryNeeded += Txt_po_NewEntryNeeded; 
@@ -342,6 +342,45 @@ namespace CXERP
         } 
 
         #endregion[PoLookup]
+
+        #region[Product Lookup]
+
+        public void Product_lookup() 
+        { 
+            txt_product_id.LookupColNames = new string[] {PRODUCT.PRODUCT_NAME }; 
+            txt_product_id.LookupUpdate += Txt_product_LookupUpdate; 
+            txt_product_id.AllowNewEntry = true; 
+            txt_product_id.NewEntryNeeded += Txt_product_NewEntryNeeded; 
+        } 
+        void Txt_product_LookupUpdate(object sender, EventArgs e) 
+        { 
+            txt_product_id.LookupList = CProduct_exten.GetforLookup(new DAL()); 
+        } 
+        private FProduct xproduct = null; 
+        void Txt_product_NewEntryNeeded(object sender, string pValue) 
+        { 
+            if (xproduct == null) 
+            { 
+                xproduct = new FProduct(); 
+                xproduct.FProduct_NeedToRefresh += Product_NeedToRefresh; 
+            } 
+            this.Parent.Controls.Add(xproduct); 
+            xproduct.Dock = DockStyle.Fill; 
+            xproduct.Show(); 
+            xproduct.BringToFront(); 
+            xproduct.Focus(); 
+               
+            xproduct.SetAction(BtnEvent.New, null); 
+            xproduct.SetFocus(); 
+            xproduct.setname(pValue); 
+        } 
+        void Product_NeedToRefresh(object sender, EventArgs e) 
+        { 
+            txt_product_id.Text = xproduct.GetName(); 
+            txt_hsncode_id.Focus(); 
+        } 
+
+        #endregion[ProductLookup]
 
         #region[Hsncode Lookup]
 
@@ -377,88 +416,88 @@ namespace CXERP
         void Hsncode_NeedToRefresh(object sender, EventArgs e) 
         { 
             txt_hsncode_id.Text = xhsncode.GetName(); 
-            txt_size_id.Focus(); 
+            txt_sizes_id.Focus(); 
         } 
 
         #endregion[HsncodeLookup]
 
-        #region[Size Lookup]
+        #region[Sizes Lookup]
 
-        public void Size_lookup() 
+        public void Sizes_lookup() 
         { 
-            txt_size_id.LookupColNames = new string[] {SIZES.SIZES_NAME }; 
-            txt_size_id.LookupUpdate += Txt_size_LookupUpdate; 
-            txt_size_id.AllowNewEntry = true; 
-            txt_size_id.NewEntryNeeded += Txt_size_NewEntryNeeded; 
+            txt_sizes_id.LookupColNames = new string[] {SIZES.SIZES_NAME }; 
+            txt_sizes_id.LookupUpdate += Txt_sizes_LookupUpdate; 
+            txt_sizes_id.AllowNewEntry = true; 
+            txt_sizes_id.NewEntryNeeded += Txt_sizes_NewEntryNeeded; 
         } 
-        void Txt_size_LookupUpdate(object sender, EventArgs e) 
+        void Txt_sizes_LookupUpdate(object sender, EventArgs e) 
         { 
-            txt_size_id.LookupList = CSizes_exten.GetforLookup(new DAL()); 
+            txt_sizes_id.LookupList = CSizes_exten.GetforLookup(new DAL()); 
         } 
-        private FSizes xsize = null; 
-        void Txt_size_NewEntryNeeded(object sender, string pValue) 
+        private FSizes xsizes = null; 
+        void Txt_sizes_NewEntryNeeded(object sender, string pValue) 
         { 
-            if (xsize == null) 
+            if (xsizes == null) 
             { 
-                xsize = new FSizes(); 
-                xsize.FSizes_NeedToRefresh += Size_NeedToRefresh; 
+                xsizes = new FSizes(); 
+                xsizes.FSizes_NeedToRefresh += Sizes_NeedToRefresh; 
             } 
-            this.Parent.Controls.Add(xsize); 
-            xsize.Dock = DockStyle.Fill; 
-            xsize.Show(); 
-            xsize.BringToFront(); 
-            xsize.Focus(); 
+            this.Parent.Controls.Add(xsizes); 
+            xsizes.Dock = DockStyle.Fill; 
+            xsizes.Show(); 
+            xsizes.BringToFront(); 
+            xsizes.Focus(); 
                
-            xsize.SetAction(BtnEvent.New, null); 
-            xsize.SetFocus(); 
-            xsize.setname(pValue); 
+            xsizes.SetAction(BtnEvent.New, null); 
+            xsizes.SetFocus(); 
+            xsizes.setname(pValue); 
         } 
-        void Size_NeedToRefresh(object sender, EventArgs e) 
+        void Sizes_NeedToRefresh(object sender, EventArgs e) 
         { 
-            txt_size_id.Text = xsize.GetName(); 
-            txt_colour_id.Focus(); 
+            txt_sizes_id.Text = xsizes.GetName(); 
+            txt_colours_id.Focus(); 
         } 
 
-        #endregion[SizeLookup]
+        #endregion[SizesLookup]
 
-        #region[Colour Lookup]
+        #region[Colours Lookup]
 
-        public void Colour_lookup() 
+        public void Colours_lookup() 
         { 
-            txt_colour_id.LookupColNames = new string[] {COLOURS.COLOURS_NAME }; 
-            txt_colour_id.LookupUpdate += Txt_colour_LookupUpdate; 
-            txt_colour_id.AllowNewEntry = true; 
-            txt_colour_id.NewEntryNeeded += Txt_colour_NewEntryNeeded; 
+            txt_colours_id.LookupColNames = new string[] {COLOURS.COLOURS_NAME }; 
+            txt_colours_id.LookupUpdate += Txt_colours_LookupUpdate; 
+            txt_colours_id.AllowNewEntry = true; 
+            txt_colours_id.NewEntryNeeded += Txt_colours_NewEntryNeeded; 
         } 
-        void Txt_colour_LookupUpdate(object sender, EventArgs e) 
+        void Txt_colours_LookupUpdate(object sender, EventArgs e) 
         { 
-            txt_colour_id.LookupList = CColours_exten.GetforLookup(new DAL()); 
+            txt_colours_id.LookupList = CColours_exten.GetforLookup(new DAL()); 
         } 
-        private FColours xcolour = null; 
-        void Txt_colour_NewEntryNeeded(object sender, string pValue) 
+        private FColours xcolours = null; 
+        void Txt_colours_NewEntryNeeded(object sender, string pValue) 
         { 
-            if (xcolour == null) 
+            if (xcolours == null) 
             { 
-                xcolour = new FColours(); 
-                xcolour.FColours_NeedToRefresh += Colour_NeedToRefresh; 
+                xcolours = new FColours(); 
+                xcolours.FColours_NeedToRefresh += Colours_NeedToRefresh; 
             } 
-            this.Parent.Controls.Add(xcolour); 
-            xcolour.Dock = DockStyle.Fill; 
-            xcolour.Show(); 
-            xcolour.BringToFront(); 
-            xcolour.Focus(); 
+            this.Parent.Controls.Add(xcolours); 
+            xcolours.Dock = DockStyle.Fill; 
+            xcolours.Show(); 
+            xcolours.BringToFront(); 
+            xcolours.Focus(); 
                
-            xcolour.SetAction(BtnEvent.New, null); 
-            xcolour.SetFocus(); 
-            xcolour.setname(pValue); 
+            xcolours.SetAction(BtnEvent.New, null); 
+            xcolours.SetFocus(); 
+            xcolours.setname(pValue); 
         } 
-        void Colour_NeedToRefresh(object sender, EventArgs e) 
+        void Colours_NeedToRefresh(object sender, EventArgs e) 
         { 
-            txt_colour_id.Text = xcolour.GetName(); 
+            txt_colours_id.Text = xcolours.GetName(); 
             txt_qty.Focus(); 
         } 
 
-        #endregion[ColourLookup]
+        #endregion[ColoursLookup]
 
         #region[GetName]
 
@@ -472,6 +511,7 @@ namespace CXERP
         } 
         public void SetFocus()
         {
+            txt_po_id.Focus();
         }
         #endregion[Set Focus]
 

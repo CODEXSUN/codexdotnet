@@ -90,7 +90,11 @@ namespace ERP
                     break;
 
                 case DropMenuERP.Article:
-                    Mymenu_Click(sender, e, new LStyle());
+                    Mymenu_Click(sender, e, new LArticle());
+                    break;
+
+                case DropMenuERP.Po:
+                    Mymenu_Click(sender, e, new LPo());
                     break;
 
                     #endregion[Erp]

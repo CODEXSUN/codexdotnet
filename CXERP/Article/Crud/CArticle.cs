@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:55 PM
+// last update : 23-01-2021 09:42:03 PM
 
 using CXLIB;
 
@@ -22,8 +22,8 @@ namespace CXERP
                     Article_no = string.Empty,
                     Product_id = string.Empty,
                     Hsncode_id = string.Empty,
-                    Size_id = string.Empty,
-                    Colour_id = string.Empty,
+                    Sizes_id = string.Empty,
+                    Colours_id = string.Empty,
                     Qty = string.Empty,
                     Price = decimal.Zero,
                     Barcode = string.Empty,
@@ -46,8 +46,8 @@ namespace CXERP
             q = q.Replace("@" + ARTICLE.ARTICLE_NO + "@", "" + ConvertTO.SqlString(v.Article_no) + "");
             q = q.Replace("@" + ARTICLE.PRODUCT_ID + "@", "" + ConvertTO.SqlString(v.Product_id) + "");
             q = q.Replace("@" + ARTICLE.HSNCODE_ID + "@", "" + ConvertTO.SqlString(v.Hsncode_id) + "");
-            q = q.Replace("@" + ARTICLE.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Size_id) + "");
-            q = q.Replace("@" + ARTICLE.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colour_id) + "");
+            q = q.Replace("@" + ARTICLE.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Sizes_id) + "");
+            q = q.Replace("@" + ARTICLE.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colours_id) + "");
             q = q.Replace("@" + ARTICLE.QTY + "@", "" + ConvertTO.SqlString(v.Qty) + "");
             q = q.Replace("@" + ARTICLE.PRICE + "@", "" + ConvertTO.SqlDecimal(v.Price) + "");
             q = q.Replace("@" + ARTICLE.BARCODE + "@", "" + ConvertTO.SqlString(v.Barcode) + "");

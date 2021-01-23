@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:57 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System; 
 using System.Data; 
@@ -73,8 +73,8 @@ namespace CXERP
                         Article_no = redr[ARTICLE.ARTICLE_NO].ToString(),
                         Product_id = redr[ARTICLE.PRODUCT_ID].ToString(),
                         Hsncode_id = redr[ARTICLE.HSNCODE_ID].ToString(),
-                        Size_id = redr[ARTICLE.SIZES_ID].ToString(),
-                        Colour_id = redr[ARTICLE.COLOURS_ID].ToString(),
+                        Sizes_id = redr[ARTICLE.SIZES_ID].ToString(),
+                        Colours_id = redr[ARTICLE.COLOURS_ID].ToString(),
                         Qty = redr[ARTICLE.QTY].ToString(),
                         Price = ConvertTO.Decimal(redr[ARTICLE.PRICE].ToString()),
                         Barcode = redr[ARTICLE.BARCODE].ToString(),

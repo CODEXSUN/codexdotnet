@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:57 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System.Windows.Forms; 
 using System.Collections.Generic; 
@@ -88,8 +88,8 @@ namespace CXERP
                  row.Cells[ARTICLE.ARTICLE_NO].Value = list[r].Article_no; 
                  row.Cells[ARTICLE.PRODUCT_ID].Value = list[r].Product_id; 
                  row.Cells[ARTICLE.HSNCODE_ID].Value = list[r].Hsncode_id; 
-                 row.Cells[ARTICLE.SIZES_ID].Value = list[r].Size_id; 
-                 row.Cells[ARTICLE.COLOURS_ID].Value = list[r].Colour_id; 
+                 row.Cells[ARTICLE.SIZES_ID].Value = list[r].Sizes_id; 
+                 row.Cells[ARTICLE.COLOURS_ID].Value = list[r].Colours_id; 
                  row.Cells[ARTICLE.QTY].Value = list[r].Qty; 
                  row.Cells[ARTICLE.PRICE].Value = list[r].Price; 
                  row.Cells[ARTICLE.BARCODE].Value = list[r].Barcode; 

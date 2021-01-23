@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:56 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System; 
 using System.Drawing; 
@@ -63,23 +63,23 @@ namespace CXERP
             col_Hsncode_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             listgrid.Columns.Add(col_Hsncode_id);
 
-            DataGridViewTextBoxColumn col_Size_id = new DataGridViewTextBoxColumn();
-            col_Size_id.Name = ARTICLE.SIZES_ID;
-            col_Size_id.HeaderText = "SIZES";
-            //col_Size_id.Visible = false; 
-            col_Size_id.Width = 100;
-            col_Size_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Size_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Size_id);
+            DataGridViewTextBoxColumn col_Sizes_id = new DataGridViewTextBoxColumn();
+            col_Sizes_id.Name = ARTICLE.SIZES_ID;
+            col_Sizes_id.HeaderText = "SIZE";
+            //col_Sizes_id.Visible = false; 
+            col_Sizes_id.Width = 100;
+            col_Sizes_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Sizes_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Sizes_id);
 
-            DataGridViewTextBoxColumn col_Colour_id = new DataGridViewTextBoxColumn();
-            col_Colour_id.Name = ARTICLE.COLOURS_ID;
-            col_Colour_id.HeaderText = "COLOURS";
-            //col_Colour_id.Visible = false; 
-            col_Colour_id.Width = 100;
-            col_Colour_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Colour_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Colour_id);
+            DataGridViewTextBoxColumn col_Colours_id = new DataGridViewTextBoxColumn();
+            col_Colours_id.Name = ARTICLE.COLOURS_ID;
+            col_Colours_id.HeaderText = "COLOUR";
+            //col_Colours_id.Visible = false; 
+            col_Colours_id.Width = 100;
+            col_Colours_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Colours_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Colours_id);
 
             DataGridViewTextBoxColumn col_Qty = new DataGridViewTextBoxColumn();
             col_Qty.Name = ARTICLE.QTY;
@@ -278,7 +278,7 @@ namespace CXERP
 
          public void Article_lookup()
          {
-             txt_article_no.LookupColNames = new string[] { ARTICLE.PO_ID };
+             txt_article_no.LookupColNames = new string[] { ARTICLE.ARTICLE_NO };
             txt_article_no.LookupUpdate += txt_article_LookupUpdate;
             txt_article_no.AllowNewEntry = true;
             txt_article_no.NewEntryNeeded += txt_article_NewEntryNeeded;

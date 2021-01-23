@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:55 PM
+// last update : 23-01-2021 09:42:04 PM
 
 using System;
 using System.Windows.Forms;
@@ -19,9 +19,10 @@ namespace CXERP
             Setactives();
             SetFocus(); 
             Po_lookup(); 
+            Product_lookup(); 
             Hsncode_lookup(); 
-            Size_lookup(); 
-            Colour_lookup(); 
+            Sizes_lookup(); 
+            Colours_lookup(); 
         }
         
         #region [Private Declare]
@@ -43,14 +44,14 @@ namespace CXERP
         private XLabel lbl_po_id;
         private XTextBox txt_article_no;
         private XLabel lbl_article_no;
-        private XTextBox txt_product_id;
+        private LookupBox txt_product_id;
         private XLabel lbl_product_id;
         private LookupBox txt_hsncode_id;
         private XLabel lbl_hsncode_id;
-        private LookupBox txt_size_id;
-        private XLabel lbl_size_id;
-        private LookupBox txt_colour_id;
-        private XLabel lbl_colour_id;
+        private LookupBox txt_sizes_id;
+        private XLabel lbl_sizes_id;
+        private LookupBox txt_colours_id;
+        private XLabel lbl_colours_id;
         private XTextBox txt_qty;
         private XLabel lbl_qty;
         private XTextBox txt_price;
@@ -88,14 +89,14 @@ namespace CXERP
             lbl_po_id = new XLabel();
             txt_article_no = new XTextBox();
             lbl_article_no = new XLabel();
-            txt_product_id = new XTextBox();
+            txt_product_id = new LookupBox();
             lbl_product_id = new XLabel();
             txt_hsncode_id = new LookupBox();
             lbl_hsncode_id = new XLabel();
-            txt_size_id = new LookupBox();
-            lbl_size_id = new XLabel();
-            txt_colour_id = new LookupBox();
-            lbl_colour_id = new XLabel();
+            txt_sizes_id = new LookupBox();
+            lbl_sizes_id = new XLabel();
+            txt_colours_id = new LookupBox();
+            lbl_colours_id = new XLabel();
             txt_qty = new XTextBox();
             lbl_qty = new XLabel();
             txt_price = new XTextBox();
@@ -245,10 +246,10 @@ namespace CXERP
             finner_panel.Controls.Add(lbl_product_id);
             finner_panel.Controls.Add(txt_hsncode_id);
             finner_panel.Controls.Add(lbl_hsncode_id);
-            finner_panel.Controls.Add(txt_size_id);
-            finner_panel.Controls.Add(lbl_size_id);
-            finner_panel.Controls.Add(txt_colour_id);
-            finner_panel.Controls.Add(lbl_colour_id);
+            finner_panel.Controls.Add(txt_sizes_id);
+            finner_panel.Controls.Add(lbl_sizes_id);
+            finner_panel.Controls.Add(txt_colours_id);
+            finner_panel.Controls.Add(lbl_colours_id);
             finner_panel.Controls.Add(txt_qty);
             finner_panel.Controls.Add(lbl_qty);
             finner_panel.Controls.Add(txt_price);
@@ -319,7 +320,7 @@ namespace CXERP
             lbl_product_id.TextAlign = ContentAlignment.MiddleLeft;
             lbl_product_id.ForeColor = XFontColor.Lbl_ForeColor;
             lbl_product_id.Size =  XSize.OneLabel;
-            lbl_product_id.Location =XLayout.R1_Label(lbl_article_no.Location);
+            lbl_product_id.Location = XLayout.R1_Label(lbl_article_no.Location);
 
             txt_product_id.Font = XFont.TxtFont;
             txt_product_id.ForeColor = XFontColor.TxtFontColor;
@@ -328,7 +329,7 @@ namespace CXERP
             txt_product_id.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
             txt_product_id.Size =  XSize.OneText;
             txt_product_id.Anchor = XAnchor.LTR;
-            txt_product_id.Location =XLayout.R1_Text(txt_article_no.Location);
+            txt_product_id.Location = XLayout.R1_Text(txt_article_no.Location);
             txt_product_id.TabIndex = XTab.Index(txt_article_no.TabIndex);
             txt_product_id.Enter += new EventHandler(Txt_product_id_Enter);
 
@@ -354,46 +355,46 @@ namespace CXERP
             txt_hsncode_id.Enter += new EventHandler(Txt_hsncode_id_Enter);
 
 
-            lbl_size_id.Font = XFont.Font_10B;
-            lbl_size_id.Name = "lbl_size_id";
-            lbl_size_id.Text = "   Size";
-            lbl_size_id.Anchor = XAnchor.LT;
-            lbl_size_id.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_size_id.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_size_id.Size =  XSize.OneLabel;
-            lbl_size_id.Location =XLayout.R1_Label(lbl_hsncode_id.Location);
+            lbl_sizes_id.Font = XFont.Font_10B;
+            lbl_sizes_id.Name = "lbl_sizes_id";
+            lbl_sizes_id.Text = "   Size";
+            lbl_sizes_id.Anchor = XAnchor.LT;
+            lbl_sizes_id.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_sizes_id.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_sizes_id.Size =  XSize.OneLabel;
+            lbl_sizes_id.Location =XLayout.R1_Label(lbl_hsncode_id.Location);
 
-            txt_size_id.Font = XFont.TxtFont;
-            txt_size_id.ForeColor = XFontColor.TxtFontColor;
-            txt_size_id.BackColor = XTheme.TxtBackcolor;
-            txt_size_id.Name = "txt_size_id";
-            txt_size_id.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_size_id.Size =  XSize.OneText;
-            txt_size_id.Anchor = XAnchor.LTR;
-            txt_size_id.Location =XLayout.R1_Text(txt_hsncode_id.Location);
-            txt_size_id.TabIndex = XTab.Index(txt_hsncode_id.TabIndex);
-            txt_size_id.Enter += new EventHandler(Txt_size_id_Enter);
+            txt_sizes_id.Font = XFont.TxtFont;
+            txt_sizes_id.ForeColor = XFontColor.TxtFontColor;
+            txt_sizes_id.BackColor = XTheme.TxtBackcolor;
+            txt_sizes_id.Name = "txt_sizes_id";
+            txt_sizes_id.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
+            txt_sizes_id.Size =  XSize.OneText;
+            txt_sizes_id.Anchor = XAnchor.LTR;
+            txt_sizes_id.Location =XLayout.R1_Text(txt_hsncode_id.Location);
+            txt_sizes_id.TabIndex = XTab.Index(txt_hsncode_id.TabIndex);
+            txt_sizes_id.Enter += new EventHandler(Txt_sizes_id_Enter);
 
 
-            lbl_colour_id.Font = XFont.Font_10B;
-            lbl_colour_id.Name = "lbl_colour_id";
-            lbl_colour_id.Text = "   Colour";
-            lbl_colour_id.Anchor = XAnchor.LT;
-            lbl_colour_id.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_colour_id.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_colour_id.Size =  XSize.OneLabel;
-            lbl_colour_id.Location =XLayout.R1_Label(lbl_size_id.Location);
+            lbl_colours_id.Font = XFont.Font_10B;
+            lbl_colours_id.Name = "lbl_colours_id";
+            lbl_colours_id.Text = "   Colour";
+            lbl_colours_id.Anchor = XAnchor.LT;
+            lbl_colours_id.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_colours_id.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_colours_id.Size =  XSize.OneLabel;
+            lbl_colours_id.Location =XLayout.R1_Label(lbl_sizes_id.Location);
 
-            txt_colour_id.Font = XFont.TxtFont;
-            txt_colour_id.ForeColor = XFontColor.TxtFontColor;
-            txt_colour_id.BackColor = XTheme.TxtBackcolor;
-            txt_colour_id.Name = "txt_colour_id";
-            txt_colour_id.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_colour_id.Size =  XSize.OneText;
-            txt_colour_id.Anchor = XAnchor.LTR;
-            txt_colour_id.Location =XLayout.R1_Text(txt_size_id.Location);
-            txt_colour_id.TabIndex = XTab.Index(txt_size_id.TabIndex);
-            txt_colour_id.Enter += new EventHandler(Txt_colour_id_Enter);
+            txt_colours_id.Font = XFont.TxtFont;
+            txt_colours_id.ForeColor = XFontColor.TxtFontColor;
+            txt_colours_id.BackColor = XTheme.TxtBackcolor;
+            txt_colours_id.Name = "txt_colours_id";
+            txt_colours_id.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
+            txt_colours_id.Size =  XSize.OneText;
+            txt_colours_id.Anchor = XAnchor.LTR;
+            txt_colours_id.Location =XLayout.R1_Text(txt_sizes_id.Location);
+            txt_colours_id.TabIndex = XTab.Index(txt_sizes_id.TabIndex);
+            txt_colours_id.Enter += new EventHandler(Txt_colours_id_Enter);
 
 
             lbl_qty.Font = XFont.Font_10B;
@@ -403,7 +404,7 @@ namespace CXERP
             lbl_qty.TextAlign = ContentAlignment.MiddleLeft;
             lbl_qty.ForeColor = XFontColor.Lbl_ForeColor;
             lbl_qty.Size =  XSize.OneLabel;
-            lbl_qty.Location =XLayout.R1_Label(lbl_colour_id.Location);
+            lbl_qty.Location =XLayout.R1_Label(lbl_colours_id.Location);
 
             txt_qty.Font = XFont.TxtFont;
             txt_qty.ForeColor = XFontColor.TxtFontColor;
@@ -412,8 +413,8 @@ namespace CXERP
             txt_qty.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
             txt_qty.Size =  XSize.OneText;
             txt_qty.Anchor = XAnchor.LTR;
-            txt_qty.Location =XLayout.R1_Text(txt_colour_id.Location);
-            txt_qty.TabIndex = XTab.Index(txt_colour_id.TabIndex);
+            txt_qty.Location =XLayout.R1_Text(txt_colours_id.Location);
+            txt_qty.TabIndex = XTab.Index(txt_colours_id.TabIndex);
             txt_qty.Enter += new EventHandler(Txt_qty_Enter);
 
 

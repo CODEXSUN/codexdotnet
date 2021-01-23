@@ -20,7 +20,7 @@ namespace CXTEST
             string db = "dev_codexsun_db";
 
 
-            new Style_Tbl(db);
+            new Article_Tbl(db);
 
 
 

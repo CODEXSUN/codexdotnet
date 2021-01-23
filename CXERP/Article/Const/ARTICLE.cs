@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:38:55 PM
+// last update : 23-01-2021 09:42:03 PM
 
 namespace CXERP
 {
@@ -13,8 +13,8 @@ namespace CXERP
         public string Article_no { get; set; }
         public string Product_id { get; set; }
         public string Hsncode_id { get; set; }
-        public string Size_id { get; set; }
-        public string Colour_id { get; set; }
+        public string Sizes_id { get; set; }
+        public string Colours_id { get; set; }
         public string Qty { get; set; }
         public decimal Price { get; set; }
         public string Barcode { get; set; }
