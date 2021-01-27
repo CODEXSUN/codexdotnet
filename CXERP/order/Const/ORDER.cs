@@ -17,7 +17,6 @@ namespace CXERP
         public string Ordertype_id { get; set; }
         public string Party_id { get; set; }
         public string Party_ref { get; set; }
-        public string Style_ref { get; set; }
         public string Refered_no { get; set; }
         public string Locked { get; set; }
         public string Notes { get; set; }
@@ -40,7 +39,6 @@ namespace CXERP
         public const string ORDERTYPE_ID = "ORDERTYPE_ID";
         public const string PARTY_ID = "PARTY_ID";
         public const string PARTY_REF = "PARTY_REF";
-        public const string STYLE_REF = "STYLE_REF";
         public const string REFERED_NO = "REFERED_NO";
         public const string LOCKED = "LOCKED";
         public const string NOTES = "NOTES";

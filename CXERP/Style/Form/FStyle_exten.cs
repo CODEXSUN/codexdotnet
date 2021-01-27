@@ -85,15 +85,18 @@ namespace CXERP
 
                 switch (lookupColName)
                 {
-                    case STYLEITEMS.PRODUCT_ID:
+                    case STYLEITEMS.ARTICLE_ID:
                         ShowLookupForm();
                         break;
-                    case STYLEITEMS.COLOURS_ID:
-                        ShowLookupForm();
-                        break;
-                    case STYLEITEMS.SIZES_ID:
-                        ShowLookupForm();
-                        break;
+                    //case STYLEITEMS.PRODUCT_ID:
+                    //    ShowLookupForm();
+                    //    break;
+                    //case STYLEITEMS.COLOURS_ID:
+                    //    ShowLookupForm();
+                    //    break;
+                    //case STYLEITEMS.SIZES_ID:
+                    //    ShowLookupForm();
+                    //    break;
                 }
             }
         }
@@ -138,6 +141,21 @@ namespace CXERP
             switch (lookupColName)
             {
 
+                case STYLEITEMS.ARTICLE_ID:
+                    {
+                        frmLookup.LookupColNames = new string[] { ARTICLE.ARTICLE_NO, PRODUCT.PRODUCT_NAME, COLOURS.COLOURS_NAME };
+                        frmLookup.SelectedPkValue = editgrid[STYLEITEMS.ARTICLE_ID, lookupRow].Value;
+                        frmLookup.AllowNewEntry = true;
+                        frmLookup.AllowEmptySelection = true;
+
+                        if (txt_style_no.Text != "")
+                        {
+                            frmLookup.LookupList = CArticle_exten.GetforLookup();
+                            frmLookup.LoadLookupList();
+                        }
+                    }
+                    break;
+
                 case STYLEITEMS.PRODUCT_ID:
                     {
                         frmLookup.LookupColNames = new string[] { PRODUCT.PRODUCT_NAME };
@@ -145,7 +163,7 @@ namespace CXERP
                         frmLookup.AllowNewEntry = true;
                         frmLookup.AllowEmptySelection = true;
 
-                        if (txt_article_no.Text != "")
+                        if (txt_style_no.Text != "")
                         {
                             frmLookup.LookupList = CProduct_exten.GetforLookup(new DAL());
                             frmLookup.LoadLookupList();
@@ -160,7 +178,7 @@ namespace CXERP
                         frmLookup.AllowNewEntry = true;
                         frmLookup.AllowEmptySelection = true;
 
-                        if (txt_article_no.Text != "")
+                        if (txt_style_no.Text != "")
                         {
                             frmLookup.LookupList = CColours_exten.GetforLookup(new DAL());
                             frmLookup.LoadLookupList();
@@ -175,7 +193,7 @@ namespace CXERP
                         frmLookup.AllowNewEntry = true;
                         frmLookup.AllowEmptySelection = true;
 
-                        if (txt_article_no.Text != "")
+                        if (txt_style_no.Text != "")
                         {
                             frmLookup.LookupList = CSizes_exten.GetforLookup(new DAL());
                             frmLookup.LoadLookupList();
@@ -211,6 +229,25 @@ namespace CXERP
 
             switch (lookupColName)
             {
+
+                case STYLEITEMS.ARTICLE_ID:
+                    if (vEntity == null)
+                    {
+                        editgrid[STYLEITEMS.ARTICLE_ID, lookupRow].Value = "";
+                    }
+                    else
+                    {
+                        editgrid[STYLEITEMS.ARTICLE_ID, lookupRow].Value = vEntity[ARTICLE.ARTICLE_NO];
+                        editgrid[STYLEITEMS.PRODUCT_ID, lookupRow].Value = vEntity[PRODUCT.PRODUCT_NAME];
+                        editgrid[STYLEITEMS.COLOURS_ID, lookupRow].Value = vEntity[COLOURS.COLOURS_NAME];
+                        editgrid[STYLEITEMS.SIZES_ID, lookupRow].Value = vEntity[SIZES.SIZES_NAME];
+                        editgrid[STYLEITEMS.QTY, lookupRow].Value = vEntity[ARTICLE.QTY];
+                        editgrid[STYLEITEMS.PRICE, lookupRow].Value = vEntity[ARTICLE.PRICE];
+                    }
+                    editgrid.CurrentCell = editgrid[STYLEITEMS.ARTICLE_ID, lookupRow];
+                    break;
+
+
                 case STYLEITEMS.PRODUCT_ID:
                     if (vEntity == null)
                     {
@@ -268,6 +305,9 @@ namespace CXERP
         {
             switch (lookupColName)
             {
+                case STYLEITEMS.ARTICLE_ID:
+                    FArticleNewEntry(pValue);
+                    break;
                 case STYLEITEMS.PRODUCT_ID:
                     FproductNewEntry(pValue);
                     break;
@@ -285,6 +325,35 @@ namespace CXERP
         #endregion[Look up]
 
         #region [New Entry]
+
+        #region[Article]
+
+        private FArticle xarticle = null;
+        void FArticleNewEntry(string pValue)
+        {
+            if (xarticle == null)
+            {
+                xarticle = new FArticle();
+                xarticle.FArticle_NeedToRefresh += Xarticle_refresh;
+            }
+            this.Parent.Controls.Add(xarticle);
+            xarticle.Dock = DockStyle.Fill;
+            xarticle.Show();
+            xarticle.BringToFront();
+            xarticle.Focus();
+            xarticle.SetAction(BtnEvent.New, null);
+            xarticle.SetFocus();
+            xarticle.setname(pValue);
+        }
+        private void Xarticle_refresh(object sender, EventArgs e)
+        {
+            editgrid[STYLEITEMS.ARTICLE_ID, lookupRow].Value = xarticle.GetName();
+            editgrid.Focus();
+            editgrid.CurrentCell = editgrid[STYLEITEMS.PRODUCT_ID, lookupRow];
+
+        }
+
+        #endregion[Article]
 
         #region[Product]
 

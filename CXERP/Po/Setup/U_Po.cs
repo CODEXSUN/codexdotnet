@@ -1,13 +1,13 @@
 //// Version : 4.0.0.2 Date : 10-08-2020
 //// Auto Generated
-//// last update : 23-01-2021 08:39:04 PM
+//// last update : 25-01-2021 10:14:36 AM
 
 //using System; 
 //using System.Data; 
 //using CXLIB; 
 //using CXCORE; 
 
-//namespace AXCODE
+//namespace CXERP
 //{
 //    public static class U_Po
 //    {
@@ -71,6 +71,7 @@
 //                        {
 //                        Po_no = redr[PO.PO_NO].ToString(),
 //                        Po_date = redr[PO.PO_DATE].ToString(),
+//                        Delivery_date = redr[PO.DELIVERY_DATE].ToString(),
 //                        Notes = redr[PO.NOTES].ToString(),
 //                        Active_id = redr[PO.ACTIVE_ID].ToString(),
 //                        User_id = "1"
@@ -89,7 +90,7 @@
 //            private static bool CheckData(Po obj)
 //            {
 //                string q = "USE CODEXSUN_DB; ";
-//                q += "SELECT * FROM " + PO.PO_TBL + " WHERE " + PO.PO_NO + " = '" + obj.Po_name + "'; ";
+//                q += "SELECT * FROM " + PO.PO_TBL + " WHERE " + PO.PO_NAME + " = '" + obj.Po_name + "'; ";
 
 //                using (IDataReader redr = new DAL().Listreader(q))
 //                {

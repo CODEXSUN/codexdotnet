@@ -460,7 +460,7 @@ namespace CXERP
             listgrid.Columns.Add(col_Style_no);
 
             DataGridViewTextBoxColumn col_Style_date = new DataGridViewTextBoxColumn();
-            col_Style_date.Name = STYLE.STYLE_DATE;
+            col_Style_date.Name = STYLE.STYLE_NAME;
             col_Style_date.HeaderText = "STYLE DATE";
             //col_Style_date.Visible = false;
             col_Style_date.Width = 162;

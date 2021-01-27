@@ -20,7 +20,7 @@ namespace CXERP
             q += AddFields.Foreign(STYLE.STYLE_TBL, STYLE.COMPANY_ID);
             q += AddFields.Foreign(STYLE.STYLE_TBL, STYLE.ACY_ID);
             q += AddFields.VARCHAR_500(STYLE.STYLE_NO); 
-            q += AddFields.Date(STYLE.STYLE_DATE); 
+            q += AddFields.VARCHAR_500(STYLE.STYLE_NAME); 
             q += AddFields.Smallint(STYLE.LOCKED); 
             q += AddFields.Notes;
             q += AddFields.Active;
@@ -44,6 +44,7 @@ namespace CXERP
             q += AddFields.Primary(STYLEITEMS.STYLEITEMS_ID);
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.STYLE_ID); 
             q += AddFields.VARCHAR_500(STYLEITEMS.STYLE_NO); 
+            q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.ARTICLE_ID); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.PRODUCT_ID); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.COLOURS_ID); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.SIZES_ID); 

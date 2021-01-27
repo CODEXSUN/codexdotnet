@@ -38,10 +38,10 @@ namespace CXERP
         private OfficeButton btn_print;
         private OfficeButton btn_splitter;
 
-        private XTextBox txt_article_no;
+        private XTextBox txt_style_no;
         private XLabel lbl_article_no;
-        private xDatepicker txt_article_date;
-        private XLabel lbl_article_date;
+        private XTextBox txt_style_name;
+        private XLabel lbl_style_name;
 
         private EditGridView editgrid;
 
@@ -71,10 +71,10 @@ namespace CXERP
             lbl_header = new Header();
             btn_close = new CloseButton();
 
-            txt_article_no = new XTextBox();
+            txt_style_no = new XTextBox();
             lbl_article_no = new XLabel();
-            txt_article_date = new xDatepicker();
-            lbl_article_date = new XLabel();
+            txt_style_name = new XTextBox();
+            lbl_style_name = new XLabel();
             editgrid = new EditGridView();
 
             txt_notes = new RichTextBox();
@@ -212,10 +212,10 @@ namespace CXERP
 
             finner_panel.Controls.Add(txt_notes);
             finner_panel.Controls.Add(lbl_notes);
-            finner_panel.Controls.Add(txt_article_no);
+            finner_panel.Controls.Add(txt_style_no);
             finner_panel.Controls.Add(lbl_article_no);
-            finner_panel.Controls.Add(txt_article_date);
-            finner_panel.Controls.Add(lbl_article_date);
+            finner_panel.Controls.Add(txt_style_name);
+            finner_panel.Controls.Add(lbl_style_name);
             finner_panel.Controls.Add(editgrid);
             finner_panel.Controls.Add(btn_save);
             finner_panel.Controls.Add(btn_active);
@@ -233,7 +233,7 @@ namespace CXERP
             #region[Properties of control]
 
             lbl_article_no.Font = XFont.Font_10B;
-            lbl_article_no.Name = "lbl_garment_article_no";
+            lbl_article_no.Name = "lbl_style_no";
             lbl_article_no.Text = " Style no";
             lbl_article_no.Anchor = XAnchor.LT;
             lbl_article_no.TextAlign = ContentAlignment.MiddleLeft;
@@ -241,43 +241,41 @@ namespace CXERP
             lbl_article_no.Size =  XSize.OneLabel;
             lbl_article_no.Location =XLayout.FirstLabel;
 
-            txt_article_no.Font = XFont.TxtFont;
-            txt_article_no.ForeColor = XFontColor.TxtFontColor;
-            txt_article_no.BackColor = XTheme.TxtBackcolor;
-            txt_article_no.Name = "txt_garment_article_no";
-            txt_article_no.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_article_no.Size =  XSize.TwoText;
-            txt_article_no.Anchor = XAnchor.LT;
-            txt_article_no.Location =XLayout.FirstText;
-            txt_article_no.TabIndex = XTab.Txt_TabIndex;
-            txt_article_no.Enter += new EventHandler(Txt_article_no_Enter);
+            txt_style_no.Font = XFont.TxtFont;
+            txt_style_no.ForeColor = XFontColor.TxtFontColor;
+            txt_style_no.BackColor = XTheme.TxtBackcolor;
+            txt_style_no.Name = "txt_style_no";
+            txt_style_no.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
+            txt_style_no.Size =  XSize.OneText;
+            txt_style_no.Anchor = XAnchor.LT;
+            txt_style_no.Location =XLayout.FirstText;
+            txt_style_no.TabIndex = XTab.Txt_TabIndex;
+            txt_style_no.Enter += new EventHandler(Txt_article_no_Enter);
 
 
-            lbl_article_date.Font = XFont.Font_10B;
-            lbl_article_date.Name = "lbl_garment_article_date";
-            lbl_article_date.Text = "   Style date";
-            lbl_article_date.Anchor = XAnchor.LT;
-            lbl_article_date.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_article_date.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_article_date.Size =  XSize.TwoLabel;
-            lbl_article_date.Location =XLayout.R1_2Label_2(lbl_article_no.Location);
+            lbl_style_name.Font = XFont.Font_10B;
+            lbl_style_name.Name = "lbl_style_name";
+            lbl_style_name.Text = " Style name";
+            lbl_style_name.Anchor = XAnchor.LT;
+            lbl_style_name.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_style_name.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_style_name.Size =  XSize.OneLabel;
+            lbl_style_name.Location =XLayout.R1_Label(lbl_article_no.Location);
 
-            txt_article_date.Font = XFont.TxtFont;
-            txt_article_date.ForeColor = XFontColor.TxtFontColor;
-            txt_article_date.BackColor = XTheme.TxtBackcolor;
-            txt_article_date.Name = "txt_garment_article_date";
-            txt_article_date.CustomFormat = "dd-MM-yyyy";
-            txt_article_date.Format = DateTimePickerFormat.Custom;
-            txt_article_date.Size =  XSize.TwoText;
-            txt_article_date.Anchor = XAnchor.LTR;
-            txt_article_date.Location =XLayout.R1_2Text_2(txt_article_no.Location);
-            txt_article_date.TabIndex = XTab.Index(txt_article_no.TabIndex);
-            txt_article_date.Enter += new EventHandler(Txt_Style_date_Enter);
+            txt_style_name.Font = XFont.TxtFont;
+            txt_style_name.ForeColor = XFontColor.TxtFontColor;
+            txt_style_name.BackColor = XTheme.TxtBackcolor;
+            txt_style_name.Name = "txt_style_name";
+            txt_style_name.Size =  XSize.OneText;
+            txt_style_name.Anchor = XAnchor.LTR;
+            txt_style_name.Location =XLayout.R1_Text(txt_style_no.Location);
+            txt_style_name.TabIndex = XTab.Index(txt_style_no.TabIndex);
+            txt_style_name.Enter += new EventHandler(Txt_Style_date_Enter);
 
-            editgrid.Location = new Point(XLayout.H_left, txt_article_date.Bottom + 10); 
+            editgrid.Location = new Point(XLayout.H_left, txt_style_name.Bottom + 10); 
             editgrid.Name = "editgrid"; 
             editgrid.Size = new Size(finner_panel.Width - 50, 250); 
-            editgrid.TabIndex = XTab.Index(txt_article_date.TabIndex);
+            editgrid.TabIndex = XTab.Index(txt_style_name.TabIndex);
             editgrid.RowsLimit = 12; 
             Point p = new Point(editgrid.Left , editgrid.Bottom); 
 
@@ -310,7 +308,7 @@ namespace CXERP
             btn_save.Font = XFont.BtnFont;
             btn_save.Size = XSize.BtnOne;
             btn_save.Location = XLayout.BtnSave;
-            btn_save.TabIndex = XTab.Index(txt_article_date.TabIndex);
+            btn_save.TabIndex = XTab.Index(txt_style_name.TabIndex);
             btn_save.Name = "btn_save";
             btn_save.Text = "&SAVE";
             btn_save.Themes = XTheme.BlueBtn;
@@ -354,12 +352,12 @@ namespace CXERP
 
         internal string GetName()
         {
-            return txt_article_no.Text;
+            return txt_style_no.Text;
         }
 
         internal void Setname(string pValue)
         {
-            txt_article_no.Text = pValue;
+            txt_style_no.Text = pValue;
         }
 
         #region[Init Grid]
@@ -408,11 +406,20 @@ namespace CXERP
             col_Style_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Style_no);
 
+            DataGridViewTextBoxColumn col_Article_id = new DataGridViewTextBoxColumn();
+            col_Article_id.Name = STYLEITEMS.ARTICLE_ID;
+            col_Article_id.HeaderText = "ARTICLE";
+            //col_Article_id.Visible = false; 
+            col_Article_id.Width = 170;
+            col_Article_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_Article_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Article_id);
+
             DataGridViewTextBoxColumn col_Product_id = new DataGridViewTextBoxColumn();
             col_Product_id.Name = STYLEITEMS.PRODUCT_ID;
             col_Product_id.HeaderText = "PRODUCT";
             //col_Product_id.Visible = false; 
-            col_Product_id.Width = 500;
+            col_Product_id.Width = 400;
             col_Product_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Product_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Product_id);
@@ -430,7 +437,7 @@ namespace CXERP
             col_Sizes_id.Name = STYLEITEMS.SIZES_ID;
             col_Sizes_id.HeaderText = "SIZES";
             //col_Sizes_id.Visible = false; 
-            col_Sizes_id.Width = 150;
+            col_Sizes_id.Width = 100;
             col_Sizes_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Sizes_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Sizes_id);
@@ -439,7 +446,7 @@ namespace CXERP
             col_Qty.Name = STYLEITEMS.QTY;
             col_Qty.HeaderText = "QTY";
             //col_Qty.Visible = false; 
-            col_Qty.Width = 200;
+            col_Qty.Width = 100;
             col_Qty.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Qty.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Qty);
@@ -448,7 +455,7 @@ namespace CXERP
             col_Price.Name = STYLEITEMS.PRICE;
             col_Price.HeaderText = "PRICE";
             //col_Price.Visible = false; 
-            col_Price.Width = 150;
+            col_Price.Width = 100;
             col_Price.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Price);

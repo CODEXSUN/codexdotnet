@@ -13,7 +13,7 @@ namespace CXERP
         public string Company_id { get; set; }
         public string Acy_id { get; set; }
         public string Style_no { get; set; }
-        public string Style_date { get; set; }
+        public string Style_name { get; set; }
         public string Locked { get; set; }
         public string Notes { get; set; }
         public string Active_id { get; set; }
@@ -32,7 +32,7 @@ namespace CXERP
         public const string ACY_ID = "ACY_ID";
         public const string ORDER_ID = "ACY_ID";
         public const string STYLE_NO = "STYLE_NO";
-        public const string STYLE_DATE = "STYLE_DATE";
+        public const string STYLE_NAME = "STYLE_NAME";
         public const string LOCKED = "LOCKED";
         public const string NOTES = "NOTES";
         public const string ACTIVE_ID = "ACTIVE_ID";

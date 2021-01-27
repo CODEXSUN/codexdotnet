@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System;
 using System.Windows.Forms;
@@ -74,6 +74,13 @@ namespace CXERP
             lbl_po_date.BorderColor = Theme.lbl_EnterBorderColor;
             lbl_po_date.ForeColor = Theme.lbl_EnterForeColor;
         }
+        private void Txt_delivery_date_Enter(object sender, EventArgs e)
+        {
+            Change_infocus();
+            lbl_delivery_date.BackColor = Theme.lbl_EnterBackColor;
+            lbl_delivery_date.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_delivery_date.ForeColor = Theme.lbl_EnterForeColor;
+        }
         private void Txt_notes_Enter(object sender, EventArgs e)
         {
             Change_infocus();
@@ -91,6 +98,10 @@ namespace CXERP
             lbl_po_date.BackColor = Theme.lbl_BackColor;
             lbl_po_date.BorderColor = Theme.lbl_BorderColor;
             lbl_po_date.ForeColor = Theme.lbl_ForeColor;
+            
+            lbl_delivery_date.BackColor = Theme.lbl_BackColor;
+            lbl_delivery_date.BorderColor = Theme.lbl_BorderColor;
+            lbl_delivery_date.ForeColor = Theme.lbl_ForeColor;
             
             lbl_notes.BackColor = Theme.lbl_BackColor;
             lbl_notes.BorderColor = Theme.lbl_BorderColor;

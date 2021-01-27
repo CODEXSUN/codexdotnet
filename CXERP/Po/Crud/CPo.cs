@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using CXLIB;
 
@@ -20,6 +20,7 @@ namespace CXERP
                     Po_id = string.Empty,
                     Po_no = string.Empty,
                     Po_date = string.Empty,
+                    Delivery_date = string.Empty,
                     Notes = string.Empty,
                     Active_id = Core.Active,
                     User_id = Current.User
@@ -37,6 +38,7 @@ namespace CXERP
             q = q.Replace("@" + PO.PO_ID + "@", "" + ConvertTO.SqlString(v.Po_id) + "");
             q = q.Replace("@" + PO.PO_NO + "@", "" + ConvertTO.SqlString(v.Po_no) + "");
             q = q.Replace("@" + PO.PO_DATE + "@", "" + ConvertTO.SqlDate(v.Po_date) + "");
+            q = q.Replace("@" + PO.DELIVERY_DATE + "@", "" + ConvertTO.SqlDate(v.Delivery_date) + "");
             q = q.Replace("@" + PO.NOTES + "@", "" + ConvertTO.SqlString(v.Notes) + "");
             q = q.Replace("@" + PO.ACTIVE_ID + "@", "" + ConvertTO.SqlString(v.Active_id) + "");
             q = q.Replace("@" + PO.USER_ID + "@", "" + ConvertTO.SqlString(v.User_id) + "");
@@ -51,12 +53,14 @@ namespace CXERP
             string q = " INSERT INTO " + PO.PO_TBL + " ( ";
             q += " " + PO.PO_NO + " \r\n ";
             q += "," + PO.PO_DATE + " \r\n ";
+            q += "," + PO.DELIVERY_DATE + " \r\n ";
             q += "," + PO.NOTES + " \r\n ";
             q += "," + PO.ACTIVE_ID + " \r\n ";
             q += "," + PO.USER_ID + " \r\n ";
             q += " ) VALUES ( ";
             q += "  @" + PO.PO_NO + "@ \r\n ";
                 q += ", @" + PO.PO_DATE + "@ \r\n ";
+                q += ", @" + PO.DELIVERY_DATE + "@ \r\n ";
             q += ", @" + PO.NOTES + "@ \r\n ";
             q += ", @" + PO.ACTIVE_ID + "@ \r\n ";
             q += ", @" + PO.USER_ID + "@ \r\n ";
@@ -73,6 +77,7 @@ namespace CXERP
             string q = "UPDATE " + PO.PO_TBL + " SET";
             q += " " + PO.PO_NO + " = @" + PO.PO_NO + "@ \r\n ";
             q += "," + PO.PO_DATE + " = @" + PO.PO_DATE + "@ \r\n ";
+            q += "," + PO.DELIVERY_DATE + " = @" + PO.DELIVERY_DATE + "@ \r\n ";
             q += "," + PO.NOTES + " = @" + PO.NOTES + "@ \r\n ";
             q += "," + PO.ACTIVE_ID + " = @" + PO.ACTIVE_ID + "@ \r\n ";
             q += "," + PO.USER_ID + " = @" + PO.USER_ID + "@ \r\n ";

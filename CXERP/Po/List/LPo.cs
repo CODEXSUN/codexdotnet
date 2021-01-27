@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System; 
 using System.Drawing; 
@@ -38,12 +38,21 @@ namespace CXERP
 
             DataGridViewTextBoxColumn col_Po_date = new DataGridViewTextBoxColumn();
             col_Po_date.Name = PO.PO_DATE;
-            col_Po_date.HeaderText = "DATE";
+            col_Po_date.HeaderText = "PO DATE";
             //col_Po_date.Visible = false; 
-            col_Po_date.Width = 100;
+            col_Po_date.Width = 200;
             col_Po_date.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col_Po_date.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             listgrid.Columns.Add(col_Po_date);
+
+            DataGridViewTextBoxColumn col_Delivery_date = new DataGridViewTextBoxColumn();
+            col_Delivery_date.Name = PO.DELIVERY_DATE;
+            col_Delivery_date.HeaderText = "DELIVERY DATE";
+            //col_Delivery_date.Visible = false; 
+            col_Delivery_date.Width = 200;
+            col_Delivery_date.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            col_Delivery_date.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            listgrid.Columns.Add(col_Delivery_date);
 
             DataGridViewTextBoxColumn col_Notes = new DataGridViewTextBoxColumn();
             col_Notes.Name = PO.NOTES;

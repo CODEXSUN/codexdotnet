@@ -71,8 +71,8 @@ namespace CXERP
         private void LoadData(Style obj)
         {
             vId = obj.Style_id;
-            txt_article_no.Text = obj.Style_no;
-            txt_article_date.Text = obj.Style_date;
+            txt_style_no.Text = obj.Style_no;
+            txt_style_name.Text = obj.Style_name;
             txt_notes.Text = obj.Notes;
             Core.Stative = obj.Active_id;
             Setactives();
@@ -95,6 +95,7 @@ namespace CXERP
                     row.Cells[STYLEITEMS.STYLEITEMS_ID].Value = (list[r].Styleitems_id) + "";
                     row.Cells[STYLEITEMS.STYLE_ID].Value = (list[r].Style_id) + "";
                     row.Cells[STYLEITEMS.STYLE_NO].Value = (list[r].Style_no) + "";
+                    row.Cells[STYLEITEMS.ARTICLE_ID].Value = (list[r].Article_id) + "";
                     row.Cells[STYLEITEMS.PRODUCT_ID].Value = (list[r].Product_id) + "";
                     row.Cells[STYLEITEMS.COLOURS_ID].Value = (list[r].Colours_id) + "";
                     row.Cells[STYLEITEMS.SIZES_ID].Value = (list[r].Sizes_id) + "";
@@ -112,8 +113,8 @@ namespace CXERP
         {
             bool pReadOnly = !pEnabled;
 
-            txt_article_no.Enabled = !pReadOnly;
-            txt_article_date.Enabled = !pReadOnly;
+            txt_style_no.Enabled = !pReadOnly;
+            txt_style_name.Enabled = !pReadOnly;
             txt_notes.Enabled = !pReadOnly;
 
             btn_active.Enabled = !pReadOnly;
@@ -236,11 +237,11 @@ namespace CXERP
             Style fobj = new Style()
             {
                 Style_id = vId,
-                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_article_no.Text + "~"+ txt_article_date.Text,
+                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_style_no.Text + "~"+ txt_style_name.Text,
                 Company_id = Current.Company_id,
                 Acy_id = Current.Acy_id,
-                Style_no = txt_article_no.Text,
-                Style_date = txt_article_date.Text,
+                Style_no = txt_style_no.Text,
+                Style_name = txt_style_name.Text,
                 Locked = Core.Unlocked,
                 Active_id = Core.Stative,
                 Notes = txt_notes.Text,
@@ -264,6 +265,7 @@ namespace CXERP
                 Styleitems obj = new Styleitems();
 
                 if (
+                    (editgrid[STYLEITEMS.ARTICLE_ID, r].Value + "") == "" ||
                (editgrid[STYLEITEMS.PRODUCT_ID, r].Value + "") == "" ||
                 (editgrid[STYLEITEMS.QTY, r].Value + "") == "" ||
                 (editgrid[STYLEITEMS.PRICE, r].Value + "") == ""
@@ -275,7 +277,8 @@ namespace CXERP
                 {
                     obj.Styleitems_id = "";
                     obj.Style_id = vId;
-                    obj.Style_no = txt_article_no.Text;
+                    obj.Style_no = txt_style_no.Text;
+                    obj.Article_id = CArticle_exten.GetId_Name(editgrid[STYLEITEMS.ARTICLE_ID, r].Value + "");
                     obj.Product_id = CProduct_exten.GetId_Name(editgrid[STYLEITEMS.PRODUCT_ID, r].Value + "");
                     obj.Colours_id = CColours_exten.GetId_Name(editgrid[STYLEITEMS.COLOURS_ID, r].Value + "");
                     obj.Sizes_id = CSizes_exten.GetId_Name(editgrid[STYLEITEMS.SIZES_ID, r].Value + "");
@@ -303,10 +306,10 @@ namespace CXERP
 
         private bool Validation()
         {
-            if (txt_article_no.Text.Trim().Length == 0)
+            if (txt_style_no.Text.Trim().Length == 0)
             {
                 MessageBox.Show(this.FindForm(), "Style no should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_article_no.Focus();
+                txt_style_no.Focus();
                 return false;
             }
 

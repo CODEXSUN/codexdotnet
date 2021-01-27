@@ -76,7 +76,6 @@ namespace CXERP
             txt_ordertype_id.Text = obj.Ordertype_id;
             txt_party_id.Text = obj.Party_id;
             txt_party_ref.Text = obj.Party_ref;
-            txt_style_ref.Text = obj.Style_ref;
             txt_notes.Text = obj.Notes;
             Core.Stative = obj.Active_id;
             Setactives();
@@ -99,11 +98,12 @@ namespace CXERP
                     row.Cells[ORDERITEMS.ORDERITEMS_ID].Value = (list[r].Orderitems_id) + "";
                     row.Cells[ORDERITEMS.ORDER_ID].Value = (list[r].Order_id) + "";
                     row.Cells[ORDERITEMS.ORDER_NO].Value = (list[r].Order_no) + "";
-                    row.Cells[ORDERITEMS.PRODUCT_ID].Value = (list[r].Product_id) + "";
+                    row.Cells[ORDERITEMS.STYLE_ID].Value = (list[r].Style_id) + "";
+                    row.Cells[ORDERITEMS.STYLE_NAME].Value = (list[r].Style_name) + "";
                     row.Cells[ORDERITEMS.COLOURS_ID].Value = (list[r].Colours_id) + "";
-                    row.Cells[ORDERITEMS.SIZES_ID].Value = (list[r].Sizes_id) + "";
                     row.Cells[ORDERITEMS.QTY].Value = (list[r].Qty) + "";
                     row.Cells[ORDERITEMS.PRICE].Value = (list[r].Price) + "";
+                    row.Cells[ORDERITEMS.MRP].Value = (list[r].Mrp) + "";
                 }
             }
         }
@@ -121,7 +121,6 @@ namespace CXERP
             txt_ordertype_id.Enabled = !pReadOnly;
             txt_party_id.Enabled = !pReadOnly;
             txt_party_ref.Enabled = !pReadOnly;
-            txt_style_ref.Enabled = !pReadOnly;
             txt_notes.Enabled = !pReadOnly;
 
             btn_active.Enabled = !pReadOnly;
@@ -252,7 +251,6 @@ namespace CXERP
                 Ordertype_id = COrdertype_exten.GetId_Name(txt_ordertype_id.Text),
                 Party_id = CParty_exten.GetId_Name(txt_party_id.Text),
                 Party_ref = txt_party_ref.Text,
-                Style_ref = txt_style_ref.Text,
                 Refered_no = "",
                 Locked = Core.Unlocked,
                 Active_id = Core.Stative,
@@ -277,7 +275,7 @@ namespace CXERP
                 Orderitems obj = new Orderitems();
 
                 if (
-               (editgrid[ORDERITEMS.PRODUCT_ID, r].Value + "") == "" ||
+               (editgrid[ORDERITEMS.STYLE_ID, r].Value + "") == "" ||
                 (editgrid[ORDERITEMS.QTY, r].Value + "") == "" ||
                 (editgrid[ORDERITEMS.PRICE, r].Value + "") == ""
                 )
@@ -289,11 +287,12 @@ namespace CXERP
                     obj.Orderitems_id = "";
                     obj.Order_id = vId;
                     obj.Order_no = txt_order_no.Text;
-                    obj.Product_id = CProduct_exten.GetId_Name(editgrid[ORDERITEMS.PRODUCT_ID, r].Value + "");
+                    obj.Style_id = CStyle_exten.GetId_Name(editgrid[ORDERITEMS.STYLE_ID, r].Value + "","","","");
+                    obj.Style_name = (editgrid[ORDERITEMS.STYLE_NAME, r].Value + "");
                     obj.Colours_id = CColours_exten.GetId_Name(editgrid[ORDERITEMS.COLOURS_ID, r].Value + "");
-                    obj.Sizes_id = CSizes_exten.GetId_Name(editgrid[ORDERITEMS.SIZES_ID, r].Value + "");
                     obj.Qty = (editgrid[ORDERITEMS.QTY, r].Value + "");
                     obj.Price = ConvertTO.Decimal(editgrid[ORDERITEMS.PRICE, r].Value + "");
+                    obj.Mrp = ConvertTO.Decimal(editgrid[ORDERITEMS.MRP, r].Value + "");
                     obj.Refered_id = "";
                     obj.Locked = Core.Unlocked;
 
@@ -320,13 +319,6 @@ namespace CXERP
             {
                 MessageBox.Show(this.FindForm(), "Order no should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_order_no.Focus();
-                return false;
-            }
-
-            if (txt_party_ref.Text.Trim().Length == 0)
-            {
-                MessageBox.Show(this.FindForm(), "Party ref should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_party_ref.Focus();
                 return false;
             }
 

@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System;
 using System.Windows.Forms;
@@ -39,6 +39,8 @@ namespace CXERP
         private XLabel lbl_po_no;
         private xDatepicker txt_po_date;
         private XLabel lbl_po_date;
+        private xDatepicker txt_delivery_date;
+        private XLabel lbl_delivery_date;
 
         private RichTextBox txt_notes;
         private XLabel lbl_notes;
@@ -70,6 +72,8 @@ namespace CXERP
             lbl_po_no = new XLabel();
             txt_po_date = new xDatepicker();
             lbl_po_date = new XLabel();
+            txt_delivery_date = new xDatepicker();
+            lbl_delivery_date = new XLabel();
 
             txt_notes = new RichTextBox();
             lbl_notes = new XLabel();
@@ -209,6 +213,8 @@ namespace CXERP
             finner_panel.Controls.Add(lbl_po_no);
             finner_panel.Controls.Add(txt_po_date);
             finner_panel.Controls.Add(lbl_po_date);
+            finner_panel.Controls.Add(txt_delivery_date);
+            finner_panel.Controls.Add(lbl_delivery_date);
             finner_panel.Controls.Add(btn_save);
             finner_panel.Controls.Add(btn_active);
 
@@ -267,6 +273,28 @@ namespace CXERP
             txt_po_date.Enter += new EventHandler(Txt_po_date_Enter);
 
 
+            lbl_delivery_date.Font = XFont.Font_10B;
+            lbl_delivery_date.Name = "lbl_delivery_date";
+            lbl_delivery_date.Text = "   Delivery date";
+            lbl_delivery_date.Anchor = XAnchor.LT;
+            lbl_delivery_date.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_delivery_date.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_delivery_date.Size =  XSize.OneLabel;
+            lbl_delivery_date.Location =XLayout.R1_Label(lbl_po_date.Location);
+
+            txt_delivery_date.Font = XFont.TxtFont;
+            txt_delivery_date.ForeColor = XFontColor.TxtFontColor;
+            txt_delivery_date.BackColor = XTheme.TxtBackcolor;
+            txt_delivery_date.Name = "txt_delivery_date";
+            txt_delivery_date.CustomFormat = "dd-MM-yyyy";
+            txt_delivery_date.Format = DateTimePickerFormat.Custom;
+            txt_delivery_date.Size =  XSize.OneText;
+            txt_delivery_date.Anchor = XAnchor.LTR;
+            txt_delivery_date.Location =XLayout.R1_Text(txt_po_date.Location);
+            txt_delivery_date.TabIndex = XTab.Index(txt_po_date.TabIndex);
+            txt_delivery_date.Enter += new EventHandler(Txt_delivery_date_Enter);
+
+
             lbl_notes.Font = XFont.Font_10B;
             lbl_notes.ForeColor = XFontColor.Lbl_ForeColor;
             lbl_notes.Location = XLayout.LblNotes;
@@ -295,7 +323,7 @@ namespace CXERP
             btn_save.Font = XFont.BtnFont;
             btn_save.Size = XSize.BtnOne;
             btn_save.Location = XLayout.BtnSave;
-            btn_save.TabIndex = XTab.Index(txt_po_date.TabIndex);
+            btn_save.TabIndex = XTab.Index(txt_delivery_date.TabIndex);
             btn_save.Name = "btn_save";
             btn_save.Text = "&SAVE";
             btn_save.Themes = XTheme.BlueBtn;

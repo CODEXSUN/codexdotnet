@@ -27,7 +27,7 @@ namespace CXERP
                         Company_id = redr[STYLE.COMPANY_ID].ToString(),
                         Acy_id = redr[STYLE.ACY_ID].ToString(),
                         Style_no = redr[STYLE.STYLE_NO].ToString(),
-                        Style_date = redr[STYLE.STYLE_DATE].ToString(),
+                        Style_name = redr[STYLE.STYLE_NAME].ToString(),
                         Locked = redr[STYLE.LOCKED].ToString(),
                         Notes = redr[STYLE.NOTES].ToString(),
                         Active_id = redr[STYLE.ACTIVE_ID].ToString(),
@@ -59,7 +59,7 @@ namespace CXERP
                         Company_id = redr[STYLE.COMPANY_ID].ToString(),
                         Acy_id = redr[STYLE.ACY_ID].ToString(),
                         Style_no = redr[STYLE.STYLE_NO].ToString(),
-                        Style_date = redr[STYLE.STYLE_DATE].ToString(),
+                        Style_name = redr[STYLE.STYLE_NAME].ToString(),
                         Locked = redr[STYLE.LOCKED].ToString(),
                         Notes = redr[STYLE.NOTES].ToString(),
                         Active_id = redr[STYLE.ACTIVE_ID].ToString(),
@@ -89,7 +89,7 @@ namespace CXERP
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
@@ -110,7 +110,7 @@ namespace CXERP
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND NOT " + STYLE.STYLE_TBL + "." + STYLE.LOCKED + " = '" + Core.Unlocked + "'  \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
@@ -130,7 +130,7 @@ namespace CXERP
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
@@ -150,7 +150,7 @@ namespace CXERP
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.NotActive + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
@@ -170,7 +170,7 @@ namespace CXERP
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.STYLE_ID + " = '" + id + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityData(q);
@@ -195,37 +195,51 @@ namespace CXERP
             }
             if (dateTo != "")
             {
-                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "  BETWEEN " + ConvertTO.SqlDate(date) + " AND " + ConvertTO.SqlDate(dateTo) + "\r\n";
+                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "  BETWEEN " + ConvertTO.SqlDate(date) + " AND " + ConvertTO.SqlDate(dateTo) + "\r\n";
             }
             else if (date != "")
             {
 
-                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + " = " + ConvertTO.SqlDate(date) + "\r\n";
+                q += " AND " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + " = " + ConvertTO.SqlDate(date) + "\r\n";
             }
             if (party != "")
             {
                 q += " AND " + PARTY.PARTY_TBL + "." + PARTY.PARTY_NAME + " = '" + party + "'  \r\n";
             }
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return EntityList(q);
          }
 
-         #endregion[Searchby]
+        #endregion[Searchby]
 
-         #region[GetforLookup]
+        #region[GetforLookup]
+
+
+        public static DataTable LookupStyle()
+        {
+            string q = " SELECT * FROM  " + STYLE.STYLE_TBL + " \r\n";
+            q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
+            q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + "\r\n";
+            q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + ";\r\n";
+
+            return new DAL().Listdata(q);
+        }
+
 
         public static DataTable LookupNo()
         {
             string q = " SELECT  DISTINCT \r\n";
             q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + " \r\n";
+            q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + " \r\n";
             q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return new DAL().Listdata(q);
@@ -239,7 +253,7 @@ namespace CXERP
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             return new DAL().Listdata(q);
@@ -248,24 +262,24 @@ namespace CXERP
         public static DataTable LookupDate()
         {
             string q = " SELECT  DISTINCT \r\n";
-            q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + " \r\n";
+            q += " " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + " \r\n";
             q += " FROM  " + STYLE.STYLE_TBL + " \r\n";
             q += " WHERE " + STYLE.STYLE_TBL + "." + STYLE.ACTIVE_ID + "  = '" + Core.Active + "' \r\n";
             //q += " AND NOT " + ORDER.ORDER_TBL + "." + ORDER.ORDER_ID + " = '" + Core.One + "' \r\n";
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
-            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_DATE + "\r\n";
+            q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NAME + "\r\n";
             q += " ,  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";
 
             DataTable xtbl = new DAL().Listdata(q);
 
             DataTable tbl = new DataTable();
 
-            tbl.Columns.Add(STYLE.STYLE_DATE, typeof(string));
+            tbl.Columns.Add(STYLE.STYLE_NAME, typeof(string));
             if (xtbl.Rows.Count != 0)
             {
                 for (int i = 0; i < xtbl.Rows.Count; i++)
                 {
-                    tbl.Rows.Add(ConvertTO.Date2S(xtbl.Rows[i][STYLE.STYLE_DATE] + "")
+                    tbl.Rows.Add(ConvertTO.Date2S(xtbl.Rows[i][STYLE.STYLE_NAME] + "")
                     );
                 }
             }

@@ -71,9 +71,9 @@ namespace CXERP
         private void Txt_Style_date_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_article_date.BackColor = Theme.lbl_EnterBackColor;
-            lbl_article_date.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_article_date.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_style_name.BackColor = Theme.lbl_EnterBackColor;
+            lbl_style_name.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_style_name.ForeColor = Theme.lbl_EnterForeColor;
         }
 
         private void Txt_notes_Enter(object sender, EventArgs e)
@@ -90,9 +90,9 @@ namespace CXERP
             lbl_article_no.BorderColor = Theme.lbl_BorderColor;
             lbl_article_no.ForeColor = Theme.lbl_ForeColor;
             
-            lbl_article_date.BackColor = Theme.lbl_BackColor;
-            lbl_article_date.BorderColor = Theme.lbl_BorderColor;
-            lbl_article_date.ForeColor = Theme.lbl_ForeColor;
+            lbl_style_name.BackColor = Theme.lbl_BackColor;
+            lbl_style_name.BorderColor = Theme.lbl_BorderColor;
+            lbl_style_name.ForeColor = Theme.lbl_ForeColor;
             
             lbl_notes.BackColor = Theme.lbl_BackColor;
             lbl_notes.BorderColor = Theme.lbl_BorderColor;
@@ -236,7 +236,7 @@ namespace CXERP
 
         public void SetFocus()
         {
-            txt_article_no.Focus();
+            txt_style_no.Focus();
         }
         #endregion[Set Focus]
 

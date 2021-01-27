@@ -50,8 +50,6 @@ namespace CXERP
         private XLabel lbl_party_id;
         private XTextBox txt_party_ref;
         private XLabel lbl_party_ref;
-        private XTextBox txt_style_ref;
-        private XLabel lbl_style_ref;
         private EditGridView editgrid;
 
         private RichTextBox txt_notes;
@@ -90,8 +88,6 @@ namespace CXERP
             lbl_party_id = new XLabel();
             txt_party_ref = new XTextBox();
             lbl_party_ref = new XLabel();
-            txt_style_ref = new XTextBox();
-            lbl_style_ref = new XLabel();
             editgrid = new EditGridView();
 
             txt_notes = new RichTextBox();
@@ -239,8 +235,6 @@ namespace CXERP
             finner_panel.Controls.Add(lbl_party_id);
             finner_panel.Controls.Add(txt_party_ref);
             finner_panel.Controls.Add(lbl_party_ref);
-            finner_panel.Controls.Add(txt_style_ref);
-            finner_panel.Controls.Add(lbl_style_ref);
             finner_panel.Controls.Add(editgrid);
             finner_panel.Controls.Add(btn_save);
             finner_panel.Controls.Add(btn_active);
@@ -349,44 +343,23 @@ namespace CXERP
             lbl_party_ref.TextAlign = ContentAlignment.MiddleLeft;
             lbl_party_ref.ForeColor = XFontColor.Lbl_ForeColor;
             lbl_party_ref.Size =  XSize.OneLabel;
-            lbl_party_ref.Location =XLayout.R2_2Label_1(lbl_party_id.Location);
+            lbl_party_ref.Location =XLayout.R1_Label(lbl_party_id.Location);
 
             txt_party_ref.Font = XFont.TxtFont;
             txt_party_ref.ForeColor = XFontColor.TxtFontColor;
             txt_party_ref.BackColor = XTheme.TxtBackcolor;
             txt_party_ref.Name = "txt_party_ref";
             txt_party_ref.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_party_ref.Size = XSize.TwoText;
+            txt_party_ref.Size = XSize.OneText;
             txt_party_ref.Anchor = XAnchor.LT;
-            txt_party_ref.Location = XLayout.R2_2Text_1(txt_party_id.Location);
+            txt_party_ref.Location = XLayout.R1_Text(txt_party_id.Location);
             txt_party_ref.TabIndex = XTab.Index(txt_party_id.TabIndex);
             txt_party_ref.Enter += new EventHandler(Txt_party_ref_Enter);
 
-
-            lbl_style_ref.Font = XFont.Font_10B;
-            lbl_style_ref.Name = "lbl_style_ref";
-            lbl_style_ref.Text = "   Style reference";
-            lbl_style_ref.Anchor = XAnchor.LT;
-            lbl_style_ref.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_style_ref.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_style_ref.Size = XSize.TwoLabel;
-            lbl_style_ref.Location = XLayout.R1_2Label_2(lbl_party_ref.Location);
-
-            txt_style_ref.Font = XFont.TxtFont;
-            txt_style_ref.ForeColor = XFontColor.TxtFontColor;
-            txt_style_ref.BackColor = XTheme.TxtBackcolor;
-            txt_style_ref.Name = "txt_style_ref";
-            txt_style_ref.ReadOnlyBackColor = XTheme.TxtReadonlyBackcolor;
-            txt_style_ref.Size = XSize.TwoText;
-            txt_style_ref.Anchor = XAnchor.LTR;
-            txt_style_ref.Location = XLayout.R1_2Text_2(txt_party_ref.Location);
-            txt_style_ref.TabIndex = XTab.Index(txt_party_ref.TabIndex);
-            txt_style_ref.Enter += new EventHandler(Txt_style_ref_Enter);
-
-            editgrid.Location = new Point(XLayout.H_left, txt_style_ref.Bottom + 10); 
+            editgrid.Location = new Point(XLayout.H_left, txt_party_ref.Bottom + 10); 
             editgrid.Name = "editgrid"; 
             editgrid.Size = new Size(finner_panel.Width - 50, 250); 
-            editgrid.TabIndex = XTab.Index(txt_style_ref.TabIndex);
+            editgrid.TabIndex = XTab.Index(txt_party_ref.TabIndex);
             editgrid.RowsLimit = 12; 
             Point p = new Point(editgrid.Left , editgrid.Bottom); 
 
@@ -419,7 +392,7 @@ namespace CXERP
             btn_save.Font = XFont.BtnFont;
             btn_save.Size = XSize.BtnOne;
             btn_save.Location = XLayout.BtnSave;
-            btn_save.TabIndex = XTab.Index(txt_style_ref.TabIndex);
+            btn_save.TabIndex = XTab.Index(txt_party_ref.TabIndex);
             btn_save.Name = "btn_save";
             btn_save.Text = "&SAVE";
             btn_save.Themes = XTheme.BlueBtn;
@@ -501,7 +474,7 @@ namespace CXERP
 
             DataGridViewTextBoxColumn col_Order_id = new DataGridViewTextBoxColumn();
             col_Order_id.Name = ORDERITEMS.ORDER_ID;
-            col_Order_id.HeaderText = "GARMENT ORDER ID";
+            col_Order_id.HeaderText = "ORDER ID";
             col_Order_id.Visible = false; 
             col_Order_id.Width = 100;
             col_Order_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -510,21 +483,30 @@ namespace CXERP
 
             DataGridViewTextBoxColumn col_Order_no = new DataGridViewTextBoxColumn();
             col_Order_no.Name = ORDERITEMS.ORDER_NO;
-            col_Order_no.HeaderText = "GARMENT ORDER NO";
+            col_Order_no.HeaderText = "ORDER NO";
             col_Order_no.Visible = false; 
             col_Order_no.Width = 200;
             col_Order_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Order_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Order_no);
 
-            DataGridViewTextBoxColumn col_Product_id = new DataGridViewTextBoxColumn();
-            col_Product_id.Name = ORDERITEMS.PRODUCT_ID;
-            col_Product_id.HeaderText = "PRODUCT";
-            //col_Product_id.Visible = false; 
-            col_Product_id.Width = 500;
-            col_Product_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Product_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Product_id);
+            DataGridViewTextBoxColumn col_Style_no = new DataGridViewTextBoxColumn();
+            col_Style_no.Name = ORDERITEMS.STYLE_ID;
+            col_Style_no.HeaderText = "STYLE NO";
+            //col_Style_no.Visible = false; 
+            col_Style_no.Width = 200;
+            col_Style_no.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_Style_no.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Style_no);
+
+            DataGridViewTextBoxColumn col_Style_id = new DataGridViewTextBoxColumn();
+            col_Style_id.Name = ORDERITEMS.STYLE_NAME;
+            col_Style_id.HeaderText = "STYLE NAME";
+            //col_Style_id.Visible = false; 
+            col_Style_id.Width = 420;
+            col_Style_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_Style_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_Style_id);
 
             DataGridViewTextBoxColumn col_Colours_id = new DataGridViewTextBoxColumn();
             col_Colours_id.Name = ORDERITEMS.COLOURS_ID;
@@ -535,20 +517,11 @@ namespace CXERP
             col_Colours_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Colours_id);
 
-            DataGridViewTextBoxColumn col_Sizes_id = new DataGridViewTextBoxColumn();
-            col_Sizes_id.Name = ORDERITEMS.SIZES_ID;
-            col_Sizes_id.HeaderText = "SIZES";
-            //col_Sizes_id.Visible = false; 
-            col_Sizes_id.Width = 150;
-            col_Sizes_id.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            col_Sizes_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            editgrid.Columns.Add(col_Sizes_id);
-
             DataGridViewTextBoxColumn col_Qty = new DataGridViewTextBoxColumn();
             col_Qty.Name = ORDERITEMS.QTY;
             col_Qty.HeaderText = "QTY";
             //col_Qty.Visible = false; 
-            col_Qty.Width = 200;
+            col_Qty.Width = 150;
             col_Qty.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Qty.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Qty);
@@ -557,11 +530,19 @@ namespace CXERP
             col_Price.Name = ORDERITEMS.PRICE;
             col_Price.HeaderText = "PRICE";
             //col_Price.Visible = false; 
-            col_Price.Width = 150;
+            col_Price.Width = 120;
             col_Price.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             col_Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             editgrid.Columns.Add(col_Price);
 
+            DataGridViewTextBoxColumn col_mrp = new DataGridViewTextBoxColumn();
+            col_mrp.Name = ORDERITEMS.MRP;
+            col_mrp.HeaderText = "MRP";
+            //col_mrp.Visible = false; 
+            col_mrp.Width = 120;
+            col_mrp.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            col_mrp.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            editgrid.Columns.Add(col_mrp);
 
             DataGridViewTextBoxColumn colFiller = new DataGridViewTextBoxColumn();
             colFiller.Name = "FILLER";

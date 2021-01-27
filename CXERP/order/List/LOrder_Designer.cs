@@ -495,15 +495,6 @@ namespace CXERP
             col_Party_ref.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             listgrid.Columns.Add(col_Party_ref);
 
-            DataGridViewTextBoxColumn col_Style_ref = new DataGridViewTextBoxColumn();
-            col_Style_ref.Name = ORDER.STYLE_REF;
-            col_Style_ref.HeaderText = "STYLE REF";
-            //col_Style_ref.Visible = false;
-            col_Style_ref.Width = 150;
-            col_Style_ref.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            col_Style_ref.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            listgrid.Columns.Add(col_Style_ref);
-
             DataGridViewTextBoxColumn col_Refered_no = new DataGridViewTextBoxColumn();
             col_Refered_no.Name = ORDER.REFERED_NO;
             col_Refered_no.HeaderText = "REFERED NO";

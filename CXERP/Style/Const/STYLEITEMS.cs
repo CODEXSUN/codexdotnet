@@ -11,6 +11,7 @@ namespace CXERP
         public string Styleitems_id { get; set; }
         public string Style_id { get; set; }
         public string Style_no { get; set; }
+        public string Article_id { get; set; }
         public string Product_id { get; set; }
         public string Colours_id { get; set; }
         public string Sizes_id { get; set; }
@@ -29,6 +30,7 @@ namespace CXERP
         public const string STYLEITEMS_ID = "STYLEITEMS_ID";
         public const string STYLE_ID = "STYLE_ID";
         public const string STYLE_NO = "STYLE_NO";
+        public const string ARTICLE_ID = "ARTICLE_ID";
         public const string PRODUCT_ID = "PRODUCT_ID";
         public const string COLOURS_ID = "COLOURS_ID";
         public const string SIZES_ID = "SIZES_ID";

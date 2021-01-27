@@ -21,12 +21,11 @@ namespace CXERP
                     Uniqueno = string.Empty,
                     Company_id = Current.Company_id,
                     Acy_id = Current.Acy_id,
-                    Order_no = string.Empty,
+                    Order_no = COrder_exten.GetNext_No,
                     Order_date = string.Empty,
                     Ordertype_id = string.Empty,
                     Party_id = string.Empty,
                     Party_ref = string.Empty,
-                    Style_ref = string.Empty,
                     Refered_no = string.Empty,
                     Locked = string.Empty,
                     Notes = string.Empty,
@@ -52,7 +51,6 @@ namespace CXERP
             q = q.Replace("@" + ORDER.ORDERTYPE_ID + "@", "" + ConvertTO.SqlString(v.Ordertype_id) + "");
             q = q.Replace("@" + ORDER.PARTY_ID + "@", "" + ConvertTO.SqlString(v.Party_id) + "");
             q = q.Replace("@" + ORDER.PARTY_REF + "@", "" + ConvertTO.SqlString(v.Party_ref) + "");
-            q = q.Replace("@" + ORDER.STYLE_REF + "@", "" + ConvertTO.SqlString(v.Style_ref) + "");
             q = q.Replace("@" + ORDER.REFERED_NO + "@", "" + ConvertTO.SqlString(v.Refered_no) + "");
             q = q.Replace("@" + ORDER.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
             q = q.Replace("@" + ORDER.NOTES + "@", "" + ConvertTO.SqlString(v.Notes) + "");
@@ -75,7 +73,6 @@ namespace CXERP
                 q += "," + ORDER.ORDERTYPE_ID + " \r\n";
                 q += "," + ORDER.PARTY_ID + " \r\n";
                 q += "," + ORDER.PARTY_REF + " \r\n";
-                q += "," + ORDER.STYLE_REF + " \r\n";
                 q += "," + ORDER.REFERED_NO + " \r\n";
                 q += "," + ORDER.LOCKED + " \r\n";
                 q += "," + ORDER.NOTES + " \r\n";
@@ -90,7 +87,6 @@ namespace CXERP
                 q += ", @"+ ORDER.ORDERTYPE_ID + "@ \r\n";
                 q += ", @"+ ORDER.PARTY_ID + "@ \r\n";
                 q += ", @"+ ORDER.PARTY_REF + "@ \r\n";
-                q += ", @"+ ORDER.STYLE_REF + "@ \r\n";
                 q += ", @"+ ORDER.REFERED_NO + "@ \r\n";
                 q += ", @"+ ORDER.LOCKED + "@ \r\n";
                 q += ", @"+ ORDER.NOTES + "@ \r\n";
@@ -115,7 +111,6 @@ namespace CXERP
                 q += "," + ORDER.ORDERTYPE_ID + " = @" + ORDER.ORDERTYPE_ID + "@ \r\n ";
                 q += "," + ORDER.PARTY_ID + " = @" + ORDER.PARTY_ID + "@ \r\n ";
                 q += "," + ORDER.PARTY_REF + " = @" + ORDER.PARTY_REF + "@ \r\n ";
-                q += "," + ORDER.STYLE_REF + " = @" + ORDER.STYLE_REF + "@ \r\n ";
                 q += "," + ORDER.REFERED_NO + " = @" + ORDER.REFERED_NO + "@ \r\n ";
                 q += "," + ORDER.LOCKED + " = @" + ORDER.LOCKED + "@ \r\n ";
                 q += "," + ORDER.NOTES + " = @" + ORDER.NOTES + "@ \r\n ";

@@ -99,7 +99,6 @@ namespace CXERP
                 row.Cells[ORDER.ORDERTYPE_ID].Value = list[r].Ordertype_id;
                 row.Cells[ORDER.PARTY_ID].Value = list[r].Party_id;
                 row.Cells[ORDER.PARTY_REF].Value = list[r].Party_ref;
-                row.Cells[ORDER.STYLE_REF].Value = list[r].Style_ref;
                 row.Cells[ORDER.REFERED_NO].Value = list[r].Refered_no;
                 row.Cells[ORDER.LOCKED].Value = list[r].Locked;
                 row.Cells[ORDER.USER_ID].Value = list[r].User_id;

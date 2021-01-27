@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System.Windows.Forms; 
 using System.Collections.Generic; 
@@ -85,7 +85,8 @@ namespace CXERP
                  
                  row.Cells[PO.PO_ID].Value = list[r].Po_id; 
                  row.Cells[PO.PO_NO].Value = list[r].Po_no; 
-                 row.Cells[PO.PO_DATE].Value = list[r].Po_date; 
+                 row.Cells[PO.PO_DATE].Value = ConvertTO.Date2S(list[r].Po_date); 
+                 row.Cells[PO.DELIVERY_DATE].Value = ConvertTO.Date2S(list[r].Delivery_date); 
                  row.Cells[PO.NOTES].Value = list[r].Notes; 
                  row.Cells[PO.ACTIVE_ID].Value = list[r].Active_id; 
                  row.Cells[PO.USER_ID].Value = list[r].User_id; 

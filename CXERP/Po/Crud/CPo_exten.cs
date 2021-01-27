@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System.Data;
 using CXLIB;
@@ -24,6 +24,7 @@ namespace CXERP
                         Po_id = redr[PO.PO_ID].ToString(),
                         Po_no = redr[PO.PO_NO].ToString(),
                         Po_date = redr[PO.PO_DATE].ToString(),
+                        Delivery_date = redr[PO.DELIVERY_DATE].ToString(),
                         Notes = redr[PO.NOTES].ToString(),
                         Active_id = redr[PO.ACTIVE_ID].ToString(),
                         User_id = redr[USER.USER_NAME].ToString()
@@ -52,6 +53,7 @@ namespace CXERP
                         Po_id = redr[PO.PO_ID].ToString(),
                         Po_no = redr[PO.PO_NO].ToString(),
                         Po_date = redr[PO.PO_DATE].ToString(),
+                        Delivery_date = redr[PO.DELIVERY_DATE].ToString(),
                         Notes = redr[PO.NOTES].ToString(),
                         Active_id = redr[PO.ACTIVE_ID].ToString(),
                         User_id = redr[USER.USER_NAME].ToString()

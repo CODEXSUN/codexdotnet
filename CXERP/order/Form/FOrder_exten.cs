@@ -85,13 +85,10 @@ namespace CXERP
 
                 switch (lookupColName)
                 {
-                    case ORDERITEMS.PRODUCT_ID:
+                    case ORDERITEMS.STYLE_ID:
                         ShowLookupForm();
                         break;
                     case ORDERITEMS.COLOURS_ID:
-                        ShowLookupForm();
-                        break;
-                    case ORDERITEMS.SIZES_ID:
                         ShowLookupForm();
                         break;
                 }
@@ -138,16 +135,16 @@ namespace CXERP
             switch (lookupColName)
             {
 
-                case ORDERITEMS.PRODUCT_ID:
+                case ORDERITEMS.STYLE_ID:
                     {
-                        frmLookup.LookupColNames = new string[] { PRODUCT.PRODUCT_NAME };
-                        frmLookup.SelectedPkValue = editgrid[ORDERITEMS.PRODUCT_ID, lookupRow].Value;
+                        frmLookup.LookupColNames = new string[] { STYLE.STYLE_NO,STYLE.STYLE_NAME  };
+                        frmLookup.SelectedPkValue = editgrid[ORDERITEMS.STYLE_ID, lookupRow].Value;
                         frmLookup.AllowNewEntry = true;
                         frmLookup.AllowEmptySelection = true;
 
                         if (txt_party_id.Text != "")
                         {
-                            frmLookup.LookupList = CProduct_exten.GetforLookup(new DAL());
+                            frmLookup.LookupList = CStyle_exten.LookupStyle();
                             frmLookup.LoadLookupList();
                         }
                     }
@@ -168,20 +165,6 @@ namespace CXERP
                     }
                     break;
 
-                case ORDERITEMS.SIZES_ID:
-                    {
-                        frmLookup.LookupColNames = new string[] { SIZES.SIZES_NAME };
-                        frmLookup.SelectedPkValue = editgrid[ORDERITEMS.SIZES_ID, lookupRow].Value;
-                        frmLookup.AllowNewEntry = true;
-                        frmLookup.AllowEmptySelection = true;
-
-                        if (txt_party_id.Text != "")
-                        {
-                            frmLookup.LookupList = CSizes_exten.GetforLookup(new DAL());
-                            frmLookup.LoadLookupList();
-                        }
-                    }
-                    break;
 
                 default:
                     throw new System.Exception("'" + lookupColName + "' Not Found");
@@ -211,16 +194,18 @@ namespace CXERP
 
             switch (lookupColName)
             {
-                case ORDERITEMS.PRODUCT_ID:
+                case ORDERITEMS.STYLE_ID:
                     if (vEntity == null)
                     {
-                        editgrid[ORDERITEMS.PRODUCT_ID, lookupRow].Value = "";
+                        editgrid[ORDERITEMS.STYLE_ID, lookupRow].Value = "";
                     }
                     else
                     {
-                        editgrid[ORDERITEMS.PRODUCT_ID, lookupRow].Value = vEntity[PRODUCT.PRODUCT_NAME];
+                        editgrid[ORDERITEMS.STYLE_ID, lookupRow].Value = vEntity[STYLE.STYLE_NO];
+                        editgrid[ORDERITEMS.STYLE_NAME, lookupRow].Value = vEntity[STYLE.STYLE_NAME];
+                        
                     }
-                    editgrid.CurrentCell = editgrid[ORDERITEMS.PRODUCT_ID, lookupRow];
+                    editgrid.CurrentCell = editgrid[ORDERITEMS.STYLE_ID, lookupRow];
                     break;
 
                 case ORDERITEMS.COLOURS_ID:
@@ -235,17 +220,6 @@ namespace CXERP
                     editgrid.CurrentCell = editgrid[ORDERITEMS.COLOURS_ID, lookupRow];
                     break;
 
-                case ORDERITEMS.SIZES_ID:
-                    if (vEntity == null)
-                    {
-                        editgrid[ORDERITEMS.SIZES_ID, lookupRow].Value = "";
-                    }
-                    else
-                    {
-                        editgrid[ORDERITEMS.SIZES_ID, lookupRow].Value = vEntity[SIZES.SIZES_NAME];
-                    }
-                    editgrid.CurrentCell = editgrid[ORDERITEMS.SIZES_ID, lookupRow];
-                    break;
             }
         }
 
@@ -268,16 +242,12 @@ namespace CXERP
         {
             switch (lookupColName)
             {
-                case ORDERITEMS.PRODUCT_ID:
-                    FproductNewEntry(pValue);
+                case ORDERITEMS.STYLE_ID:
+                    FstyleNewEntry(pValue);
                     break;
 
                 case ORDERITEMS.COLOURS_ID:
                     FcoloursNewEntry(pValue);
-                    break;
-
-                case ORDERITEMS.SIZES_ID:
-                    FsizesNewEntry(pValue);
                     break;
             }
         }
@@ -288,61 +258,31 @@ namespace CXERP
 
         #region[Product]
 
-        private FProduct xproduct = null;
-        void FproductNewEntry(string pValue)
+        private FStyle xstyle = null;
+        void FstyleNewEntry(string pValue)
         {
-            if (xproduct == null)
+            if (xstyle == null)
             {
-                xproduct = new FProduct();
-                xproduct.FProduct_NeedToRefresh += Xproduct_refresh;
+                xstyle = new FStyle();
+                xstyle.FStyle_NeedToRefresh += Xproduct_refresh;
             }
-            this.Parent.Controls.Add(xproduct);
-            xproduct.Dock = DockStyle.Fill;
-            xproduct.Show();
-            xproduct.BringToFront();
-            xproduct.Focus();
-            xproduct.SetAction(BtnEvent.New, null);
-            xproduct.SetFocus();
-            xproduct.setname(pValue);
+            this.Parent.Controls.Add(xstyle);
+            xstyle.Dock = DockStyle.Fill;
+            xstyle.Show();
+            xstyle.BringToFront();
+            xstyle.Focus();
+            xstyle.SetAction(BtnEvent.New, null);
+            xstyle.SetFocus();
         }
         private void Xproduct_refresh(object sender, EventArgs e)
         {
-            editgrid[ORDERITEMS.PRODUCT_ID, lookupRow].Value = xproduct.GetName();
+            editgrid[ORDERITEMS.STYLE_ID, lookupRow].Value = xstyle.GetName();
             editgrid.Focus();
-            editgrid.CurrentCell = editgrid[ORDERITEMS.SIZES_ID, lookupRow];
+            editgrid.CurrentCell = editgrid[ORDERITEMS.COLOURS_ID, lookupRow];
 
         }
 
         #endregion[Product]
-
-        #region[SIZES]
-
-        private FSizes xsizes = null;
-        void FsizesNewEntry(string pValue)
-        {
-            if (xsizes == null)
-            {
-                xsizes = new FSizes();
-                xsizes.FSizes_NeedToRefresh += Xsizes_refresh;
-            }
-            this.Parent.Controls.Add(xsizes);
-            xsizes.Dock = DockStyle.Fill;
-            xsizes.Show();
-            xsizes.BringToFront();
-            xsizes.Focus();
-            xsizes.SetAction(BtnEvent.New, null);
-            xsizes.SetFocus();
-            xsizes.setname(pValue);
-        }
-        private void Xsizes_refresh(object sender, EventArgs e)
-        {
-            editgrid[ORDERITEMS.SIZES_ID, lookupRow].Value = xsizes.GetName();
-            editgrid.Focus();
-            editgrid.CurrentCell = editgrid[ORDERITEMS.QTY, lookupRow];
-
-        }
-
-        #endregion[sizes]
 
         #region[COLOURS]
 

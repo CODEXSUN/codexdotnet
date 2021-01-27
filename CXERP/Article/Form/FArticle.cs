@@ -503,11 +503,11 @@ namespace CXERP
 
         public string GetName() 
         { 
-            return txt_po_id.Text; 
+            return txt_article_no.Text; 
         } 
         public void setname(string pName) 
         { 
-            txt_po_id.Text = pName ; 
+            txt_article_no.Text = pName ; 
         } 
         public void SetFocus()
         {

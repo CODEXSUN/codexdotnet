@@ -96,13 +96,6 @@ namespace CXERP
             lbl_party_ref.BorderColor = Theme.lbl_EnterBorderColor;
             lbl_party_ref.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_style_ref_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_style_ref.BackColor = Theme.lbl_EnterBackColor;
-            lbl_style_ref.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_style_ref.ForeColor = Theme.lbl_EnterForeColor;
-        }
         private void Txt_notes_Enter(object sender, EventArgs e)
         {
             Change_infocus();
@@ -133,10 +126,6 @@ namespace CXERP
             lbl_party_ref.BorderColor = Theme.lbl_BorderColor;
             lbl_party_ref.ForeColor = Theme.lbl_ForeColor;
             
-            lbl_style_ref.BackColor = Theme.lbl_BackColor;
-            lbl_style_ref.BorderColor = Theme.lbl_BorderColor;
-            lbl_style_ref.ForeColor = Theme.lbl_ForeColor;
-
             lbl_notes.BackColor = Theme.lbl_BackColor;
             lbl_notes.BorderColor = Theme.lbl_BorderColor;
             lbl_notes.ForeColor = Theme.lbl_ForeColor;

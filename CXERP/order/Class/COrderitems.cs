@@ -23,11 +23,12 @@ namespace CXERP
                     Orderitems_id = string.Empty,
                     Order_id = string.Empty,
                     Order_no = string.Empty,
-                    Product_id = string.Empty,
+                    Style_id = string.Empty,
+                    Style_name = string.Empty,
                     Colours_id = string.Empty,
-                    Sizes_id = string.Empty,
                     Qty = string.Empty,
                     Price =  decimal.Zero,
+                    Mrp =  decimal.Zero,
                     Refered_id = string.Empty,
                     Locked = string.Empty,
                 };
@@ -44,11 +45,12 @@ namespace CXERP
         {
             q = q.Replace("@" + ORDERITEMS.ORDER_ID + "@", "" + ConvertTO.SqlString(v.Order_id) + "");
             q = q.Replace("@" + ORDERITEMS.ORDER_NO + "@", "" + ConvertTO.SqlString(v.Order_no) + "");
-            q = q.Replace("@" + ORDERITEMS.PRODUCT_ID + "@", "" + ConvertTO.SqlString(v.Product_id) + "");
+            q = q.Replace("@" + ORDERITEMS.STYLE_ID + "@", "" + ConvertTO.SqlString(v.Style_id) + "");
+            q = q.Replace("@" + ORDERITEMS.STYLE_NAME + "@", "" + ConvertTO.SqlString(v.Style_name) + "");
             q = q.Replace("@" + ORDERITEMS.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colours_id) + "");
-            q = q.Replace("@" + ORDERITEMS.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Sizes_id) + "");
             q = q.Replace("@" + ORDERITEMS.QTY + "@", "" + ConvertTO.SqlString(v.Qty) + "");
             q = q.Replace("@" + ORDERITEMS.PRICE + "@", "" + ConvertTO.SqlDecimal(v.Price) + "");
+            q = q.Replace("@" + ORDERITEMS.MRP + "@", "" + ConvertTO.SqlDecimal(v.Mrp) + "");
             q = q.Replace("@" + ORDERITEMS.REFERED_ID + "@", "" + ConvertTO.SqlString(v.Refered_id) + "");
             q = q.Replace("@" + ORDERITEMS.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
             return q;
@@ -65,11 +67,12 @@ namespace CXERP
                 {
                     Order_id = list[i].Order_id,
                     Order_no = list[i].Order_no,
-                    Product_id = list[i].Product_id,
+                    Style_id = list[i].Style_id,
+                    Style_name = list[i].Style_name,
                     Colours_id = list[i].Colours_id,
-                    Sizes_id = list[i].Sizes_id,
                     Qty = list[i].Qty,
                     Price = list[i].Price,
+                    Mrp = list[i].Mrp,
                     Refered_id = list[i].Refered_id,
                     Locked = list[i].Locked
                 };
@@ -86,21 +89,23 @@ namespace CXERP
                 string q = " INSERT INTO " + ORDERITEMS.ORDERITEMS_TBL + " ( ";
                 q += " " + ORDERITEMS.ORDER_ID + " \r\n ";
                 q += "," + ORDERITEMS.ORDER_NO + " \r\n ";
-                q += "," + ORDERITEMS.PRODUCT_ID + " \r\n ";
+                q += "," + ORDERITEMS.STYLE_ID + " \r\n ";
+                q += "," + ORDERITEMS.STYLE_NAME + " \r\n ";
                 q += "," + ORDERITEMS.COLOURS_ID + " \r\n ";
-                q += "," + ORDERITEMS.SIZES_ID + " \r\n ";
                 q += "," + ORDERITEMS.QTY + " \r\n ";
                 q += "," + ORDERITEMS.PRICE + " \r\n ";
+                q += "," + ORDERITEMS.MRP + " \r\n ";
                 q += "," + ORDERITEMS.REFERED_ID + " \r\n ";
                 q += "," + ORDERITEMS.LOCKED + " \r\n ";
                 q += " ) VALUES ( ";
                 q += "  @"+ ORDERITEMS.ORDER_ID + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.ORDER_NO + "@ \r\n ";
-                q += ", @"+ ORDERITEMS.PRODUCT_ID + "@ \r\n ";
+                q += ", @"+ ORDERITEMS.STYLE_ID + "@ \r\n ";
+                q += ", @"+ ORDERITEMS.STYLE_NAME + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.COLOURS_ID + "@ \r\n ";
-                q += ", @"+ ORDERITEMS.SIZES_ID + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.QTY + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.PRICE + "@ \r\n ";
+                q += ", @"+ ORDERITEMS.MRP + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.REFERED_ID + "@ \r\n ";
                 q += ", @"+ ORDERITEMS.LOCKED + "@ \r\n ";
                 q += " ) \r\n ";

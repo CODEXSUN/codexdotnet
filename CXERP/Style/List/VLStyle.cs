@@ -95,7 +95,7 @@ namespace CXERP
 
                 row.Cells[STYLE.STYLE_ID].Value = list[r].Style_id;
                 row.Cells[STYLE.STYLE_NO].Value = list[r].Style_no;
-                row.Cells[STYLE.STYLE_DATE].Value = ConvertTO.Date2S(list[r].Style_date);
+                row.Cells[STYLE.STYLE_NAME].Value = list[r].Style_name;
                 row.Cells[STYLE.LOCKED].Value = list[r].Locked;
                 row.Cells[STYLE.USER_ID].Value = list[r].User_id;
 

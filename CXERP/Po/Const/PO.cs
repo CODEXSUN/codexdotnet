@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 namespace CXERP
 {
@@ -11,6 +11,7 @@ namespace CXERP
         public string Po_id { get; set; }
         public string Po_no { get; set; }
         public string Po_date { get; set; }
+        public string Delivery_date { get; set; }
         public string Notes { get; set; }
         public string Active_id { get; set; }
         public string User_id { get; set; }
@@ -25,6 +26,7 @@ namespace CXERP
         public const string PO_ID = "PO_ID";
         public const string PO_NO = "PO_NO";
         public const string PO_DATE = "PO_DATE";
+        public const string DELIVERY_DATE = "DELIVERY_DATE";
         public const string NOTES = "NOTES";
         public const string ACTIVE_ID = "ACTIVE_ID";
         public const string USER_ID = "USER_ID";

@@ -23,6 +23,7 @@ namespace CXERP
                     Styleitems_id = string.Empty,
                     Style_id = string.Empty,
                     Style_no = string.Empty,
+                    Article_id = string.Empty,
                     Product_id = string.Empty,
                     Colours_id = string.Empty,
                     Sizes_id = string.Empty,
@@ -44,6 +45,7 @@ namespace CXERP
         {
             q = q.Replace("@" + STYLEITEMS.STYLE_ID + "@", "" + ConvertTO.SqlString(v.Style_id) + "");
             q = q.Replace("@" + STYLEITEMS.STYLE_NO + "@", "" + ConvertTO.SqlString(v.Style_no) + "");
+            q = q.Replace("@" + STYLEITEMS.ARTICLE_ID + "@", "" + ConvertTO.SqlString(v.Article_id) + "");
             q = q.Replace("@" + STYLEITEMS.PRODUCT_ID + "@", "" + ConvertTO.SqlString(v.Product_id) + "");
             q = q.Replace("@" + STYLEITEMS.COLOURS_ID + "@", "" + ConvertTO.SqlString(v.Colours_id) + "");
             q = q.Replace("@" + STYLEITEMS.SIZES_ID + "@", "" + ConvertTO.SqlString(v.Sizes_id) + "");
@@ -65,6 +67,7 @@ namespace CXERP
                 {
                     Style_id = list[i].Style_id,
                     Style_no = list[i].Style_no,
+                    Article_id = list[i].Article_id,
                     Product_id = list[i].Product_id,
                     Colours_id = list[i].Colours_id,
                     Sizes_id = list[i].Sizes_id,
@@ -86,6 +89,7 @@ namespace CXERP
                 string q = " INSERT INTO " + STYLEITEMS.STYLEITEMS_TBL + " ( ";
                 q += " " + STYLEITEMS.STYLE_ID + " \r\n ";
                 q += "," + STYLEITEMS.STYLE_NO + " \r\n ";
+                q += "," + STYLEITEMS.ARTICLE_ID + " \r\n ";
                 q += "," + STYLEITEMS.PRODUCT_ID + " \r\n ";
                 q += "," + STYLEITEMS.COLOURS_ID + " \r\n ";
                 q += "," + STYLEITEMS.SIZES_ID + " \r\n ";
@@ -96,6 +100,7 @@ namespace CXERP
                 q += " ) VALUES ( ";
                 q += "  @"+ STYLEITEMS.STYLE_ID + "@ \r\n ";
                 q += ", @"+ STYLEITEMS.STYLE_NO + "@ \r\n ";
+                q += ", @"+ STYLEITEMS.ARTICLE_ID + "@ \r\n ";
                 q += ", @"+ STYLEITEMS.PRODUCT_ID + "@ \r\n ";
                 q += ", @"+ STYLEITEMS.COLOURS_ID + "@ \r\n ";
                 q += ", @"+ STYLEITEMS.SIZES_ID + "@ \r\n ";

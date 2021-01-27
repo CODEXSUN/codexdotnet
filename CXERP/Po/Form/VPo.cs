@@ -1,6 +1,6 @@
 // Version : 4.0.0.2 Date : 10-08-2020
 // Auto Generated
-// last update : 23-01-2021 08:39:04 PM
+// last update : 25-01-2021 10:14:36 AM
 
 using System; 
 using System.Windows.Forms; 
@@ -61,6 +61,7 @@ namespace CXERP
             vId = obj.Po_id;
             txt_po_no.Text = obj.Po_no;
             txt_po_date.Text = obj.Po_date;
+            txt_delivery_date.Text = obj.Delivery_date;
             txt_notes.Text = obj.Notes;
             Core.Stative = obj.Active_id;
             Setactives();
@@ -76,6 +77,7 @@ namespace CXERP
            
             txt_po_no.Enabled = !pReadOnly;
             txt_po_date.Enabled = !pReadOnly;
+            txt_delivery_date.Enabled = !pReadOnly;
             txt_notes.Enabled = !pReadOnly;
            
             btn_active.Enabled = !pReadOnly;
@@ -193,6 +195,7 @@ namespace CXERP
                 Po_id = vId,
                 Po_no = txt_po_no.Text,
                 Po_date = txt_po_date.Text,
+                Delivery_date = txt_delivery_date.Text,
                 Active_id = Core.Stative,
                 Notes = txt_notes.Text,
                 User_id = Current.User
@@ -217,6 +220,13 @@ namespace CXERP
             {
                 MessageBox.Show(this.FindForm(), "Po date should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_po_date.Focus();
+                return false;
+            }
+           
+            if (txt_delivery_date.Text.Trim().Length == 0)
+            {
+                MessageBox.Show(this.FindForm(), "Delivery date should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_delivery_date.Focus();
                 return false;
             }
            
