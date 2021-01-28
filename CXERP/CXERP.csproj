@@ -42,132 +42,132 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article\Const\ARTICLE.cs" />
-    <Compile Include="Article\Crud\CArticle.cs" />
-    <Compile Include="Article\Crud\CArticle_exten.cs" />
-    <Compile Include="Article\Form\FArticle.cs">
+    <Compile Include="Order Info\Article\Const\ARTICLE.cs" />
+    <Compile Include="Order Info\Article\Crud\CArticle.cs" />
+    <Compile Include="Order Info\Article\Crud\CArticle_exten.cs" />
+    <Compile Include="Order Info\Article\Form\FArticle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\Form\FArticle.designer.cs">
+    <Compile Include="Order Info\Article\Form\FArticle.designer.cs">
       <DependentUpon>FArticle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Article\Form\FArticle_Designer.cs">
+    <Compile Include="Order Info\Article\Form\FArticle_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\Form\VArticle.cs">
+    <Compile Include="Order Info\Article\Form\VArticle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\List\LArticle.cs">
+    <Compile Include="Order Info\Article\List\LArticle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\List\LArticle.designer.cs">
+    <Compile Include="Order Info\Article\List\LArticle.designer.cs">
       <DependentUpon>LArticle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Article\List\LArticle_Designer.cs">
+    <Compile Include="Order Info\Article\List\LArticle_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\List\VLArticle.cs">
+    <Compile Include="Order Info\Article\List\VLArticle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Article\Setup\Article_Tbl.cs" />
-    <Compile Include="Article\Setup\U_Article.cs" />
-    <Compile Include="Po\Const\PO.cs" />
-    <Compile Include="Po\Crud\CPo.cs" />
-    <Compile Include="Po\Crud\CPo_exten.cs" />
-    <Compile Include="Po\Form\FPo.cs">
+    <Compile Include="Order Info\Article\Setup\Article_Tbl.cs" />
+    <Compile Include="Order Info\Article\Setup\U_Article.cs" />
+    <Compile Include="Order Info\Po\Const\PO.cs" />
+    <Compile Include="Order Info\Po\Crud\CPo.cs" />
+    <Compile Include="Order Info\Po\Crud\CPo_exten.cs" />
+    <Compile Include="Order Info\Po\Form\FPo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\Form\FPo.designer.cs">
+    <Compile Include="Order Info\Po\Form\FPo.designer.cs">
       <DependentUpon>FPo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Po\Form\FPo_Designer.cs">
+    <Compile Include="Order Info\Po\Form\FPo_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\Form\VPo.cs">
+    <Compile Include="Order Info\Po\Form\VPo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\List\LPo.cs">
+    <Compile Include="Order Info\Po\List\LPo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\List\LPo.designer.cs">
+    <Compile Include="Order Info\Po\List\LPo.designer.cs">
       <DependentUpon>LPo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Po\List\LPo_Designer.cs">
+    <Compile Include="Order Info\Po\List\LPo_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\List\VLPo.cs">
+    <Compile Include="Order Info\Po\List\VLPo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Po\Setup\Po_Tbl.cs" />
-    <Compile Include="Po\Setup\U_Po.cs" />
-    <Compile Include="Style\Class\CStyle.cs" />
-    <Compile Include="Style\Class\CStyleitems.cs" />
-    <Compile Include="Style\Class\CStyleitems_exten.cs" />
-    <Compile Include="Style\Class\CStyle_exten.cs" />
-    <Compile Include="Style\Const\STYLE.cs" />
-    <Compile Include="Style\Const\STYLEITEMS.cs" />
-    <Compile Include="Style\Form\FStyle.cs">
+    <Compile Include="Order Info\Po\Setup\Po_Tbl.cs" />
+    <Compile Include="Order Info\Po\Setup\U_Po.cs" />
+    <Compile Include="Order Info\Style\Class\CStyle.cs" />
+    <Compile Include="Order Info\Style\Class\CStyleitems.cs" />
+    <Compile Include="Order Info\Style\Class\CStyleitems_exten.cs" />
+    <Compile Include="Order Info\Style\Class\CStyle_exten.cs" />
+    <Compile Include="Order Info\Style\Const\STYLE.cs" />
+    <Compile Include="Order Info\Style\Const\STYLEITEMS.cs" />
+    <Compile Include="Order Info\Style\Form\FStyle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\Form\FStyle.designer.cs">
+    <Compile Include="Order Info\Style\Form\FStyle.designer.cs">
       <DependentUpon>FStyle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Style\Form\FStyle_Designer.cs">
+    <Compile Include="Order Info\Style\Form\FStyle_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\Form\FStyle_exten.cs">
+    <Compile Include="Order Info\Style\Form\FStyle_exten.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\Form\VStyle.cs">
+    <Compile Include="Order Info\Style\Form\VStyle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\List\LStyle.cs">
+    <Compile Include="Order Info\Style\List\LStyle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\List\LStyle.designer.cs">
+    <Compile Include="Order Info\Style\List\LStyle.designer.cs">
       <DependentUpon>LStyle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Style\List\LStyle_Designer.cs">
+    <Compile Include="Order Info\Style\List\LStyle_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\List\VLStyle.cs">
+    <Compile Include="Order Info\Style\List\VLStyle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Style\Setup\Style_Tbl.cs" />
-    <Compile Include="order\Class\COrder.cs" />
-    <Compile Include="order\Class\COrderitems.cs" />
-    <Compile Include="order\Class\COrderitems_exten.cs" />
-    <Compile Include="order\Class\COrder_exten.cs" />
-    <Compile Include="order\Const\ORDER.cs" />
-    <Compile Include="order\Const\ORDERITEMS.cs" />
-    <Compile Include="order\Form\FOrder.cs">
+    <Compile Include="Order Info\Style\Setup\Style_Tbl.cs" />
+    <Compile Include="Order Info\order\Class\COrder.cs" />
+    <Compile Include="Order Info\order\Class\COrderitems.cs" />
+    <Compile Include="Order Info\order\Class\COrderitems_exten.cs" />
+    <Compile Include="Order Info\order\Class\COrder_exten.cs" />
+    <Compile Include="Order Info\order\Const\ORDER.cs" />
+    <Compile Include="Order Info\order\Const\ORDERITEMS.cs" />
+    <Compile Include="Order Info\order\Form\FOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\Form\FOrder.designer.cs">
+    <Compile Include="Order Info\order\Form\FOrder.designer.cs">
       <DependentUpon>FOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="order\Form\FOrder_Designer.cs">
+    <Compile Include="Order Info\order\Form\FOrder_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\Form\FOrder_exten.cs">
+    <Compile Include="Order Info\order\Form\FOrder_exten.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\Form\VOrder.cs">
+    <Compile Include="Order Info\order\Form\VOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\List\LOrder.cs">
+    <Compile Include="Order Info\order\List\LOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\List\LOrder.designer.cs">
+    <Compile Include="Order Info\order\List\LOrder.designer.cs">
       <DependentUpon>LOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="order\List\LOrder_Designer.cs">
+    <Compile Include="Order Info\order\List\LOrder_Designer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\List\VLOrder.cs">
+    <Compile Include="Order Info\order\List\VLOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="order\Setup\Order_Tbl.cs" />
+    <Compile Include="Order Info\order\Setup\Order_Tbl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +180,8 @@
       <Name>CXLIB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entries\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
