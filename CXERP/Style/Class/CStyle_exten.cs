@@ -210,7 +210,7 @@ namespace CXERP
             }
             if (party != "")
             {
-                q += " AND " + PARTY.PARTY_TBL + "." + PARTY.PARTY_NAME + " = '" + party + "'  \r\n";
+               // q += " AND " + PARTY.PARTY_TBL + "." + PARTY.PARTY_NAME + " = '" + party + "'  \r\n";
             }
             q += " AND " + STYLE.STYLE_TBL + "." + STYLE.COMPANY_ID + " = '" + Current.Company_id + "'  \r\n";
             q += " ORDER BY  " + STYLE.STYLE_TBL + "." + STYLE.STYLE_NO + ";\r\n";

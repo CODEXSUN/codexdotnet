@@ -49,9 +49,11 @@ namespace CXERP
             q += AddFields.Foreign(ORDERITEMS.ORDERITEMS_TBL, ORDERITEMS.ORDER_ID); 
             q += AddFields.VARCHAR_500(ORDERITEMS.ORDER_NO); 
             q += AddFields.Foreign(ORDERITEMS.ORDERITEMS_TBL, ORDERITEMS.STYLE_ID); 
+            q += AddFields.VARCHAR_500(ORDERITEMS.STYLE_NAME); 
             q += AddFields.Foreign(ORDERITEMS.ORDERITEMS_TBL, ORDERITEMS.COLOURS_ID); 
             q += AddFields.VARCHAR_200(ORDERITEMS.QTY); 
             q += AddFields.Decimal_2(ORDERITEMS.PRICE); 
+            q += AddFields.Decimal_2(ORDERITEMS.MRP); 
             q += AddFields.VARCHAR_200(ORDERITEMS.REFERED_ID); 
             q += AddFields.Smallint(ORDERITEMS.LOCKED); 
             q += AddFields.EOF;
