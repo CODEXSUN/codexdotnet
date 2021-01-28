@@ -8,6 +8,7 @@ using System.Data;
 using CXLIB;
 using CXCORE;
 using System.Collections.Generic;
+using CXERP;
 
 namespace CXBILL
 {

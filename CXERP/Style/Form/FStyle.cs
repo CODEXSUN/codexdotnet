@@ -64,11 +64,20 @@ namespace CXERP
         private void Txt_article_no_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_article_no.BackColor = Theme.lbl_EnterBackColor;
-            lbl_article_no.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_article_no.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_style_no.BackColor = Theme.lbl_EnterBackColor;
+            lbl_style_no.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_style_no.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_Style_date_Enter(object sender, EventArgs e)
+
+        private void Txt_po_id_Enter(object sender, EventArgs e)
+        {
+            Change_infocus();
+            lbl_po_id.BackColor = Theme.lbl_EnterBackColor;
+            lbl_po_id.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_po_id.ForeColor = Theme.lbl_EnterForeColor;
+        }
+
+        private void Txt_Style_name_Enter(object sender, EventArgs e)
         {
             Change_infocus();
             lbl_style_name.BackColor = Theme.lbl_EnterBackColor;
@@ -86,10 +95,14 @@ namespace CXERP
         private void Change_infocus()
         {
             
-            lbl_article_no.BackColor = Theme.lbl_BackColor;
-            lbl_article_no.BorderColor = Theme.lbl_BorderColor;
-            lbl_article_no.ForeColor = Theme.lbl_ForeColor;
-            
+            lbl_style_no.BackColor = Theme.lbl_BackColor;
+            lbl_style_no.BorderColor = Theme.lbl_BorderColor;
+            lbl_style_no.ForeColor = Theme.lbl_ForeColor;
+
+            lbl_po_id.BackColor = Theme.lbl_BackColor;
+            lbl_po_id.BorderColor = Theme.lbl_BorderColor;
+            lbl_po_id.ForeColor = Theme.lbl_ForeColor;
+
             lbl_style_name.BackColor = Theme.lbl_BackColor;
             lbl_style_name.BorderColor = Theme.lbl_BorderColor;
             lbl_style_name.ForeColor = Theme.lbl_ForeColor;
@@ -218,6 +231,40 @@ namespace CXERP
         }
 
         #endregion[Active Event ]
+
+
+        #region[lookup] 
+
+        public void Po_lookup()
+        {
+            txt_po_id.LookupColNames = new string[] { PO.PO_NO };
+            txt_po_id.LookupUpdate += Txt_po_LookupUpdate;
+            txt_po_id.AllowNewEntry = true;
+            txt_po_id.NewEntryNeeded += txt_po_NewEntryNeeded;
+        }
+        void Txt_po_LookupUpdate(object sender, EventArgs e)
+        {
+            txt_po_id.LookupList = CPo_exten.GetforLookup();
+        }
+        private FPo fspo = null;
+        void txt_po_NewEntryNeeded(object sender, string pValue)
+        {
+            if (fspo == null)
+            {
+                fspo = new FPo();
+            }
+            Parent.Controls.Add(fspo);
+            fspo.Dock = DockStyle.Fill;
+            fspo.Show();
+            fspo.BringToFront();
+            fspo.Focus();
+
+            fspo.SetAction(BtnEvent.New, null);
+            fspo.SetFocus();
+        }
+
+        #endregion[lookup] 
+
 
         #region[Raise Event ]
 

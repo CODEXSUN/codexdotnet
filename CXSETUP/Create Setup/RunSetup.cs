@@ -3,6 +3,7 @@ using CXLIB;
 using CXCORE;
 using CXBILL;
 using CXACCOUNTS;
+using CXERP;
 
 namespace CXSETUP
 {
@@ -27,10 +28,15 @@ namespace CXSETUP
 
                     CxCore(obj);
 
+                    InstallErp(obj);
+
                     InstallEntries(obj);
 
                     CxAccounts(obj);
+
                     
+
+
                     break;
 
             }
@@ -569,7 +575,7 @@ namespace CXSETUP
 
         public static void CxGarment(Setup obj)
         {
-            new Order_Tbl(obj.Database);
+            //new Order_Tbl(obj.Database);
 
             screenText = "Installed Order Table";
             Processing(null, null);
@@ -631,7 +637,7 @@ namespace CXSETUP
 
         public static void CxTex(Setup obj)
         {
-            new Order_Tbl(obj.Database);
+            //new Order_Tbl(obj.Database);
 
             screenText = "Installed Order Table";
             Processing(null, null);
@@ -673,6 +679,29 @@ namespace CXSETUP
         }
 
         #endregion[CXTEX]
+
+        #region[ERP]
+
+        private static void InstallErp(Setup obj)
+        {
+
+            switch (obj.SoftwareType)
+            {
+
+                case Softwares.GARMENT:
+                    new Po_Tbl(obj.Database);
+                    new Article_Tbl(obj.Database);
+                    new Style_Tbl(obj.Database);
+                    new Order_Tbl(obj.Database);
+
+             
+                    break;
+
+            }
+
+        }
+
+        #endregion[Entries]
 
     }
 }

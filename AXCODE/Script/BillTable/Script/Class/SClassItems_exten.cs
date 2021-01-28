@@ -68,7 +68,7 @@ namespace AXCODE
 
             ___result += "namespace " + vnamespaces + "\r\n";
             ___result += "{\r\n";
-            ___result += "    public class C" + UPPERFIRST + "items_exten\r\n";
+            ___result += "    public static class C" + UPPERFIRST + "items_exten\r\n";
             ___result += "    {\r\n";
 
             #endregion [namespace]

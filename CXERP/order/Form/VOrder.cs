@@ -243,7 +243,7 @@ namespace CXERP
             Order fobj = new Order()
             {
                 Order_id = vId,
-                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_order_no.Text + "~"+ txt_order_date.Text,
+                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_order_no.Text,
                 Company_id = Current.Company_id,
                 Acy_id = Current.Acy_id,
                 Order_no = txt_order_no.Text,
@@ -287,7 +287,7 @@ namespace CXERP
                     obj.Orderitems_id = "";
                     obj.Order_id = vId;
                     obj.Order_no = txt_order_no.Text;
-                    obj.Style_id = CStyle_exten.GetId_Name(editgrid[ORDERITEMS.STYLE_ID, r].Value + "","","","");
+                    obj.Style_id = CStyle_exten.GetId_Name(editgrid[ORDERITEMS.STYLE_ID, r].Value+"");
                     obj.Style_name = (editgrid[ORDERITEMS.STYLE_NAME, r].Value + "");
                     obj.Colours_id = CColours_exten.GetId_Name(editgrid[ORDERITEMS.COLOURS_ID, r].Value + "");
                     obj.Qty = (editgrid[ORDERITEMS.QTY, r].Value + "");

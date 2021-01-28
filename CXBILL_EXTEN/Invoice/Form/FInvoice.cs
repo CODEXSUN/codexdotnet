@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using CXBILL;
 using CXCORE;
+using CXERP;
 using CXLIB;
 using CInvoice_exten = CXBILL_EXTEN.Invoice.Class.CInvoice_exten;
 using D_Invoice = CXBILL_EXTEN.Invoice.Prints.D_Invoice;

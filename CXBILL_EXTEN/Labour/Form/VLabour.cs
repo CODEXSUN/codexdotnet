@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CXBILL;
 using CXCORE;
+using CXERP;
 using CXLIB;
 using CLabour = CXBILL_EXTEN.Labour.Class.CLabour;
 using CLabour_exten = CXBILL_EXTEN.Labour.Class.CLabour_exten;

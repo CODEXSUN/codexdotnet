@@ -1,6 +1,6 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 5.0.0.0 Date : 27-01-2021
 // Auto Generated
-// last update : 14-06-2019 09:02:20 PM
+// last update : 28-01-2021 03:36:48 PM
 
 namespace CXERP
 {
@@ -13,6 +13,7 @@ namespace CXERP
         public string Company_id { get; set; }
         public string Acy_id { get; set; }
         public string Style_no { get; set; }
+        public string Po_id { get; set; }
         public string Style_name { get; set; }
         public string Locked { get; set; }
         public string Notes { get; set; }
@@ -30,8 +31,8 @@ namespace CXERP
         public const string UNIQUENO = "UNIQUENO";
         public const string COMPANY_ID = "COMPANY_ID";
         public const string ACY_ID = "ACY_ID";
-        public const string ORDER_ID = "ACY_ID";
         public const string STYLE_NO = "STYLE_NO";
+        public const string PO_ID = "PO_ID";
         public const string STYLE_NAME = "STYLE_NAME";
         public const string LOCKED = "LOCKED";
         public const string NOTES = "NOTES";

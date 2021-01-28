@@ -141,6 +141,10 @@
       <Project>{f859e753-8725-48f3-83ac-56ff98054236}</Project>
       <Name>CXCORE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CXERP\CXERP.csproj">
+      <Project>{34bb6a66-5087-45aa-88b4-3bc4310c0ccb}</Project>
+      <Name>CXERP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CXLIB\CXLIB.csproj">
       <Project>{f0ec1db6-ea0b-4ade-8ee5-a7c10cad33ed}</Project>
       <Name>CXLIB</Name>

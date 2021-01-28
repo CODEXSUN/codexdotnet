@@ -1,6 +1,6 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 5.0.0.0 Date : 27-01-2021
 // Auto Generated
-// last update : 14-06-2019 09:02:20 PM
+// last update : 28-01-2021 05:53:39 PM
 
 using CXLIB;
 
@@ -22,6 +22,7 @@ namespace CXERP
                     Company_id = Current.Company_id,
                     Acy_id = Current.Acy_id,
                     Style_no = CStyle_exten.GetNext_No,
+                    Po_id = string.Empty,
                     Style_name = string.Empty,
                     Locked = string.Empty,
                     Notes = string.Empty,
@@ -43,6 +44,7 @@ namespace CXERP
             q = q.Replace("@" + STYLE.COMPANY_ID + "@", "" + ConvertTO.SqlString(v.Company_id) + "");
             q = q.Replace("@" + STYLE.ACY_ID + "@", "" + ConvertTO.SqlString(v.Acy_id) + "");
             q = q.Replace("@" + STYLE.STYLE_NO + "@", "" + ConvertTO.SqlString(v.Style_no) + "");
+            q = q.Replace("@" + STYLE.PO_ID + "@", "" + ConvertTO.SqlString(v.Po_id) + "");
             q = q.Replace("@" + STYLE.STYLE_NAME + "@", "" + ConvertTO.SqlString(v.Style_name) + "");
             q = q.Replace("@" + STYLE.LOCKED + "@", "" + ConvertTO.SqlString(v.Locked) + "");
             q = q.Replace("@" + STYLE.NOTES + "@", "" + ConvertTO.SqlString(v.Notes) + "");
@@ -61,6 +63,7 @@ namespace CXERP
                 q += "," + STYLE.COMPANY_ID + "\r\n";
                 q += "," + STYLE.ACY_ID + "\r\n";
                 q += "," + STYLE.STYLE_NO + " \r\n";
+                q += "," + STYLE.PO_ID + " \r\n";
                 q += "," + STYLE.STYLE_NAME + " \r\n";
                 q += "," + STYLE.LOCKED + " \r\n";
                 q += "," + STYLE.NOTES + " \r\n";
@@ -71,6 +74,7 @@ namespace CXERP
                 q += ", @" + STYLE.COMPANY_ID + "@ \r\n";
                 q += ", @" + STYLE.ACY_ID + "@ \r\n";
                 q += ", @"+ STYLE.STYLE_NO + "@ \r\n";
+                q += ", @"+ STYLE.PO_ID + "@ \r\n";
                 q += ", @"+ STYLE.STYLE_NAME + "@ \r\n";
                 q += ", @"+ STYLE.LOCKED + "@ \r\n";
                 q += ", @"+ STYLE.NOTES + "@ \r\n";
@@ -91,6 +95,7 @@ namespace CXERP
                 q += "," + STYLE.COMPANY_ID + " = @" + STYLE.COMPANY_ID + "@ \r\n";
                 q += "," + STYLE.ACY_ID + " = @" + STYLE.ACY_ID + "@ \r\n";
                 q += "," + STYLE.STYLE_NO + " = @" + STYLE.STYLE_NO + "@ \r\n ";
+                q += "," + STYLE.PO_ID + " = @" + STYLE.PO_ID + "@ \r\n ";
                 q += "," + STYLE.STYLE_NAME + " = @" + STYLE.STYLE_NAME + "@ \r\n ";
                 q += "," + STYLE.LOCKED + " = @" + STYLE.LOCKED + "@ \r\n ";
                 q += "," + STYLE.NOTES + " = @" + STYLE.NOTES + "@ \r\n ";

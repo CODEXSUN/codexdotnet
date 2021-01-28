@@ -1,13 +1,13 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 5.0.0.0 Date : 27-01-2021
 // Auto Generated
-// last update : 14-06-2019 09:02:20 PM
+// last update : 28-01-2021 06:08:07 PM
 
 using System.Collections.Generic;
 using CXLIB;
 
 namespace CXERP
 {
-    public static class CStyleitems 
+    public class CStyleitems 
     {
 
         #region[Get New]

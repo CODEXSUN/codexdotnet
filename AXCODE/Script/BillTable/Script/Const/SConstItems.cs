@@ -158,7 +158,7 @@ namespace AXCODE
 
             ___result += "    #region[string Const class]\r\n";
             ___result += "\r\n";
-            ___result += "    public class " + CAPITAL + "ITEMS\r\n";
+            ___result += "    public static class " + CAPITAL + "ITEMS\r\n";
             ___result += "    {\r\n";
             ___result += "        public const string " + CAPITAL + "ITEMS_ID = \"" + CAPITAL + "ITEMS_ID\";\r\n";
 

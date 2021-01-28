@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Data;
 using CXBILL;
 using CXCORE;
+using CXERP;
 using CXLIB;
 using LABOUR = CXBILL_EXTEN.Labour.Const.LABOUR;
 

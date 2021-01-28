@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using CXBILL;
 using CXCORE;
+using CXERP;
 using CXLIB;
 using CLabour_exten = CXBILL_EXTEN.Labour.Class.CLabour_exten;
 using D_Labour = CXBILL_EXTEN.Labour.Prints.D_Labour;

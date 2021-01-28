@@ -20,6 +20,7 @@ namespace CXERP
             Initialize();
             InitGrid();
             Setactives();
+            Po_lookup();
             SetFocus();
         }
         
@@ -39,7 +40,9 @@ namespace CXERP
         private OfficeButton btn_splitter;
 
         private XTextBox txt_style_no;
-        private XLabel lbl_article_no;
+        private XLabel lbl_style_no;
+        private LookupBox txt_po_id;
+        private XLabel lbl_po_id;
         private XTextBox txt_style_name;
         private XLabel lbl_style_name;
 
@@ -72,7 +75,9 @@ namespace CXERP
             btn_close = new CloseButton();
 
             txt_style_no = new XTextBox();
-            lbl_article_no = new XLabel();
+            lbl_style_no = new XLabel();
+            txt_po_id = new LookupBox();
+            lbl_po_id = new XLabel();
             txt_style_name = new XTextBox();
             lbl_style_name = new XLabel();
             editgrid = new EditGridView();
@@ -213,7 +218,9 @@ namespace CXERP
             finner_panel.Controls.Add(txt_notes);
             finner_panel.Controls.Add(lbl_notes);
             finner_panel.Controls.Add(txt_style_no);
-            finner_panel.Controls.Add(lbl_article_no);
+            finner_panel.Controls.Add(lbl_style_no);
+            finner_panel.Controls.Add(txt_po_id);
+            finner_panel.Controls.Add(lbl_po_id);
             finner_panel.Controls.Add(txt_style_name);
             finner_panel.Controls.Add(lbl_style_name);
             finner_panel.Controls.Add(editgrid);
@@ -232,14 +239,14 @@ namespace CXERP
 
             #region[Properties of control]
 
-            lbl_article_no.Font = XFont.Font_10B;
-            lbl_article_no.Name = "lbl_style_no";
-            lbl_article_no.Text = " Style no";
-            lbl_article_no.Anchor = XAnchor.LT;
-            lbl_article_no.TextAlign = ContentAlignment.MiddleLeft;
-            lbl_article_no.ForeColor = XFontColor.Lbl_ForeColor;
-            lbl_article_no.Size =  XSize.OneLabel;
-            lbl_article_no.Location =XLayout.FirstLabel;
+            lbl_style_no.Font = XFont.Font_10B;
+            lbl_style_no.Name = "lbl_style_no";
+            lbl_style_no.Text = " Style no";
+            lbl_style_no.Anchor = XAnchor.LT;
+            lbl_style_no.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_style_no.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_style_no.Size =  XSize.OneLabel;
+            lbl_style_no.Location =XLayout.FirstLabel;
 
             txt_style_no.Font = XFont.TxtFont;
             txt_style_no.ForeColor = XFontColor.TxtFontColor;
@@ -252,6 +259,25 @@ namespace CXERP
             txt_style_no.TabIndex = XTab.Txt_TabIndex;
             txt_style_no.Enter += new EventHandler(Txt_article_no_Enter);
 
+            lbl_po_id.Font = XFont.Font_10B;
+            lbl_po_id.Name = "lbl_po_id";
+            lbl_po_id.Text = " Po no";
+            lbl_po_id.Anchor = XAnchor.LT;
+            lbl_po_id.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_po_id.ForeColor = XFontColor.Lbl_ForeColor;
+            lbl_po_id.Size = XSize.OneLabel;
+            lbl_po_id.Location = XLayout.R1_Label(lbl_style_no.Location);
+
+            txt_po_id.Font = XFont.TxtFont;
+            txt_po_id.ForeColor = XFontColor.TxtFontColor;
+            txt_po_id.BackColor = XTheme.TxtBackcolor;
+            txt_po_id.Name = "txt_po_id";
+            txt_po_id.Size = XSize.OneText;
+            txt_po_id.Anchor = XAnchor.LTR;
+            txt_po_id.Location = XLayout.R1_Text(txt_style_no.Location);
+            txt_po_id.TabIndex = XTab.Index(txt_style_no.TabIndex);
+            txt_po_id.Enter += new EventHandler(Txt_po_id_Enter);
+
 
             lbl_style_name.Font = XFont.Font_10B;
             lbl_style_name.Name = "lbl_style_name";
@@ -260,7 +286,7 @@ namespace CXERP
             lbl_style_name.TextAlign = ContentAlignment.MiddleLeft;
             lbl_style_name.ForeColor = XFontColor.Lbl_ForeColor;
             lbl_style_name.Size =  XSize.OneLabel;
-            lbl_style_name.Location =XLayout.R1_Label(lbl_article_no.Location);
+            lbl_style_name.Location =XLayout.R1_Label(lbl_po_id.Location);
 
             txt_style_name.Font = XFont.TxtFont;
             txt_style_name.ForeColor = XFontColor.TxtFontColor;
@@ -268,9 +294,9 @@ namespace CXERP
             txt_style_name.Name = "txt_style_name";
             txt_style_name.Size =  XSize.OneText;
             txt_style_name.Anchor = XAnchor.LTR;
-            txt_style_name.Location =XLayout.R1_Text(txt_style_no.Location);
-            txt_style_name.TabIndex = XTab.Index(txt_style_no.TabIndex);
-            txt_style_name.Enter += new EventHandler(Txt_Style_date_Enter);
+            txt_style_name.Location =XLayout.R1_Text(txt_po_id.Location);
+            txt_style_name.TabIndex = XTab.Index(txt_po_id.TabIndex);
+            txt_style_name.Enter += new EventHandler(Txt_Style_name_Enter);
 
             editgrid.Location = new Point(XLayout.H_left, txt_style_name.Bottom + 10); 
             editgrid.Name = "editgrid"; 

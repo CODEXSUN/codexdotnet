@@ -52,40 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Garment new\order\Class\COrder.cs" />
-    <Compile Include="Garment new\order\Class\COrderitems.cs" />
-    <Compile Include="Garment new\order\Class\COrderitems_exten.cs" />
-    <Compile Include="Garment new\order\Class\COrder_exten.cs" />
-    <Compile Include="Garment new\order\Const\ORDER.cs" />
-    <Compile Include="Garment new\order\Const\ORDERITEMS.cs" />
-    <Compile Include="Garment new\order\Form\FOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\Form\FOrder.designer.cs">
-      <DependentUpon>FOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Garment new\order\Form\FOrder_Designer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\Form\FOrder_exten.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\Form\VOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\List\LOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\List\LOrder.designer.cs">
-      <DependentUpon>LOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Garment new\order\List\LOrder_Designer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\List\VLOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Garment new\order\Setup\Order_Tbl.cs" />
     <Compile Include="Garment new\Purchase\Purchase\Setup\U_Purchase_from_GarmentSoftware.cs" />
     <Compile Include="Garment new\Sales\Invoice\Class\cInvoice.cs" />
     <Compile Include="Garment new\Sales\Invoice\Class\CInvoiceitems.cs" />
@@ -397,6 +363,10 @@
     <ProjectReference Include="..\CXCORE\CXCORE.csproj">
       <Project>{06076e9e-19e8-4aae-ae6a-4fe7d0512462}</Project>
       <Name>CXCORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CXERP\CXERP.csproj">
+      <Project>{34bb6a66-5087-45aa-88b4-3bc4310c0ccb}</Project>
+      <Name>CXERP</Name>
     </ProjectReference>
     <ProjectReference Include="..\CXLIB\CXLIB.csproj">
       <Project>{fda5925a-117f-44f4-a789-84d234122a4b}</Project>

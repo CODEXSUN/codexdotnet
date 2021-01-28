@@ -104,7 +104,7 @@ namespace AXCODE
 
             ___result += "    #region[string Const class]\r\n";
             ___result += "\r\n";
-            ___result += "    public class " + CAPITAL + "\r\n";
+            ___result += "    public static class " + CAPITAL + "\r\n";
             ___result += "    {\r\n";
             ___result += "        public const string " + CAPITAL + "_ID = \"" + CAPITAL + "_ID\";\r\n";
             ___result += "        public const string UNIQUENO = \"UNIQUENO\";\r\n";

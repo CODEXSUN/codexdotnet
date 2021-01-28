@@ -1,6 +1,6 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 5.0.0.0 Date : 27-01-2021
 // Auto Generated
-// last update : 14-06-2019 09:02:20 PM
+// last update : 28-01-2021 06:09:30 PM
 
 using System.Data;
 using CXLIB;
@@ -26,8 +26,8 @@ namespace CXERP
                         Styleitems_id = redr[STYLEITEMS.STYLEITEMS_ID].ToString(), 
                         Style_id = redr[STYLEITEMS.STYLE_ID].ToString(),
                         Style_no = redr[STYLEITEMS.STYLE_NO].ToString(),
-                          Article_id = redr[ARTICLE.ARTICLE_NO].ToString(),
-                          Product_id = redr[PRODUCT.PRODUCT_NAME].ToString(),
+                        Article_id = redr[ARTICLE.ARTICLE_NO].ToString(),
+                        Product_id = redr[PRODUCT.PRODUCT_NAME].ToString(),
                         Colours_id = redr[COLOURS.COLOURS_NAME].ToString(),
                         Sizes_id = redr[SIZES.SIZES_NAME].ToString(),
                         Qty = redr[STYLEITEMS.QTY].ToString(),
@@ -50,16 +50,16 @@ namespace CXERP
          public static List<Styleitems> FKId(string id ) 
          { 
             string q = " SELECT " + STYLEITEMS.STYLEITEMS_TBL +".* \r\n"; 
-            q += ", "+ STYLE.STYLE_TBL + "."+ STYLE.STYLE_NO + " \r\n";
-            q += ", " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_NO + " \r\n";
+            q += ", "+ STYLE.STYLE_TBL + "."+ STYLE.STYLE_NO + " \r\n"; 
+            q += ", "+ ARTICLE.ARTICLE_TBL + "."+ ARTICLE.ARTICLE_NO + " \r\n"; 
             q += ", "+ PRODUCT.PRODUCT_TBL + "."+ PRODUCT.PRODUCT_NAME + " \r\n"; 
             q += ", "+ COLOURS.COLOURS_TBL + "."+ COLOURS.COLOURS_NAME + " \r\n"; 
             q += ", "+ SIZES.SIZES_TBL + "."+ SIZES.SIZES_NAME + " \r\n"; 
             q += " FROM  " + STYLEITEMS.STYLEITEMS_TBL + " \r\n"; 
             q += " INNER JOIN  " + STYLE.STYLE_TBL + "\r\n";  
-            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.STYLE_ID + " = " + STYLE.STYLE_TBL + "." + STYLE.STYLE_ID+" )\r\n";
-            q += " INNER JOIN  " + ARTICLE.ARTICLE_TBL + "\r\n";
-            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.ARTICLE_ID + " = " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_ID + " )\r\n";
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.STYLE_ID + " = " + STYLE.STYLE_TBL + "." + STYLE.STYLE_ID+" )\r\n";  
+            q += " INNER JOIN  " + ARTICLE.ARTICLE_TBL + "\r\n";  
+            q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.ARTICLE_ID + " = " + ARTICLE.ARTICLE_TBL + "." + ARTICLE.ARTICLE_ID+" )\r\n";  
             q += " INNER JOIN  " + PRODUCT.PRODUCT_TBL + "\r\n";  
             q += " ON(" + STYLEITEMS.STYLEITEMS_TBL + "." + STYLEITEMS.PRODUCT_ID + " = " + PRODUCT.PRODUCT_TBL + "." + PRODUCT.PRODUCT_ID+" )\r\n";  
             q += " INNER JOIN  " + COLOURS.COLOURS_TBL + "\r\n";  

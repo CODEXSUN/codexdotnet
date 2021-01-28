@@ -8,6 +8,7 @@ using System;
 using System.Windows.Forms;
 using CXBILL;
 using CXACCOUNTS;
+using CXERP;
 
 namespace CXSUN
 {

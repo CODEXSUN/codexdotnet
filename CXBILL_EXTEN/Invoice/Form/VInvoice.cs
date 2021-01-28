@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CXBILL;
 using CXCORE;
+using CXERP;
 using CXLIB;
 using CInvoice = CXBILL_EXTEN.Invoice.Class.CInvoice;
 using CInvoice_exten = CXBILL_EXTEN.Invoice.Class.CInvoice_exten;

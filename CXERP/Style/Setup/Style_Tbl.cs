@@ -1,6 +1,6 @@
-// Version : 2.2.0.0 dt : 15-03-2019
+// Version : 5.0.0.0 Date : 27-01-2021
 // Auto Generated
-// last update : 28-05-2019 06:03:19 PM
+// last update : 28-01-2021 03:36:48 PM
 
 using CXLIB; 
 
@@ -19,7 +19,8 @@ namespace CXERP
             q += AddFields.Unique_500(STYLE.UNIQUENO);
             q += AddFields.Foreign(STYLE.STYLE_TBL, STYLE.COMPANY_ID);
             q += AddFields.Foreign(STYLE.STYLE_TBL, STYLE.ACY_ID);
-            q += AddFields.VARCHAR_500(STYLE.STYLE_NO); 
+            q += AddFields.Int(STYLE.STYLE_NO); 
+            q += AddFields.Foreign(STYLE.STYLE_TBL, STYLE.PO_ID); 
             q += AddFields.VARCHAR_500(STYLE.STYLE_NAME); 
             q += AddFields.Smallint(STYLE.LOCKED); 
             q += AddFields.Notes;
@@ -43,7 +44,7 @@ namespace CXERP
             q += CREATE.TABLE(STYLEITEMS.STYLEITEMS_TBL);
             q += AddFields.Primary(STYLEITEMS.STYLEITEMS_ID);
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.STYLE_ID); 
-            q += AddFields.VARCHAR_500(STYLEITEMS.STYLE_NO); 
+            q += AddFields.VARCHAR_200(STYLEITEMS.STYLE_NO); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.ARTICLE_ID); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.PRODUCT_ID); 
             q += AddFields.Foreign(STYLEITEMS.STYLEITEMS_TBL, STYLEITEMS.COLOURS_ID); 
