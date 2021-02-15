@@ -31,6 +31,9 @@ namespace CXSETUP
 
                     //CxAccounts(obj);
 
+                    screenText = "Installed Setup Success " + obj.Database;
+                    Processing(null, null);
+
                     break;
 
             }

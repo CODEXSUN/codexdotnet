@@ -7,8 +7,8 @@ namespace CXSETUP.Create_Setup.Base
     class CoreSetup
     {
 
-        private static string screenText;
-        public static event EventHandler Processing = null;
+        //private static string screenText;
+       // public static event EventHandler Processing = null;
 
         public static void Install(Setup obj)
         {
@@ -17,13 +17,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Version_Tbl(obj.Database);
 
-            screenText = "Installed Version Table";
-            Processing(null, null);
+            ////screenText = "Installed Version Table";
+            //Processing(null, null);
 
             Version_Tbl.InsertDefault_Version(obj.Database);
 
-            screenText = "Insert Version data";
-            Processing(null, null);
+            //screenText = "Insert Version data";
+            //Processing(null, null);
 
             #endregion[Version]
 
@@ -31,13 +31,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Role_Tbl(obj.Database);
 
-            screenText = "Installed Role Table";
-            Processing(null, null);
+            //screenText = "Installed Role Table";
+            //Processing(null, null);
 
             Role_Tbl.InsertDefault_Role(obj.Database);
 
-            screenText = "Insert Role data";
-            Processing(null, null);
+            //screenText = "Insert Role data";
+            //Processing(null, null);
 
             #endregion[Role]
 
@@ -45,13 +45,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new User_Tbl(obj.Database);
 
-            screenText = "Installed User Table";
-            Processing(null, null);
+            //screenText = "Installed User Table";
+            //Processing(null, null);
 
             User_Tbl.InsertDefault_User(obj.Database);
 
-            screenText = "Insert User data";
-            Processing(null, null);
+            //screenText = "Insert User data";
+            //Processing(null, null);
 
             #endregion[User]
 
@@ -59,13 +59,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new City_Tbl(obj.Database);
 
-            screenText = "Installed City Table";
-            Processing(null, null);
+            //screenText = "Installed City Table";
+            //Processing(null, null);
 
             City_Tbl.InsertDefault_City(obj.Database);
 
-            screenText = "Insert City data";
-            Processing(null, null);
+            //screenText = "Insert City data";
+            //Processing(null, null);
 
             #endregion[City]
 
@@ -73,13 +73,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new State_Tbl(obj.Database);
 
-            screenText = "Installed State Table";
-            Processing(null, null);
+            //screenText = "Installed State Table";
+            //Processing(null, null);
 
             State_Tbl.InsertDefault_State(obj.Database);
 
-            screenText = "Insert State data";
-            Processing(null, null);
+            //screenText = "Insert State data";
+            //Processing(null, null);
 
             #endregion[State]
 
@@ -87,13 +87,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Country_Tbl(obj.Database);
 
-            screenText = "Installed Country Table";
-            Processing(null, null);
+            //screenText = "Installed Country Table";
+            //Processing(null, null);
 
             Country_Tbl.InsertDefault_Country(obj.Database);
 
-            screenText = "Insert Country data";
-            Processing(null, null);
+            //screenText = "Insert Country data";
+            //Processing(null, null);
 
             #endregion[Country]
 
@@ -101,13 +101,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Pincode_Tbl(obj.Database);
 
-            screenText = "Installed Pincode Table";
-            Processing(null, null);
+            //screenText = "Installed Pincode Table";
+            //Processing(null, null);
 
             Pincode_Tbl.InsertDefault_Pincode(obj.Database);
 
-            screenText = "Insert Pincode data";
-            Processing(null, null);
+            //screenText = "Insert Pincode data";
+            //Processing(null, null);
 
             #endregion[Pincode]
 
@@ -115,13 +115,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Company_Tbl(obj.Database);
 
-            screenText = "Installed Company Table";
-            Processing(null, null);
+            //screenText = "Installed Company Table";
+            //Processing(null, null);
 
             Company_Tbl.InsertDefault_Company(obj.Database, obj.Company, obj.Displayname);
 
-            screenText = "Insert Company data";
-            Processing(null, null);
+            //screenText = "Insert Company data";
+            //Processing(null, null);
 
             #endregion[Company]
 
@@ -129,13 +129,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Acy_Tbl(obj.Database);
 
-            screenText = "Installed ACY Table";
-            Processing(null, null);
+            //screenText = "Installed ACY Table";
+            //Processing(null, null);
 
             Acy_Tbl.InsertDefault_Acy(obj.Database);
 
-            screenText = "Insert ACY data";
-            Processing(null, null);
+            //screenText = "Insert ACY data";
+            //Processing(null, null);
 
             #endregion[ACY]
 
@@ -143,13 +143,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Defaultcompany_Tbl(obj.Database);
 
-            screenText = "Installed DefaultCompany Table";
-            Processing(null, null);
+            //screenText = "Installed DefaultCompany Table";
+            //Processing(null, null);
 
             Defaultcompany_Tbl.InsertDefault_Defaultcompany(obj.Database);
 
-            screenText = "Insert Default company data";
-            Processing(null, null);
+            //screenText = "Insert Default company data";
+            //Processing(null, null);
 
             #endregion[Default Company]
 
@@ -157,13 +157,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Defaultlogin_Tbl(obj.Database);
 
-            screenText = "Installed DefaultLogin Table";
-            Processing(null, null);
+            //screenText = "Installed DefaultLogin Table";
+            //Processing(null, null);
 
             Defaultlogin_Tbl.InsertDefault_Defaultlogin(obj.Database);
 
-            screenText = "Insert Default login data";
-            Processing(null, null);
+            //screenText = "Insert Default login data";
+            //Processing(null, null);
 
             #endregion[Default Login]
 
@@ -171,13 +171,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Contacttype_Tbl(obj.Database);
 
-            screenText = "Installed Contacttype Table";
-            Processing(null, null);
+            //screenText = "Installed Contacttype Table";
+            //Processing(null, null);
 
             Contacttype_Tbl.InsertDefault_Contacttype(obj.Database);
 
-            screenText = "Insert Contact type data";
-            Processing(null, null);
+            //screenText = "Insert Contact type data";
+            //Processing(null, null);
 
             #endregion[Contact type]
 
@@ -185,13 +185,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Party_Tbl(obj.Database);
 
-            screenText = "Installed Party Table";
-            Processing(null, null);
+            //screenText = "Installed Party Table";
+            //Processing(null, null);
 
             Party_Tbl.InsertDefault_Party(obj.Database);
 
-            screenText = "Insert Party data";
-            Processing(null, null);
+            //screenText = "Insert Party data";
+            //Processing(null, null);
 
             #endregion[Party]
 
@@ -199,13 +199,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Producttype_Tbl(obj.Database);
 
-            screenText = "Installed Product Type Table";
-            Processing(null, null);
+            //screenText = "Installed Product Type Table";
+            //Processing(null, null);
 
             Producttype_Tbl.InsertDefault_Producttype(obj.Database);
 
-            screenText = "Insert Product type data";
-            Processing(null, null);
+            //screenText = "Insert Product type data";
+            //Processing(null, null);
 
             #endregion[Product type]
 
@@ -213,13 +213,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Hsncode_Tbl(obj.Database);
 
-            screenText = "Installed HSN Code Table";
-            Processing(null, null);
+            //screenText = "Installed HSN Code Table";
+            //Processing(null, null);
 
             Hsncode_Tbl.InsertDefault_Hsncode(obj.Database);
 
-            screenText = "Insert Hsn code data";
-            Processing(null, null);
+            //screenText = "Insert Hsn code data";
+            //Processing(null, null);
 
             #endregion[Hsn code]
 
@@ -227,13 +227,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Unit_Tbl(obj.Database);
 
-            screenText = "Installed Units Table";
-            Processing(null, null);
+            //screenText = "Installed Units Table";
+            //Processing(null, null);
 
             Unit_Tbl.InsertDefault_Unit(obj.Database);
 
-            screenText = "Insert Unit data";
-            Processing(null, null);
+            //screenText = "Insert Unit data";
+            //Processing(null, null);
 
             #endregion[Unit]
 
@@ -241,13 +241,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Product_Tbl(obj.Database);
 
-            screenText = "Installed Product Table";
-            Processing(null, null);
+            //screenText = "Installed Product Table";
+            //Processing(null, null);
 
             Product_Tbl.InsertDefault_Product(obj.Database);
 
-            screenText = "Insert Product data";
-            Processing(null, null);
+            //screenText = "Insert Product data";
+            //Processing(null, null);
 
             #endregion[Product]
 
@@ -255,13 +255,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Ledgergroup_Tbl(obj.Database);
 
-            screenText = "Installed Ledger Group Table";
-            Processing(null, null);
+            //screenText = "Installed Ledger Group Table";
+            //Processing(null, null);
 
             Ledgergroup_Tbl.InsertDefault_Ledgergroup(obj.Database);
 
-            screenText = "Insert Ledger group data";
-            Processing(null, null);
+            //screenText = "Insert Ledger group data";
+            //Processing(null, null);
 
             #endregion[Ledger Group]
 
@@ -269,13 +269,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Ledger_Tbl(obj.Database);
 
-            screenText = "Installed Ledger Table";
-            Processing(null, null);
+            //screenText = "Installed Ledger Table";
+            //Processing(null, null);
 
             Ledger_Tbl.InsertDefault_Ledger(obj.Database);
 
-            screenText = "Insert Ledger data";
-            Processing(null, null);
+            //screenText = "Insert Ledger data";
+            //Processing(null, null);
 
             #endregion[Ledger]
 
@@ -283,13 +283,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Taxtype_Tbl(obj.Database);
 
-            screenText = "Installed Tax Type Table";
-            Processing(null, null);
+            //screenText = "Installed Tax Type Table";
+            //Processing(null, null);
 
             Taxtype_Tbl.InsertDefault_Taxtype(obj.Database);
 
-            screenText = "Insert Tax type data";
-            Processing(null, null);
+            //screenText = "Insert Tax type data";
+            //Processing(null, null);
 
             #endregion[Taxtype]
 
@@ -297,13 +297,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Salestype_Tbl(obj.Database);
 
-            screenText = "Installed Sales Type Table";
-            Processing(null, null);
+            //screenText = "Installed Sales Type Table";
+            //Processing(null, null);
 
             Salestype_Tbl.InsertDefault_Salestype(obj.Database);
 
-            screenText = "Insert Sales type data";
-            Processing(null, null);
+            //screenText = "Insert Sales type data";
+            //Processing(null, null);
 
             #endregion[Sales Type]
 
@@ -311,13 +311,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Transport_Tbl(obj.Database);
 
-            screenText = "Installed Transport Table";
-            Processing(null, null);
+            //screenText = "Installed Transport Table";
+            //Processing(null, null);
 
             Transport_Tbl.InsertDefault_Transport(obj.Database);
 
-            screenText = "Insert Transport data";
-            Processing(null, null);
+            //screenText = "Insert Transport data";
+            //Processing(null, null);
 
             #endregion[Transport]
 
@@ -325,13 +325,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Deliveredto_Tbl(obj.Database);
 
-            screenText = "Installed Delivered to Table";
-            Processing(null, null);
+            //screenText = "Installed Delivered to Table";
+            //Processing(null, null);
 
             Deliveredto_Tbl.InsertDefault_Deliveredto(obj.Database);
 
-            screenText = "Insert Delivered to data";
-            Processing(null, null);
+            //screenText = "Insert Delivered to data";
+            //Processing(null, null);
 
             #endregion[Delivered to]
 
@@ -339,13 +339,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Sizes_Tbl(obj.Database);
 
-            screenText = "Installed Sizes Table";
-            Processing(null, null);
+            //screenText = "Installed Sizes Table";
+            //Processing(null, null);
 
             Sizes_Tbl.InsertDefault_Sizes(obj.Database);
 
-            screenText = "Insert Sizes data";
-            Processing(null, null);
+            //screenText = "Insert Sizes data";
+            //Processing(null, null);
 
             #endregion[Sizes]
 
@@ -353,13 +353,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Colours_Tbl(obj.Database);
 
-            screenText = "Installed Colours Table";
-            Processing(null, null);
+            //screenText = "Installed Colours Table";
+            //Processing(null, null);
 
             Colours_Tbl.InsertDefault_Colours(obj.Database);
 
-            screenText = "Insert Colours data";
-            Processing(null, null);
+            //screenText = "Insert Colours data";
+            //Processing(null, null);
 
             #endregion[Colours]
 
@@ -367,13 +367,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Bank_Tbl(obj.Database);
 
-            screenText = "Installed Bank Table";
-            Processing(null, null);
+            //screenText = "Installed Bank Table";
+            //Processing(null, null);
 
             Bank_Tbl.InsertDefault_Bank(obj.Database);
 
-            screenText = "Insert Bank data";
-            Processing(null, null);
+            //screenText = "Insert Bank data";
+            //Processing(null, null);
 
             #endregion[Bank]
 
@@ -381,13 +381,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Receipttype_Tbl(obj.Database);
 
-            screenText = "Installed Receipt Type Table";
-            Processing(null, null);
+            //screenText = "Installed Receipt Type Table";
+            //Processing(null, null);
 
             Receipttype_Tbl.InsertDefault_Receipttype(obj.Database);
 
-            screenText = "Insert Receipt type data";
-            Processing(null, null);
+            //screenText = "Insert Receipt type data";
+            //Processing(null, null);
 
             #endregion[Receipt type]
 
@@ -395,13 +395,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Ordertype_Tbl(obj.Database);
 
-            screenText = "Installed Order Type Table";
-            Processing(null, null);
+            //screenText = "Installed Order Type Table";
+            //Processing(null, null);
 
             Ordertype_Tbl.InsertDefault_Ordertype(obj.Database);
 
-            screenText = "Insert Order type data";
-            Processing(null, null);
+            //screenText = "Insert Order type data";
+            //Processing(null, null);
 
             #endregion[Order type]
 
@@ -409,13 +409,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Month_Tbl(obj.Database);
 
-            screenText = "Installed Month Table";
-            Processing(null, null);
+            //screenText = "Installed Month Table";
+            //Processing(null, null);
 
             Month_Tbl.InsertDefault_Month(obj.Database);
 
-            screenText = "Insert Month data";
-            Processing(null, null);
+            //screenText = "Insert Month data";
+            //Processing(null, null);
 
             #endregion[Month type]
 
@@ -423,13 +423,13 @@ namespace CXSETUP.Create_Setup.Base
 
             new Bundle_Tbl(obj.Database);
 
-            screenText = "Installed Bundle Table";
-            Processing(null, null);
+            //screenText = "Installed Bundle Table";
+            //Processing(null, null);
 
             Bundle_Tbl.InsertDefault_Bundle(obj.Database);
 
-            screenText = "Insert Bundle data";
-            Processing(null, null);
+            //screenText = "Insert Bundle data";
+            //Processing(null, null);
 
             #endregion[Month type]
         }

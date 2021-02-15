@@ -39,9 +39,9 @@ namespace CXCORE
             q += DB.FIELD(VERSION.CHANGES);
             q += DB.MID;
             q += DB.VALUE_1ST("1");
-            q += DB.VALUE("4.0.0.2");
-            q += DB.VALUE("2020-08-10");
-            q += DB.VALUE("Adding Cash Book");
+            q += DB.VALUE("5.0.0.0");
+            q += DB.VALUE("2021-02-15");
+            q += DB.VALUE("Rework for v5 update");
             q += DB.EOF;
 
             new DAL().Execute(q);
