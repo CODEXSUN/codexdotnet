@@ -247,10 +247,10 @@ namespace CXLIB
             PrintConfig.With_PO_Dc = true;
 
 
-            PrintConfig.Account_no = "Account No   : 510909010138768";
-            PrintConfig.IFSC = "IFSC Code     : CIUB0000523";
-            PrintConfig.BankName = "Bank Name   : CITY UNION BANK";
-            PrintConfig.BankBranch = "Bank Branch : NALLUR BRANCH";
+            //PrintConfig.Account_no = "Account No   : 510909010138768";
+            //PrintConfig.IFSC = "IFSC Code     : CIUB0000523";
+            //PrintConfig.BankName = "Bank Name   : CITY UNION BANK";
+            //PrintConfig.BankBranch = "Bank Branch : NALLUR BRANCH";
         }
 
 

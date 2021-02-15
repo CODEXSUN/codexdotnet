@@ -43,8 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create Setup\CreateDatabase.cs" />
-    <Compile Include="Create Setup\InsertDefault.cs" />
+    <Compile Include="Create Setup\Base\AccountsSetup.cs" />
+    <Compile Include="Create Setup\Base\BillSetup.cs" />
+    <Compile Include="Create Setup\Base\CoreSetup.cs" />
+    <Compile Include="Create Setup\Base\ErpSetup.cs" />
+    <Compile Include="Create Setup\Base\GarmentSetup.cs" />
+    <Compile Include="Create Setup\Base\TexQuotationSetup.cs" />
+    <Compile Include="Create Setup\Base\UpvcSetup.cs" />
+    <Compile Include="Create Setup\Common\CreateDatabase.cs" />
     <Compile Include="Main\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +70,9 @@
       <DependentUpon>NewSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Create Setup\RunSetup.cs" />
-    <Compile Include="Update Setup\RunUpdate.cs" />
     <Compile Include="Utlities\WriteAppConfig.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="SQL_DB_Query.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SQL\codexsun.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CXACCOUNTS\CXACCOUNTS.csproj">

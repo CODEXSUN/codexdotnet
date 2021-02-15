@@ -40,7 +40,8 @@ namespace ERP
 
             };
 
-            string[] _erp;
+            string[] _orderInfo;
+            string[] _entries;
 
 
             Add_menu(_Master, MainMenuHeader.Master, _MasterCommon);
@@ -49,9 +50,11 @@ namespace ERP
             switch (Current.SoftwareType)
             {
                 case SoftwareTypes.GARMENT:
-                    _erp = new string[] { DropMenuERP.Orderinfo, DropMenuERP.Style, DropMenuERP.Article, DropMenuERP.Po };
+                    _orderInfo = new string[] { DropMenuERP.Orderinfo, DropMenuERP.Style, DropMenuERP.Article, DropMenuERP.Po };
+                    _entries = new string[] { DropMenuERP.Inward, DropMenuERP.Outward};
 
-                    Add_menu(_erp, MainMenuHeader.Erp, null);
+                    Add_menu(_orderInfo, MainMenuHeader.OrderInfo, null);
+                    Add_menu(_entries, MainMenuHeader.Entries, null);
 
                     break;
 
@@ -126,7 +129,8 @@ namespace ERP
         internal const string Report = "REPORT";
         internal const string Accounts = "ACCOUNTS";
         internal const string Admin = "ADMIN";
-        internal const string Erp = "ERP";
+        internal const string OrderInfo = "Order Info";
+        internal const string Entries = "Entries";
 
 
 

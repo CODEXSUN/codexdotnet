@@ -333,7 +333,7 @@ namespace CXERP
                 {
                     while (redr.Read() == true)
                     {
-                        return ((Convert.ToInt32(redr[ORDER.ORDER_NO].ToString())) + 1).ToString();
+                        //return ((Convert.ToInt32(redr[ORDER.ORDER_NO].ToString())) + 1).ToString();
                     }
                      redr.Close();
                     return Core.One;

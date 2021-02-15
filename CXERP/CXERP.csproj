@@ -42,6 +42,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entries\Inward\Class\cInward.cs" />
+    <Compile Include="Entries\Inward\Class\CInwarditems.cs" />
+    <Compile Include="Entries\Inward\Class\CInwarditems_exten.cs" />
+    <Compile Include="Entries\Inward\Class\cInward_exten.cs" />
+    <Compile Include="Entries\Inward\Const\INWARD.cs" />
+    <Compile Include="Entries\Inward\Const\INWARDITEMS.cs" />
+    <Compile Include="Entries\Inward\Form\FInward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\Form\FInward.designer.cs">
+      <DependentUpon>FInward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entries\Inward\Form\FInward_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\Form\FInward_exten.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\Form\VInward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\List\LInward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\List\LInward.designer.cs">
+      <DependentUpon>LInward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entries\Inward\List\LInward_design.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\List\VLInward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entries\Inward\Setup\Inward_Tbl.cs" />
     <Compile Include="Order Info\Article\Const\ARTICLE.cs" />
     <Compile Include="Order Info\Article\Crud\CArticle.cs" />
     <Compile Include="Order Info\Article\Crud\CArticle_exten.cs" />
@@ -180,8 +214,6 @@
       <Name>CXLIB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entries\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

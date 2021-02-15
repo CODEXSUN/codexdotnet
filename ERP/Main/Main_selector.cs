@@ -97,6 +97,10 @@ namespace ERP
                     Mymenu_Click(sender, e, new LPo());
                     break;
 
+                case DropMenuERP.Inward:
+                    Mymenu_Click(sender, e, new LInward());
+                    break;
+
                     #endregion[Erp]
 
             }

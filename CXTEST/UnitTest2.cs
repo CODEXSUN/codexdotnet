@@ -17,10 +17,15 @@ namespace CXTEST
         [TestMethod]
         public void TestMethod1()
         {
-            string db = "dev_codexsun_db";
+            string db = "codexsun_db";
 
 
-            new Style_Tbl(db);
+            //new Style_Tbl(db);
+
+            //new Po_Tbl(db);
+            //new Article_Tbl(db);
+            //new Style_Tbl(db);
+            new Order_Tbl(db);
 
 
 
@@ -46,7 +51,7 @@ namespace CXTEST
             //U_Tex_invoice.GetUpdated(OldDb);
             //U_Quotation.GetUpdated(OldDb);
             //U_QReceipt.GetUpdated(OldDb);
-           //U_Receipt.GetUpdated(OldDb);
+            //U_Receipt.GetUpdated(OldDb);
             //U_Party.GetUpdated(OldDb);
 
 

@@ -71,7 +71,7 @@ namespace CXCORE
                         {
                         Bank_name = redr[BANK.BANK_NAME].ToString(),
                         Account_number = redr[BANK.ACCOUNT_NUMBER].ToString(),
-                        Ifsc_code = redr[BANK.IFSC_CODE].ToString(),
+                        Ifsc_code = redr["ghjhj"].ToString(),
                         Opening_balance = ConvertTO.Decimal(redr[BANK.OPENING_BALANCE].ToString()),
                         Notes = redr[BANK.NOTES].ToString(),
                         Active_id = redr[BANK.ACTIVE_ID].ToString(),
