@@ -1,30 +1,16 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CXCORE;
-using CXLIB;
-using System.Data;
-using CXBILL;
-using CXBILL_EXTEN;
-using CXSETUP;
-using CXERP;
-using System.IO;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CXTEST
+namespace ZXDEV
 {
-    [TestClass]
-    public class UnitTest2
+    class Class1
     {
 
-        StreamWriter streamWriter;
-        string xmlstc = "";
-
-        public object MessageBox { get; private set; }
-
-        [TestMethod]
-        public void TestMethod1()
+        public void tallyexport()
         {
-
 
             try
             {
@@ -91,25 +77,18 @@ namespace CXTEST
                 httpWebRequest.ContentLength = xmlstc.Length;
                 httpWebRequest.ContentType = "application/x-www-form-urlencoded";
 
-                StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream());
+                streamWriter = new StreamWriter(httpWebRequest.GetRequestStream());
                 streamWriter.Write(xmlstc);
-                Console.WriteLine("Data inserted into Tally sucessfully");
+                MessageBox.Show("Data inserted into Tally sucessfully");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message, ex.StackTrace);
+                MessageBox.Show(ex.Message, ex.StackTrace);
             }
             finally
             {
                 streamWriter.Close();
             }
-
-
-
-
-
-
         }
-     
     }
 }
