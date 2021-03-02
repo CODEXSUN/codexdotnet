@@ -563,8 +563,8 @@ namespace CXERP
 
             DataGridViewTextBoxColumn col_Total_bundles = new DataGridViewTextBoxColumn();
             col_Total_bundles.Name = INWARD.TOTAL_BUNDEL;
-            col_Total_bundles.HeaderText = "TOTAL_BUNDEL";
-            col_Total_bundles.Visible = false;
+            col_Total_bundles.HeaderText = "TOTAL BUNDEL";
+            //col_Total_bundles.Visible = false;
             col_Total_bundles.Width = 288;
             col_Total_bundles.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col_Total_bundles.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;

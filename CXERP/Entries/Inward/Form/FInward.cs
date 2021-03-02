@@ -80,21 +80,21 @@ namespace CXERP
 
         #region[Enter Event]
 
-        private void Txt_taxtype_id_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_taxtype_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_taxtype_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_taxtype_id.ForeColor = Theme.lbl_EnterForeColor;
-        }
+        //private void Txt_taxtype_id_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_taxtype_id.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_taxtype_id.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_taxtype_id.ForeColor = Theme.lbl_EnterForeColor;
+        //}
 
-        private void Txt_salestype_id_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_salestype_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_salestype_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_salestype_id.ForeColor = Theme.lbl_EnterForeColor;
-        }
+        //private void Txt_salestype_id_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_salestype_id.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_salestype_id.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_salestype_id.ForeColor = Theme.lbl_EnterForeColor;
+        //}
 
 
         private void Txt_order_id_Enter(object sender, EventArgs e)
@@ -108,16 +108,16 @@ namespace CXERP
         private void Txt_invoice_no_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_invoice_no.BackColor = Theme.lbl_EnterBackColor;
-            lbl_invoice_no.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_invoice_no.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_inward_no.BackColor = Theme.lbl_EnterBackColor;
+            lbl_inward_no.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_inward_no.ForeColor = Theme.lbl_EnterForeColor;
         }
         private void Txt_invoice_date_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_invoice_date.BackColor = Theme.lbl_EnterBackColor;
-            lbl_invoice_date.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_invoice_date.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_inward_date.BackColor = Theme.lbl_EnterBackColor;
+            lbl_inward_date.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_inward_date.ForeColor = Theme.lbl_EnterForeColor;
         }
         private void Txt_party_id_Enter(object sender, EventArgs e)
         {
@@ -127,28 +127,28 @@ namespace CXERP
             lbl_party_id.ForeColor = Theme.lbl_EnterForeColor;
         }
 
-        private void Txt_transport_id_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_transport_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_transport_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_transport_id.ForeColor = Theme.lbl_EnterForeColor;
-        }
+        //private void Txt_transport_id_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_transport_id.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_transport_id.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_transport_id.ForeColor = Theme.lbl_EnterForeColor;
+        //}
 
         private void Txt_deliverto_id_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_deliveryto_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_deliveryto_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_deliveryto_id.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_receivedby_id.BackColor = Theme.lbl_EnterBackColor;
+            lbl_receivedby_id.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_receivedby_id.ForeColor = Theme.lbl_EnterForeColor;
         }
 
         private void Txt_bundel_Enter(object sender, EventArgs e)
         {
             Change_infocus();
-            lbl_bundel.BackColor = Theme.lbl_EnterBackColor;
-            lbl_bundel.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_bundel.ForeColor = Theme.lbl_EnterForeColor;
+            lbl_total_bundel.BackColor = Theme.lbl_EnterBackColor;
+            lbl_total_bundel.BorderColor = Theme.lbl_EnterBorderColor;
+            lbl_total_bundel.ForeColor = Theme.lbl_EnterForeColor;
         }
 
         private void Txt_total_qty_Enter(object sender, EventArgs e)
@@ -158,41 +158,41 @@ namespace CXERP
             lbl_total_qty.BorderColor = Theme.lbl_EnterBorderColor;
             lbl_total_qty.ForeColor = Theme.lbl_EnterForeColor;
         }
-        private void Txt_gsttotal_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_gsttotal.BackColor = Theme.lbl_EnterBackColor;
-            lbl_gsttotal.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_gsttotal.ForeColor = Theme.lbl_EnterForeColor;
-        }
-        private void Txt_ledger_id_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_ledger_id.BackColor = Theme.lbl_EnterBackColor;
-            lbl_ledger_id.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_ledger_id.ForeColor = Theme.lbl_EnterForeColor;
-        }
-        private void Txt_additional_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_additional.BackColor = Theme.lbl_EnterBackColor;
-            lbl_additional.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_additional.ForeColor = Theme.lbl_EnterForeColor;
-        }
-        private void Txt_grandtotal_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_grandtotal.BackColor = Theme.lbl_EnterBackColor;
-            lbl_grandtotal.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_grandtotal.ForeColor = Theme.lbl_EnterForeColor;
-        }
-        private void Txt_balance_Enter(object sender, EventArgs e)
-        {
-            Change_infocus();
-            lbl_balance.BackColor = Theme.lbl_EnterBackColor;
-            lbl_balance.BorderColor = Theme.lbl_EnterBorderColor;
-            lbl_balance.ForeColor = Theme.lbl_EnterForeColor;
-        }
+        //private void Txt_gsttotal_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_gsttotal.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_gsttotal.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_gsttotal.ForeColor = Theme.lbl_EnterForeColor;
+        //}
+        //private void Txt_ledger_id_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_ledger_id.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_ledger_id.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_ledger_id.ForeColor = Theme.lbl_EnterForeColor;
+        //}
+        //private void Txt_additional_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_additional.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_additional.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_additional.ForeColor = Theme.lbl_EnterForeColor;
+        //}
+        //private void Txt_grandtotal_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_grandtotal.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_grandtotal.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_grandtotal.ForeColor = Theme.lbl_EnterForeColor;
+        //}
+        //private void Txt_balance_Enter(object sender, EventArgs e)
+        //{
+        //    Change_infocus();
+        //    lbl_balance.BackColor = Theme.lbl_EnterBackColor;
+        //    lbl_balance.BorderColor = Theme.lbl_EnterBorderColor;
+        //    lbl_balance.ForeColor = Theme.lbl_EnterForeColor;
+        //}
         private void Txt_notes_Enter(object sender, EventArgs e)
         {
             Change_infocus();
@@ -207,61 +207,61 @@ namespace CXERP
             lbl_order_id.BorderColor = Theme.lbl_BorderColor;
             lbl_order_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_taxtype_id.BackColor = Theme.lbl_BackColor;
-            lbl_taxtype_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_taxtype_id.ForeColor = Theme.lbl_ForeColor;
+            //lbl_taxtype_id.BackColor = Theme.lbl_BackColor;
+            //lbl_taxtype_id.BorderColor = Theme.lbl_BorderColor;
+            //lbl_taxtype_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_salestype_id.BackColor = Theme.lbl_BackColor;
-            lbl_salestype_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_salestype_id.ForeColor = Theme.lbl_ForeColor;
+            //lbl_salestype_id.BackColor = Theme.lbl_BackColor;
+            //lbl_salestype_id.BorderColor = Theme.lbl_BorderColor;
+            //lbl_salestype_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_invoice_no.BackColor = Theme.lbl_BackColor;
-            lbl_invoice_no.BorderColor = Theme.lbl_BorderColor;
-            lbl_invoice_no.ForeColor = Theme.lbl_ForeColor;
+            lbl_inward_no.BackColor = Theme.lbl_BackColor;
+            lbl_inward_no.BorderColor = Theme.lbl_BorderColor;
+            lbl_inward_no.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_invoice_date.BackColor = Theme.lbl_BackColor;
-            lbl_invoice_date.BorderColor = Theme.lbl_BorderColor;
-            lbl_invoice_date.ForeColor = Theme.lbl_ForeColor;
+            lbl_inward_date.BackColor = Theme.lbl_BackColor;
+            lbl_inward_date.BorderColor = Theme.lbl_BorderColor;
+            lbl_inward_date.ForeColor = Theme.lbl_ForeColor;
 
             lbl_party_id.BackColor = Theme.lbl_BackColor;
             lbl_party_id.BorderColor = Theme.lbl_BorderColor;
             lbl_party_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_transport_id.BackColor = Theme.lbl_BackColor;
-            lbl_transport_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_transport_id.ForeColor = Theme.lbl_ForeColor;
+            //lbl_transport_id.BackColor = Theme.lbl_BackColor;
+            //lbl_transport_id.BorderColor = Theme.lbl_BorderColor;
+            //lbl_transport_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_deliveryto_id.BackColor = Theme.lbl_BackColor;
-            lbl_deliveryto_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_deliveryto_id.ForeColor = Theme.lbl_ForeColor;
+            lbl_receivedby_id.BackColor = Theme.lbl_BackColor;
+            lbl_receivedby_id.BorderColor = Theme.lbl_BorderColor;
+            lbl_receivedby_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_bundel.BackColor = Theme.lbl_BackColor;
-            lbl_bundel.BorderColor = Theme.lbl_BorderColor;
-            lbl_bundel.ForeColor = Theme.lbl_ForeColor;
+            lbl_total_bundel.BackColor = Theme.lbl_BackColor;
+            lbl_total_bundel.BorderColor = Theme.lbl_BorderColor;
+            lbl_total_bundel.ForeColor = Theme.lbl_ForeColor;
 
             lbl_total_qty.BackColor = Theme.lbl_BackColor;
             lbl_total_qty.BorderColor = Theme.lbl_BorderColor;
             lbl_total_qty.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_gsttotal.BackColor = Theme.lbl_BackColor;
-            lbl_gsttotal.BorderColor = Theme.lbl_BorderColor;
-            lbl_gsttotal.ForeColor = Theme.lbl_ForeColor;
+            //lbl_gsttotal.BackColor = Theme.lbl_BackColor;
+            //lbl_gsttotal.BorderColor = Theme.lbl_BorderColor;
+            //lbl_gsttotal.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_ledger_id.BackColor = Theme.lbl_BackColor;
-            lbl_ledger_id.BorderColor = Theme.lbl_BorderColor;
-            lbl_ledger_id.ForeColor = Theme.lbl_ForeColor;
+            //lbl_ledger_id.BackColor = Theme.lbl_BackColor;
+            //lbl_ledger_id.BorderColor = Theme.lbl_BorderColor;
+            //lbl_ledger_id.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_additional.BackColor = Theme.lbl_BackColor;
-            lbl_additional.BorderColor = Theme.lbl_BorderColor;
-            lbl_additional.ForeColor = Theme.lbl_ForeColor;
+            //lbl_additional.BackColor = Theme.lbl_BackColor;
+            //lbl_additional.BorderColor = Theme.lbl_BorderColor;
+            //lbl_additional.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_grandtotal.BackColor = Theme.lbl_BackColor;
-            lbl_grandtotal.BorderColor = Theme.lbl_BorderColor;
-            lbl_grandtotal.ForeColor = Theme.lbl_ForeColor;
+            //lbl_grandtotal.BackColor = Theme.lbl_BackColor;
+            //lbl_grandtotal.BorderColor = Theme.lbl_BorderColor;
+            //lbl_grandtotal.ForeColor = Theme.lbl_ForeColor;
 
-            lbl_balance.BackColor = Theme.lbl_BackColor;
-            lbl_balance.BorderColor = Theme.lbl_BorderColor;
-            lbl_balance.ForeColor = Theme.lbl_ForeColor;
+            //lbl_balance.BackColor = Theme.lbl_BackColor;
+            //lbl_balance.BorderColor = Theme.lbl_BorderColor;
+            //lbl_balance.ForeColor = Theme.lbl_ForeColor;
 
             lbl_notes.BackColor = Theme.lbl_BackColor;
             lbl_notes.BorderColor = Theme.lbl_BorderColor;
@@ -439,147 +439,147 @@ namespace CXERP
 
         #endregion[Tax type lookup] 
 
-        #region[Tax type lookup] 
+        //#region[Tax type lookup] 
 
-        public void Taxtype_lookup()
-        {
-            txt_taxtype_id.LookupColNames = new string[] { TAXTYPE.TAXTYPE_NAME };
-            txt_taxtype_id.LookupUpdate += Txt_taxtype_LookupUpdate;
-            txt_taxtype_id.AllowNewEntry = true;
-            txt_taxtype_id.NewEntryNeeded += Txt_taxtype_NewEntryNeeded;
-        }
-        void Txt_taxtype_LookupUpdate(object sender, EventArgs e)
-        {
-            txt_taxtype_id.LookupList = CTaxtype_exten.GetforLookup(new DAL());
-        }
-        private FTaxtype fstaxtype = null;
-        void Txt_taxtype_NewEntryNeeded(object sender, string pValue)
-        {
-            if (fstaxtype == null)
-            {
-                fstaxtype = new FTaxtype();
-            }
-            Parent.Controls.Add(fstaxtype);
-            fstaxtype.Dock = DockStyle.Fill;
-            fstaxtype.Show();
-            fstaxtype.BringToFront();
-            fstaxtype.Focus();
+        //public void Taxtype_lookup()
+        //{
+        //    txt_taxtype_id.LookupColNames = new string[] { TAXTYPE.TAXTYPE_NAME };
+        //    txt_taxtype_id.LookupUpdate += Txt_taxtype_LookupUpdate;
+        //    txt_taxtype_id.AllowNewEntry = true;
+        //    txt_taxtype_id.NewEntryNeeded += Txt_taxtype_NewEntryNeeded;
+        //}
+        //void Txt_taxtype_LookupUpdate(object sender, EventArgs e)
+        //{
+        //    txt_taxtype_id.LookupList = CTaxtype_exten.GetforLookup(new DAL());
+        //}
+        //private FTaxtype fstaxtype = null;
+        //void Txt_taxtype_NewEntryNeeded(object sender, string pValue)
+        //{
+        //    if (fstaxtype == null)
+        //    {
+        //        fstaxtype = new FTaxtype();
+        //    }
+        //    Parent.Controls.Add(fstaxtype);
+        //    fstaxtype.Dock = DockStyle.Fill;
+        //    fstaxtype.Show();
+        //    fstaxtype.BringToFront();
+        //    fstaxtype.Focus();
 
-            fstaxtype.SetAction(BtnEvent.New, null);
-            fstaxtype.SetFocus();
-        }
+        //    fstaxtype.SetAction(BtnEvent.New, null);
+        //    fstaxtype.SetFocus();
+        //}
 
-        #endregion[Tax type lookup] 
+        //#endregion[Tax type lookup] 
 
-        #region[Sales type lookup] 
+        //#region[Sales type lookup] 
 
-        public void Salestype_lookup()
-        {
-            txt_salestype_id.LookupColNames = new string[] { SALESTYPE.SALESTYPE_NAME };
-            txt_salestype_id.LookupUpdate += Txt_salestype_LookupUpdate;
-            txt_salestype_id.AllowNewEntry = true;
-            txt_salestype_id.NewEntryNeeded += Txt_salestype_NewEntryNeeded;
-        }
-        void Txt_salestype_LookupUpdate(object sender, EventArgs e)
-        {
-            txt_salestype_id.LookupList = CSalestype_exten.GetforLookup(new DAL());
-        }
-        private FSalestype fssalestype = null;
-        void Txt_salestype_NewEntryNeeded(object sender, string pValue)
-        {
-            if (fssalestype == null)
-            {
-                fssalestype = new FSalestype();
-            }
-            Parent.Controls.Add(fssalestype);
-            fssalestype.Dock = DockStyle.Fill;
-            fssalestype.Show();
-            fssalestype.BringToFront();
-            fssalestype.Focus();
+        //public void Salestype_lookup()
+        //{
+        //    txt_salestype_id.LookupColNames = new string[] { SALESTYPE.SALESTYPE_NAME };
+        //    txt_salestype_id.LookupUpdate += Txt_salestype_LookupUpdate;
+        //    txt_salestype_id.AllowNewEntry = true;
+        //    txt_salestype_id.NewEntryNeeded += Txt_salestype_NewEntryNeeded;
+        //}
+        //void Txt_salestype_LookupUpdate(object sender, EventArgs e)
+        //{
+        //    txt_salestype_id.LookupList = CSalestype_exten.GetforLookup(new DAL());
+        //}
+        //private FSalestype fssalestype = null;
+        //void Txt_salestype_NewEntryNeeded(object sender, string pValue)
+        //{
+        //    if (fssalestype == null)
+        //    {
+        //        fssalestype = new FSalestype();
+        //    }
+        //    Parent.Controls.Add(fssalestype);
+        //    fssalestype.Dock = DockStyle.Fill;
+        //    fssalestype.Show();
+        //    fssalestype.BringToFront();
+        //    fssalestype.Focus();
 
-            fssalestype.SetAction(BtnEvent.New, null);
-            fssalestype.SetFocus();
-        }
+        //    fssalestype.SetAction(BtnEvent.New, null);
+        //    fssalestype.SetFocus();
+        //}
 
-        #endregion[Sales type lookup] 
+        //#endregion[Sales type lookup] 
 
-        #region[Transport lookup] 
+        //#region[Transport lookup] 
 
-        public void Transport_lookup()
-        {
-            txt_transport_id.LookupColNames = new string[] { TRANSPORT.TRANSPORT_NAME };
-            txt_transport_id.LookupUpdate += Txt_transport_LookupUpdate;
-            txt_transport_id.AllowNewEntry = true;
-            txt_transport_id.NewEntryNeeded += Txt_transport_NewEntryNeeded;
-        }
-        void Txt_transport_LookupUpdate(object sender, EventArgs e)
-        {
-            txt_transport_id.LookupList = CTransport_exten.GetforLookup(new DAL());
-        }
-        private FTransport fstransport = null;
-        void Txt_transport_NewEntryNeeded(object sender, string pValue)
-        {
-            if (fstransport == null)
-            {
-                fstransport = new FTransport();
-                fstransport.FTransport_NeedToRefresh += Transport_ToRefresh;
-            }
-            Parent.Controls.Add(fstransport);
-            fstransport.Dock = DockStyle.Fill;
-            fstransport.Show();
-            fstransport.BringToFront();
-            fstransport.Focus();
+        //public void Transport_lookup()
+        //{
+        //    txt_transport_id.LookupColNames = new string[] { TRANSPORT.TRANSPORT_NAME };
+        //    txt_transport_id.LookupUpdate += Txt_transport_LookupUpdate;
+        //    txt_transport_id.AllowNewEntry = true;
+        //    txt_transport_id.NewEntryNeeded += Txt_transport_NewEntryNeeded;
+        //}
+        //void Txt_transport_LookupUpdate(object sender, EventArgs e)
+        //{
+        //    txt_transport_id.LookupList = CTransport_exten.GetforLookup(new DAL());
+        //}
+        //private FTransport fstransport = null;
+        //void Txt_transport_NewEntryNeeded(object sender, string pValue)
+        //{
+        //    if (fstransport == null)
+        //    {
+        //        fstransport = new FTransport();
+        //        fstransport.FTransport_NeedToRefresh += Transport_ToRefresh;
+        //    }
+        //    Parent.Controls.Add(fstransport);
+        //    fstransport.Dock = DockStyle.Fill;
+        //    fstransport.Show();
+        //    fstransport.BringToFront();
+        //    fstransport.Focus();
 
-            fstransport.SetAction(BtnEvent.New, null);
-            fstransport.SetFocus();
-            fstransport.setname(pValue);
-        }
-        void Transport_ToRefresh(object sender, EventArgs e)
-        {
-            txt_transport_id.Text = fstransport.GetName();
-            txt_deliveredto_id.Focus();
-        }
+        //    fstransport.SetAction(BtnEvent.New, null);
+        //    fstransport.SetFocus();
+        //    fstransport.setname(pValue);
+        //}
+        //void Transport_ToRefresh(object sender, EventArgs e)
+        //{
+        //    txt_transport_id.Text = fstransport.GetName();
+        //    txt_receivedby_id.Focus();
+        //}
 
-        #endregion[Transport lookup] 
+        //#endregion[Transport lookup] 
 
-        #region[Deliverto lookup] 
+        //#region[Deliverto lookup] 
 
-        public void Deliverto_lookup()
-        {
-            txt_deliveredto_id.LookupColNames = new string[] { DELIVEREDTO.DELIVEREDTO_NAME };
-            txt_deliveredto_id.LookupUpdate += Txt_deliverto_LookupUpdate;
-            txt_deliveredto_id.AllowNewEntry = true;
-            txt_deliveredto_id.NewEntryNeeded += Txt_deliverto_NewEntryNeeded;
-        }
-        void Txt_deliverto_LookupUpdate(object sender, EventArgs e)
-        {
-            txt_deliveredto_id.LookupList = CDeliveredto_exten.GetforLookup(new DAL());
-        }
-        private FDeliveredto fsdeliveryto = null;
-        void Txt_deliverto_NewEntryNeeded(object sender, string pValue)
-        {
-            if (fsdeliveryto == null)
-            {
-                fsdeliveryto = new FDeliveredto();
-            }
-            Parent.Controls.Add(fsdeliveryto);
-            fsdeliveryto.Dock = DockStyle.Fill;
-            fsdeliveryto.Show();
-            fsdeliveryto.BringToFront();
-            fsdeliveryto.Focus();
+        //public void Deliverto_lookup()
+        //{
+        //    txt_receivedby_id.LookupColNames = new string[] { DELIVEREDTO.DELIVEREDTO_NAME };
+        //    txt_receivedby_id.LookupUpdate += Txt_deliverto_LookupUpdate;
+        //    txt_receivedby_id.AllowNewEntry = true;
+        //    txt_receivedby_id.NewEntryNeeded += Txt_deliverto_NewEntryNeeded;
+        //}
+        //void Txt_deliverto_LookupUpdate(object sender, EventArgs e)
+        //{
+        //    txt_receivedby_id.LookupList = CDeliveredto_exten.GetforLookup(new DAL());
+        //}
+        //private FDeliveredto fsdeliveryto = null;
+        //void Txt_deliverto_NewEntryNeeded(object sender, string pValue)
+        //{
+        //    if (fsdeliveryto == null)
+        //    {
+        //        fsdeliveryto = new FDeliveredto();
+        //    }
+        //    Parent.Controls.Add(fsdeliveryto);
+        //    fsdeliveryto.Dock = DockStyle.Fill;
+        //    fsdeliveryto.Show();
+        //    fsdeliveryto.BringToFront();
+        //    fsdeliveryto.Focus();
 
-            fsdeliveryto.SetAction(BtnEvent.New, null);
-            fsdeliveryto.SetFocus();
-            fsdeliveryto.setname(pValue);
-        }
+        //    fsdeliveryto.SetAction(BtnEvent.New, null);
+        //    fsdeliveryto.SetFocus();
+        //    fsdeliveryto.setname(pValue);
+        //}
 
-        void Deliveryto_ToRefresh(object sender, EventArgs e)
-        {
-            txt_deliveredto_id.Text = fsdeliveryto.GetName();
-            txt_bundel.Focus();
-        }
+        //void Deliveryto_ToRefresh(object sender, EventArgs e)
+        //{
+        //    txt_receivedby_id.Text = fsdeliveryto.GetName();
+        //    txt_total_bundel.Focus();
+        //}
 
-        #endregion[Deliverto lookup] 
+        //#endregion[Deliverto lookup] 
 
         #region[Party Lookup]
 
@@ -620,44 +620,44 @@ namespace CXERP
 
         #endregion[PartyLookup]
 
-        #region[Ledger Lookup]
+        //#region[Ledger Lookup]
 
-        public void Ledger_lookup()
-        {
-            txt_ledger_id.LookupColNames = new string[] { LEDGER.LEDGER_NAME };
-            txt_ledger_id.LookupUpdate += txt_ledger_LookupUpdate;
-            txt_ledger_id.AllowNewEntry = true;
-            txt_ledger_id.NewEntryNeeded += txt_ledger_NewEntryNeeded;
-        }
-        void txt_ledger_LookupUpdate(object sender, EventArgs e)
-        {
-            txt_ledger_id.LookupList = CLedger_exten.GetforLookup();
-        }
-        private FLedger xledger = null;
-        void txt_ledger_NewEntryNeeded(object sender, string pValue)
-        {
-            if (xledger == null)
-            {
-                xledger = new FLedger();
-                xledger.FLedger_NeedToRefresh += Ledger_NeedToRefresh;
-            }
-            this.Parent.Controls.Add(xledger);
-            xledger.Dock = DockStyle.Fill;
-            xledger.Show();
-            xledger.BringToFront();
-            xledger.Focus();
+        //public void Ledger_lookup()
+        //{
+        //    txt_ledger_id.LookupColNames = new string[] { LEDGER.LEDGER_NAME };
+        //    txt_ledger_id.LookupUpdate += txt_ledger_LookupUpdate;
+        //    txt_ledger_id.AllowNewEntry = true;
+        //    txt_ledger_id.NewEntryNeeded += txt_ledger_NewEntryNeeded;
+        //}
+        //void txt_ledger_LookupUpdate(object sender, EventArgs e)
+        //{
+        //    txt_ledger_id.LookupList = CLedger_exten.GetforLookup();
+        //}
+        //private FLedger xledger = null;
+        //void txt_ledger_NewEntryNeeded(object sender, string pValue)
+        //{
+        //    if (xledger == null)
+        //    {
+        //        xledger = new FLedger();
+        //        xledger.FLedger_NeedToRefresh += Ledger_NeedToRefresh;
+        //    }
+        //    this.Parent.Controls.Add(xledger);
+        //    xledger.Dock = DockStyle.Fill;
+        //    xledger.Show();
+        //    xledger.BringToFront();
+        //    xledger.Focus();
 
-            xledger.SetAction(BtnEvent.New, null);
-            xledger.SetFocus();
-            xledger.setname(pValue);
-        }
-        void Ledger_NeedToRefresh(object sender, EventArgs e)
-        {
-            txt_ledger_id.Text = xledger.GetName();
-            txt_additional.Focus();
-        }
+        //    xledger.SetAction(BtnEvent.New, null);
+        //    xledger.SetFocus();
+        //    xledger.setname(pValue);
+        //}
+        //void Ledger_NeedToRefresh(object sender, EventArgs e)
+        //{
+        //    txt_ledger_id.Text = xledger.GetName();
+        //    txt_additional.Focus();
+        //}
 
-        #endregion[LedgerLookup]
+        //#endregion[LedgerLookup]
 
         #region[Set Focus]
 
@@ -723,7 +723,7 @@ namespace CXERP
 
             new SetPrintConfig();
 
-            PrintConfig.TaxType = txt_taxtype_id.Text;
+            //PrintConfig.TaxType = txt_taxtype_id.Text;
 //            D_Inward.Build();
             //D_InwardItem.Build();
 

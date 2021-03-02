@@ -25,9 +25,9 @@ namespace CXSETUP
 
                     CoreSetup.Install(obj);
 
-                    //InstallErp(obj);
+                    ErpSetup.Install(obj);
 
-                    //InstallEntries(obj);
+                    BillSetup.Entries(obj);
 
                     //CxAccounts(obj);
 

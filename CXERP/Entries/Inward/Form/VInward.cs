@@ -71,10 +71,10 @@ namespace CXERP
         {
             vId = obj.Inward_id;
             txt_order_id.Text = obj.Order_id;
-            txt_invoice_no.Text = obj.Inward_no.ToString();
-            txt_invoice_date.Text = obj.Inward_date;
+            txt_inward_no.Text = obj.Inward_no.ToString();
+            txt_inward_date.Text = obj.Inward_date;
             txt_party_id.Text = obj.Party_id;
-            txt_bundel.Text = obj.Total_bundel;
+            txt_total_bundel.Text = obj.Total_bundel;
             txt_total_qty.Text = obj.Total_qty.ToString();
             txt_notes.Text = obj.Notes;
             Core.Stative = obj.Active_id;
@@ -115,19 +115,19 @@ namespace CXERP
             bool pReadOnly = !pEnabled;
 
             txt_order_id.Enabled = !pReadOnly;
-            txt_taxtype_id.Enabled = !pReadOnly;
-            txt_salestype_id.Enabled = !pReadOnly;
-            txt_transport_id.Enabled = !pReadOnly;
-            txt_deliveredto_id.Enabled = !pReadOnly;
-            txt_bundel.Enabled = !pReadOnly;
-            txt_invoice_no.Enabled = !pReadOnly;
-            txt_invoice_date.Enabled = !pReadOnly;
+            //txt_taxtype_id.Enabled = !pReadOnly;
+            //txt_salestype_id.Enabled = !pReadOnly;
+            //txt_transport_id.Enabled = !pReadOnly;
+            txt_receivedby_id.Enabled = !pReadOnly;
+            txt_total_bundel.Enabled = !pReadOnly;
+            txt_inward_no.Enabled = !pReadOnly;
+            txt_inward_date.Enabled = !pReadOnly;
             txt_party_id.Enabled = !pReadOnly;
             txt_total_qty.Enabled = !pReadOnly;
-            txt_gsttotal.Enabled = !pReadOnly;
-            txt_ledger_id.Enabled = !pReadOnly;
-            txt_additional.Enabled = !pReadOnly;
-            txt_grandtotal.Enabled = !pReadOnly;
+            //txt_gsttotal.Enabled = !pReadOnly;
+            //txt_ledger_id.Enabled = !pReadOnly;
+            //txt_additional.Enabled = !pReadOnly;
+            //txt_grandtotal.Enabled = !pReadOnly;
             txt_notes.Enabled = !pReadOnly;
 
             editgrid.Enabled = !pReadOnly;
@@ -194,7 +194,7 @@ namespace CXERP
                             //Form_NeedToRefresh();
 
                             SetAction(BtnEvent.New, null);
-                            txt_invoice_no.Focus();
+                            txt_inward_no.Focus();
                         }
                         catch (Exception ex)
                         {
@@ -304,15 +304,15 @@ namespace CXERP
             Inward fobj = new Inward()
             {
                 Inward_id = vId,
-                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_invoice_no.Text,
+                Uniqueno = Current.Acy_id + "~" + Current.Company_id + "~" + txt_inward_no.Text,
                 Company_id = Current.Company_id,
                 //Div_id = Current.Div_id,
                 Acy_id = Current.Acy_id,
                 Order_id = COrder_exten.GetId_Name(txt_order_id.Text,"","",""),
-                Inward_no = txt_invoice_no.Text,
-                Inward_date = txt_invoice_date.Text,
+                Inward_no = txt_inward_no.Text,
+                Inward_date = txt_inward_date.Text,
                 Party_id = CParty_exten.GetId_Name(txt_party_id.Text),
-                Total_bundel = txt_bundel.Text,
+                Total_bundel = txt_total_bundel.Text,
                 Total_qty = txt_total_qty.Text,
                 Locked = Core.Unlocked,
                 Active_id = Core.Stative,
@@ -377,10 +377,10 @@ namespace CXERP
 
         private bool Validation()
         {
-            if (txt_invoice_no.Text.Trim().Length == 0)
+            if (txt_inward_no.Text.Trim().Length == 0)
             {
                 MessageBox.Show(this.FindForm(), "Inward no should not Empty ! ", "Warning...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_invoice_no.Focus();
+                txt_inward_no.Focus();
                 return false;
             }
 

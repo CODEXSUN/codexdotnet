@@ -144,37 +144,37 @@ namespace CXERP
 
             decimal vSub_total = vTotTaxable + vTotCgst + vTotSgst + vTotIgst;
 
-            decimal VAdditional = 0M;
-            decimal vNettotal = 0M;
+            //decimal VAdditional = 0M;
+            //decimal vNettotal = 0M;
 
 
-            if (txt_additional.Text.Contains("-"))
-            {
-                VAdditional = Convert.ToDecimal("0" + txt_additional.Text.Replace("-", ""));
+            //if (txt_additional.Text.Contains("-"))
+            //{
+            //    VAdditional = Convert.ToDecimal("0" + txt_additional.Text.Replace("-", ""));
 
-                vNettotal = vSub_total - VAdditional;
-            }
-            else
-            {
-                VAdditional = Convert.ToDecimal("0" + txt_additional.Text);
+            //    vNettotal = vSub_total - VAdditional;
+            //}
+            //else
+            //{
+            //    VAdditional = Convert.ToDecimal("0" + txt_additional.Text);
 
-                vNettotal = vSub_total + VAdditional;
-            }
+            //    vNettotal = vSub_total + VAdditional;
+            //}
 
-            decimal rounded = Math.Round(vNettotal);
+            //decimal rounded = Math.Round(vNettotal);
 
-            if (rounded > vNettotal)
-            {
-                vRoundoff = rounded - vNettotal;
-            }
-            else
-            {
-                vRoundoff = vNettotal - rounded;
-            }
+            //if (rounded > vNettotal)
+            //{
+            //    vRoundoff = rounded - vNettotal;
+            //}
+            //else
+            //{
+            //    vRoundoff = vNettotal - rounded;
+            //}
 
-            txt_gsttotal.Text = (vTotCgst + vTotSgst + vTotIgst).ToString();
+            //txt_gsttotal.Text = (vTotCgst + vTotSgst + vTotIgst).ToString();
 
-            txt_grandtotal.Text = ConvertTO.Decimal2d(rounded.ToString());
+            //txt_grandtotal.Text = ConvertTO.Decimal2d(rounded.ToString());
 
             txt_total_qty.Text = vTotQty + "";
         }

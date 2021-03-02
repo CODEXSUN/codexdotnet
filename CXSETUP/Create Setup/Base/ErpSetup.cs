@@ -8,7 +8,7 @@ namespace CXSETUP.Create_Setup.Base
 
         #region[ERP]
 
-        private static void Install(Setup obj)
+        public static void Install(Setup obj)
         {
 
             switch (obj.SoftwareType)
@@ -18,6 +18,11 @@ namespace CXSETUP.Create_Setup.Base
                     new Article_Tbl(obj.Database);
                     new Style_Tbl(obj.Database);
                     new Order_Tbl(obj.Database);
+                    
+                    new Inward_Tbl(obj.Database);
+
+
+
                     break;
             }
 

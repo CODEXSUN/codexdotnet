@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CXBILL;
+using CXLIB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,43 +10,43 @@ namespace CXSETUP.Create_Setup.Base
 {
     class GarmentSetup
     {
-        //#region[CXGARMENT]
+        #region[CXGARMENT]
 
-        //public static void CxGarment(Setup obj)
-        //{
-        //    //new Order_Tbl(obj.Database);
+        public static void Install(Setup obj)
+        {
+            //new Order_Tbl(obj.Database);
 
-        //    screenText = "Installed Order Table";
-        //    Processing(null, null);
+            //screenText = "Installed Order Table";
+            //Processing(null, null);
 
-        //    new CXBILL_EXTEN.Invoice_Tbl(obj.Database);
+            new CXBILL_EXTEN.Invoice_Tbl(obj.Database);
 
-        //    screenText = "Installed Invoice Table";
-        //    Processing(null, null);
+            //screenText = "Installed Invoice Table";
+            //Processing(null, null);
 
 
-        //    new CXBILL_EXTEN.Labour_Tbl(obj.Database);
+            new CXBILL_EXTEN.Labour_Tbl(obj.Database);
 
-        //    screenText = "Installed Invoice Table";
-        //    Processing(null, null);
+            //screenText = "Installed Invoice Table";
+            //Processing(null, null);
 
-        //    new CXBILL.Receipt_Tbl(obj.Database);
+            new CXBILL.Receipt_Tbl(obj.Database);
 
-        //    screenText = "Installed Receipt Table";
-        //    Processing(null, null);
+            //screenText = "Installed Receipt Table";
+            //Processing(null, null);
 
-        //    new Purchase_Tbl(obj.Database);
+            new Purchase_Tbl(obj.Database);
 
-        //    screenText = "Installed Purchase Table";
-        //    Processing(null, null);
+           // screenText = "Installed Purchase Table";
+            //Processing(null, null);
 
-        //    new Payment_Tbl(obj.Database);
+            new Payment_Tbl(obj.Database);
 
-        //    screenText = "Installed Payment Table";
-        //    Processing(null, null);
-        //}
+            //screenText = "Installed Payment Table";
+           // Processing(null, null);
+        }
 
-        //#endregion[CXGARMENT]
+        #endregion[CXGARMENT]
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CXLIB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,43 +9,43 @@ namespace CXSETUP.Create_Setup.Base
 {
     class BillSetup
     {
-        //#region[Entries]
+        #region[Entries]
 
-        //private static void InstallEntries(Setup obj)
-        //{
+        public static void Entries(Setup obj)
+        {
 
-        //    switch (obj.SoftwareType)
-        //    {
+            switch (obj.SoftwareType)
+            {
 
-        //        case Softwares.GARMENT:
-        //            CxGarment(obj);
-        //            break;
+                case Softwares.GARMENT:
+                   GarmentSetup.Install(obj);
+                    break;
 
-        //        //case Softwares.OFFSET:
-        //        //    CxOffset(obj);
-        //        //    break;
+                //case Softwares.OFFSET:
+                //    CxOffset(obj);
+                //    break;
 
-        //        //case Softwares.OFFSET_1:
-        //        //    CxOffset_1(obj);
-        //        //    break;
+                //case Softwares.OFFSET_1:
+                //    CxOffset_1(obj);
+                //    break;
 
-        //        case Softwares.TEX:
-        //            CxTex(obj);
-        //            break;
+                case Softwares.TEX:
+                   // CxTex(obj);
+                    break;
 
-        //        //case Softwares.KNITTING:
+                //case Softwares.KNITTING:
 
-        //        //    break;
+                //    break;
 
-        //        case Softwares.UPVC:
-        //            CxUPVC(obj);
-        //            break;
+                case Softwares.UPVC:
+                   // CxUPVC(obj);
+                    break;
 
-        //    }
+            }
 
-        //}
+        }
 
-        //#endregion[Entries]
+        #endregion[Entries]
 
     }
 }
