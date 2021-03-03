@@ -14,7 +14,7 @@ namespace CXLIB
 
         static DAL()
         {
-            CONNECTION_STRING = "Server=" + Server.DBHOST + "; Database=" + Server.DBNAME + "; User Id=" + Server.DBUSER + "; Password=" + Server.DBPASS + "; pooling=true;";//pooling=true; connection timeout=28800;
+            CONNECTION_STRING = "Server=" + Server.DBHOST + ";Port=" + Server.DBPORT + "; Database=" + Server.DBNAME + "; User Id=" + Server.DBUSER + "; Password=" + Server.DBPASS + "; pooling=true;";//pooling=true; connection timeout=28800;
         }
 
         public DAL()

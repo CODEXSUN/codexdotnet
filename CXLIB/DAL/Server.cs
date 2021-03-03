@@ -7,6 +7,7 @@ namespace CXLIB
     {
         public static string DBSERVER { get; set; } = ConfigurationManager.AppSettings["DBSERVER"] + "";
         public static string DBHOST { get; set; } = ConfigurationManager.AppSettings["DBHOST"] + "";
+        public static string DBPORT { get; set; } = ConfigurationManager.AppSettings["PORT"] + "";
         public static string DBNAME { get; set; } = ConfigurationManager.AppSettings["DBNAME"] + "";
         public static string DBUSER { get; set; } = "root";
         public static string DBPASS { get; set; } = "Computer.1";
