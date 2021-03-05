@@ -31,6 +31,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZXDEV", "ZXDEV\ZXDEV.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "old", "old", "{F54A33CE-262E-4A6A-8DB9-307B6F8F2084}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ACode", "ACode", "{FC9D1578-87E7-4DED-96CC-52DDFCACF35B}"
+	ProjectSection(SolutionItems) = preProject
+		What to do next.cs = What to do next.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
